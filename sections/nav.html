@@ -1,0 +1,60 @@
+<header class="nav" id="site-nav">
+  <div class="nav__bar container">
+    <a class="nav__logo" href="#hero" aria-label="Smith Visuals — Startseite">
+      <span class="nav__logo-dot" aria-hidden="true"></span>SMITH VISUALS
+    </a>
+
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link is-active" aria-current="page">Home</a></li>
+        <li><a href="#services" class="nav__link">Leistungen</a></li>
+        <li><a href="#clients" class="nav__link">Kunden</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#services" class="nav__link">Pakete</a></li>
+        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+      </ul>
+      <!-- TODO: echten Instagram-Link ergänzen, sobald vorhanden -->
+      <a class="nav__social" href="#" aria-label="Smith Visuals auf Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </nav>
+
+    <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menü öffnen">
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile-Menü als Geschwister von <header> (nicht darin verschachtelt!): .nav trägt
+     backdrop-filter, das für position:fixed-Nachfahren einen eigenen Containing Block
+     aufspannt — verschachtelt würde das Menü auf die Nav-Bar-Höhe zusammenschrumpfen
+     statt den vollen Viewport abzudecken. Per Default per `inert` aus der Tab-Reihenfolge
+     genommen, JS hebt das beim Öffnen auf. -->
+<div class="nav__mobile" id="nav-mobile" data-state="closed" inert>
+  <button type="button" class="nav__scrim" id="nav-scrim" aria-label="Menü schließen" tabindex="-1"></button>
+
+  <div class="nav__drawer" role="dialog" aria-label="Mobile Navigation">
+    <ul class="nav__drawer-list">
+      <li><a href="#hero" class="nav__drawer-link is-active" aria-current="page">Home</a></li>
+      <li><a href="#services" class="nav__drawer-link">Leistungen</a></li>
+      <li><a href="#clients" class="nav__drawer-link">Kunden</a></li>
+      <li><a href="#portfolio" class="nav__drawer-link">Portfolio</a></li>
+      <li><a href="#services" class="nav__drawer-link">Pakete</a></li>
+      <li><a href="#kontakt" class="nav__drawer-link">Kontakt</a></li>
+    </ul>
+    <a class="nav__drawer-social" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+</div>

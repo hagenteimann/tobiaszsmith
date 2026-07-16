@@ -1,0 +1,104 @@
+/* =========================================================
+   Smith Visuals — Behind the Scenes Section
+   Figma node 76:189 · Portrait-Vorstellung des Fotografen
+   "Tobiasz Smith" auf hellem Kontrast-Panel (Design/Light).
+   Mobile-first: Text + Bild gestapelt, ab 880px zweispaltig.
+   ========================================================= */
+
+.behind-scenes {
+  /* -Tobiasz Smith ist exakt halb so groß wie die Headline (128px -> 64px);
+     Werte aus --fs-display-xl abgeleitet statt neu erfunden. */
+  --bs-fs-author: clamp(1.375rem, 0.75rem + 3vw, 4rem);
+  /* Bild-Seitenverhältnis aus Figma-Frame 665 x 975.587 */
+  --bs-media-ratio: 665 / 976;
+  /* Höhe des unteren Verlaufs relativ zur Bildhöhe (Figma: 235px von 975.587px) */
+  --bs-fade-height: 24%;
+
+  background: var(--c-light);
+  color: var(--c-text-dark);
+  padding-block: var(--space-9);
+}
+
+.behind-scenes__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-7);
+}
+
+@media (min-width: 880px) {
+  .behind-scenes__inner {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ---------- Text ---------- */
+.behind-scenes__text {
+  max-width: 34rem;
+  text-align: center;
+}
+
+.behind-scenes__heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+.behind-scenes__accent {
+  color: var(--c-accent);
+}
+
+.behind-scenes__dark {
+  color: var(--c-text-dark);
+}
+
+.behind-scenes__author {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--bs-fs-author);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--c-text-dim);
+}
+
+/* ---------- Media ---------- */
+.behind-scenes__media {
+  position: relative;
+  width: 100%;
+  max-width: 28rem;
+}
+
+@media (min-width: 880px) {
+  .behind-scenes__media {
+    max-width: 665px;
+  }
+}
+
+.behind-scenes__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--bs-media-ratio);
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Weicher Verlauf am unteren Bildrand, blendet in den hellen Section-BG über
+   (Figma: media-stack-spacer). */
+.behind-scenes__media::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: var(--bs-fade-height);
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 245, 245, 0) 0%,
+    var(--c-light) 65%
+  );
+  pointer-events: none;
+}

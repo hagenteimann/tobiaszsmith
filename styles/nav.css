@@ -1,0 +1,219 @@
+/* =========================================================
+   Smith Visuals — Navigation Bar
+   Figma: node 78:103. Bewusster Bruch mit der dunklen Seite:
+   die Nav ist hell (Weiß/Schwarz), um sich vom Hero abzusetzen.
+   Mobile-first ab 375px, ein Breakpoint fürs Umschalten auf Desktop-Layout.
+   ========================================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color var(--dur-base) var(--ease-soft),
+              box-shadow var(--dur-base) var(--ease-soft);
+}
+
+/* Beim Scrollen etwas satter + Schatten für Tiefe (dezent, kein Layout-Shift) */
+.nav.is-scrolled {
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: var(--shadow-card);
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 4.5rem;
+  padding-block: var(--space-2);
+}
+
+/* ---------- Logo ---------- */
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-display);
+  font-size: var(--fs-logo);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+  color: var(--c-text-dark);
+  white-space: nowrap;
+}
+
+.nav__logo-dot {
+  width: 0.22em;
+  height: 0.22em;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  flex-shrink: 0;
+}
+
+/* ---------- Desktop-Links (ab Breakpoint sichtbar) ---------- */
+.nav__links {
+  display: none;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-nav);
+  letter-spacing: 0.015em;
+  color: var(--c-text-dark);
+  transition: color var(--dur-fast) var(--ease-soft);
+}
+
+.nav__link:hover { color: var(--c-accent); }
+
+.nav__link.is-active {
+  font-weight: 600;
+  color: var(--c-accent);
+}
+
+.nav__social {
+  display: inline-flex;
+  color: var(--c-text-dark);
+  transition: color var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+
+.nav__social svg { width: 1.5rem; height: 1.5rem; }
+
+.nav__social:hover {
+  color: var(--c-accent);
+  transform: translateY(-1px);
+}
+
+/* ---------- Hamburger-Button (mobil) ---------- */
+.nav__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: calc(var(--space-2) * -1);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.nav__toggle-bar {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--c-text-dark);
+  border-radius: var(--radius-full);
+  transition: transform var(--dur-base) var(--ease-soft),
+              opacity var(--dur-base) var(--ease-soft);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) {
+  transform: translateY(0.5rem) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) {
+  transform: translateY(-0.5rem) rotate(-45deg);
+}
+
+/* ---------- Mobile-Menü (Scrim + Drawer) ---------- */
+.nav__mobile {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+}
+
+/* [inert] blendet das Menü sowohl visuell als auch für Tastatur/AT aus */
+.nav__mobile[inert] {
+  display: none;
+}
+
+.nav__scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: rgba(6, 7, 9, 0.6);
+  cursor: pointer;
+}
+
+.nav__drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(85vw, 22rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-6);
+  padding: var(--space-7) var(--space-5);
+  background: var(--c-bg-elevated);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.45);
+  transform: translateX(100%);
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+
+.nav__mobile[data-state="open"] .nav__drawer {
+  transform: translateX(0);
+}
+
+.nav__drawer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.nav__drawer-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-subheading);
+  color: var(--c-text);
+}
+
+.nav__drawer-link:hover,
+.nav__drawer-link.is-active { color: var(--c-accent); }
+
+.nav__drawer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
+
+.nav__drawer-social svg { width: 1.25rem; height: 1.25rem; }
+.nav__drawer-social:hover { color: var(--c-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__drawer { transition-duration: 0.001ms; }
+}
+
+/* ---------- Breakpoint: Desktop-Nav ---------- */
+@media (min-width: 62rem) {
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .nav__toggle { display: none; }
+  .nav__mobile { display: none !important; }
+}

@@ -1,0 +1,67 @@
+/* =========================================================
+   Smith Visuals — Divider Section
+   Drei Set-Foto-Streifen als visueller Übergang zwischen Services
+   und How-We-Operate (Figma: 17:1127, 73:95, 76:361 — liegen im
+   Layout direkt aneinander, ergeben zusammen ein 1253px-Band).
+   Bild B & C tragen in Figma einen 1px-Blur (soft, ausklingender
+   Effekt). Laut Figma-Annotation: Bild wird beim Hover etwas größer
+   + Parallax beim Scrollen.
+   ========================================================= */
+
+.divider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+.divider__panel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-size var(--dur-slow) var(--ease-soft);
+}
+
+/* Seitenverhältnisse 1:1 aus Figma übernommen (Referenzbreite 1920px) */
+.divider__a {
+  aspect-ratio: 1920 / 610;
+  background-image: url("../assets/divider/divider-a.jpg");
+}
+
+.divider__b {
+  aspect-ratio: 1920 / 354;
+  background-image: url("../assets/divider/divider-b.jpg");
+  filter: blur(1px);
+}
+
+.divider__c {
+  aspect-ratio: 1920 / 289;
+  background-image: url("../assets/divider/divider-c.jpg");
+  filter: blur(1px);
+}
+
+/* Leichtes Heranzoomen beim Hovern (nur Geräte mit echtem Zeiger) */
+@media (hover: hover) and (pointer: fine) {
+  .divider__panel:hover {
+    background-size: 112%;
+  }
+}
+
+/* Parallax beim Scrollen — nur ab Desktop-Breite (Performance/Kompatibilität
+   von background-attachment: fixed auf Mobile ist unzuverlässig) */
+@media (min-width: 64rem) {
+  .divider__panel {
+    background-attachment: fixed;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .divider__panel {
+    transition: none;
+    background-attachment: scroll;
+  }
+}

@@ -1,0 +1,34 @@
+/* =========================================================
+   Smith Visuals — Film-Grain-Overlay
+   Befund: Figma selbst zeigt an geprüften Flächen (Kontakt-Bereich,
+   native 1920px-Auflösung) keinerlei Rauschen (Pixel-Standardabweichung
+   exakt 0 in flachen Farbflächen) und keine "Grain"/"Noise"-Effekte in
+   den über get_design_context ausgelesenen Style-Listen (Hero, Kontakt,
+   Divider geprüft). Unsere Bild-Assets sind zudem mit vertretbarer
+   Qualität komprimiert (JPEG q~82, kein sichtbarer Detailverlust).
+   → Kein Effekt zum 1:1-Nachbauen gefunden. Dieses Overlay ist eine
+   bewusste, sehr dezente Design-Ergänzung passend zur "cineastischen,
+   brutalen Qualitätsanspruch"-Positionierung der Marke — ein etabliertes
+   Stilmittel bei Premium-Film-/Videoproduktions-Websites.
+   Reines CSS, kein Bild-Download, kein Request (Daten-URI), performant
+   (einzelne kleine gekachelte SVG-Textur, keine Animation).
+   ========================================================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Nutzer, die reduzierte Transparenz/Effekte bevorzugen, bekommen die
+   reinen Flächen ohne Textur-Layer. */
+@media (prefers-reduced-transparency: reduce) {
+  body::after { display: none; }
+}

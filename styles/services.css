@@ -1,0 +1,118 @@
+/* =========================================================
+   Smith Visuals — Services Section
+   Figma node 17:468 · Überschrift „SERVICE" + 3 Leistungs-Cards
+   Mobile-first: Cards stapeln ab 375px, Grid ab 880px.
+   ========================================================= */
+
+.services {
+  --services-radius: 4px;
+
+  background: var(--c-white);
+  padding-block: var(--space-8);
+}
+
+.services__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.services__title {
+  color: var(--c-text-dark);
+  text-align: center;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+@media (min-width: 880px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* ---------- Card ----------
+   Figma-Maß (Node 17:1014): 522.67×350px, padding 40px, gap 24px —
+   die 350px Höhe ergibt sich dort rein aus Inhalt+Padding+Gap, nicht
+   aus einer erzwungenen Mindesthöhe. Fluid zwischen Mobile und diesem
+   Desktop-Zielwert skaliert (kein Space-Token, da Figma-Fixwerte). */
+.services__card {
+  --card-pad: clamp(1.5rem, 1rem + 2vw, 2.5rem);   /* 24px → 40px */
+  --card-gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);  /* 16px → 24px */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--card-gap);
+  padding: var(--card-pad);
+  border-radius: var(--services-radius);
+  box-shadow: var(--shadow-card);
+}
+
+.services__card--dark {
+  background: var(--c-bg);
+  color: var(--c-white);
+}
+
+.services__card--light {
+  background: var(--c-light);
+  color: var(--c-text-dark);
+}
+
+.services__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--services-radius);
+  background: var(--c-accent);
+}
+
+.services__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--c-white);
+}
+
+.services__card-title {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-subheading);
+  line-height: var(--lh-tight);
+}
+
+.services__card-text {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body);
+}
+
+.services__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding-inline: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--fs-display-btn);
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+}
+
+.services__card--dark .services__cta {
+  background: var(--c-white);
+  color: var(--c-accent);
+}
+
+.services__card--light .services__cta {
+  background: var(--c-bg);
+  color: var(--c-white);
+}

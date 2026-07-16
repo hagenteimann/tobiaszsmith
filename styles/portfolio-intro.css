@@ -1,0 +1,27 @@
+/* =========================================================
+   Smith Visuals — Portfolio Intro
+   Figma node 76:363 · kurzer Überschriften-Block direkt vor dem
+   Portfolio-Grid. Liegt auf dunklem Seiten-Background.
+   ========================================================= */
+
+.portfolio-intro {
+  background: var(--c-bg);
+  padding-block: var(--space-8);
+}
+
+.portfolio-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.portfolio-intro__lead {
+  max-width: 60ch;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+  color: var(--c-text);
+}

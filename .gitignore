@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+.playwright-mcp/
+_qa/
+_qa_*.png

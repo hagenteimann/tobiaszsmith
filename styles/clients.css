@@ -1,0 +1,96 @@
+/* =========================================================
+   Smith Visuals — Clients Bar
+   Figma node 17:486 · statische Namensleiste, auf breiten
+   Viewports als sanfter Endlos-Marquee (CSS-only).
+   ========================================================= */
+
+.clients {
+  --clients-gap: clamp(1.5rem, 4vw, 3rem);
+  --clients-dur: 32s;
+
+  background: var(--c-light);
+  padding-block: var(--space-7);
+  overflow: hidden;
+}
+
+.clients__marquee {
+  display: flex;
+  width: 100%;
+  /* Abstand zwischen den beiden Marquee-Spuren an der Loop-Nahtstelle.
+     (padding-inline-end auf .clients__track wird von base.css' ul[class]{padding:0}
+     Reset wegen höherer Selektor-Spezifität überschrieben — daher hier am Flex-Parent.) */
+  gap: var(--clients-gap);
+  /* Fade an den Rändern, damit der Loop nicht hart abschneidet */
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 clamp(1.5rem, 6vw, 5rem),
+    #000 calc(100% - clamp(1.5rem, 6vw, 5rem)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 clamp(1.5rem, 6vw, 5rem),
+    #000 calc(100% - clamp(1.5rem, 6vw, 5rem)),
+    transparent 100%
+  );
+}
+
+.clients__track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--clients-gap);
+  animation: clients-scroll var(--clients-dur) linear infinite;
+}
+
+/* Zweite Spur läuft nahtlos an die erste an */
+.clients__track[aria-hidden="true"] {
+  animation-name: clients-scroll;
+}
+
+.clients__marquee:hover .clients__track {
+  animation-play-state: paused;
+}
+
+.clients__logo {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  letter-spacing: 0.03em;
+  color: var(--c-text-dark);
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: opacity var(--dur-fast) var(--ease-soft);
+}
+
+.clients__logo:hover {
+  opacity: 1;
+}
+
+@keyframes clients-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* Ruhige, statische Variante ohne Bewegung */
+@media (prefers-reduced-motion: reduce) {
+  .clients__marquee {
+    flex-wrap: wrap;
+    justify-content: center;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .clients__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Duplizierte Spur wird für Screenreader & Layout ausgeblendet */
+  .clients__track[aria-hidden="true"] {
+    display: none;
+  }
+}

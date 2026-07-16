@@ -1,0 +1,85 @@
+/* =========================================================
+   Smith Visuals — Design Tokens
+   Quelle: Figma Variablen (get_variable_defs, node 17:312)
+   Mobile-first, alle Größen fluid via clamp() zwischen 375px und 1920px.
+   ========================================================= */
+
+:root {
+  /* ---------- Farben ---------- */
+  --c-accent:        #A11919;
+  --c-accent-hover:  #C42222;
+  --c-bg:            #060709;
+  --c-bg-elevated:   #101114;
+  --c-text:          #FFFFFF;
+  --c-text-dim:      #6B7280;
+  --c-text-dark:     #060709;
+  --c-light:         #F5F5F5;
+  --c-white:         #FFFFFF;
+  --c-black:         #000000;
+  --c-border:        #6B7280;
+  --c-border-light:  #F3F4F6;
+  --c-border-hair:   rgba(255, 255, 255, 0.12);
+
+  /* ---------- Fonts ---------- */
+  --font-display: "League Gothic", "Arial Narrow", sans-serif;
+  --font-body:    "Geist", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Fluid Type Scale (Figma-Werte = Desktop-Maximum) */
+  --fs-display-xl:  clamp(2.75rem, 1.5rem + 6vw, 8rem);      /* Section Title 128px */
+  --fs-display-btn: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);    /* Display/Button 32px */
+  --fs-h2:          clamp(1.5rem, 1.3rem + 0.9vw, 1.75rem);   /* 28px */
+  --fs-h3:          clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);   /* 24px */
+  --fs-subheading:  clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); /* 28px */
+  --fs-body-lg:     clamp(1rem, 0.94rem + 0.3vw, 1.125rem);   /* 18px */
+  --fs-body-md:     1.125rem;                                  /* 18px medium */
+  --fs-body:        1rem;                                      /* 16px */
+  --fs-body-sm:      0.875rem;                                 /* 14px */
+  --fs-body-xs:      0.75rem;                                  /* 12px */
+  --fs-label-btn:    1rem;                                     /* 16px, ls 3 */
+  --fs-label:        0.875rem;                                 /* 14px */
+  --fs-label-sm:      0.75rem;                                 /* 12px, ls 1 */
+  --fs-nav:          clamp(1.05rem, 1rem + 0.25vw, 1.25rem);   /* 20px */
+  --fs-logo:         clamp(1.5rem, 1.3rem + 0.6vw, 2.25rem);   /* 36px */
+
+  --lh-tight: 1;
+  --lh-body:  1.6;
+
+  --ls-display: 0.02em;
+  --ls-label:   0.19em;   /* letterSpacing 3 auf 16px */
+  --ls-eyebrow: 0.28em;
+
+  /* ---------- Spacing (fluid, 8px-Grid als Basis) ---------- */
+  --space-1:  0.5rem;
+  --space-2:  0.75rem;
+  --space-3:  1rem;
+  --space-4:  1.5rem;
+  --space-5:  2rem;
+  --space-6:  clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --space-7:  clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  --space-8:  clamp(3rem, 1.5rem + 6vw, 7.5rem);    /* Section-Vertikalabstand */
+  --space-9:  clamp(3.5rem, 1.5rem + 8vw, 9rem);
+
+  --container-max: 1600px;
+  --container-pad: clamp(1.25rem, 3vw + 0.5rem, 7.5rem);
+
+  /* ---------- Radius ---------- */
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   20px;
+  --radius-full: 999px;
+
+  /* ---------- Schatten / Glow ---------- */
+  --shadow-card:      0 4px 40px rgba(0, 0, 0, 0.35);
+  --shadow-hairline:  -4px -4px 22px rgba(255, 255, 255, 0.10);
+  --shadow-accent:    0 8px 30px rgba(161, 25, 25, 0.35);
+
+  /* ---------- Motion ---------- */
+  --ease-soft:  cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-fan:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   0.2s;
+  --dur-base:   0.4s;
+  --dur-slow:   0.7s;
+
+  --z-nav:      100;
+  --z-overlay:  200;
+}

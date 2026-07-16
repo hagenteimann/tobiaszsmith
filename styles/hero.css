@@ -1,0 +1,116 @@
+/* =========================================================
+   Smith Visuals — Hero
+   Figma: hero-section (17:466) — HELLER/weißer Wortmarken-Block
+   mit zwei überlagerten Foto-Ebenen (Ghost 40% + scharfe Kopie).
+   homepage-text-group (17:1004) — SEPARATER dunkler Tagline-Block.
+   Zwei eigenständige Sections, keine gemeinsame Hintergrundfarbe.
+   ========================================================= */
+
+.hero {
+  --hero-pad-block: clamp(2rem, 1rem + 3vw, 4rem);
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--c-white);
+  padding-block: var(--hero-pad-block);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Hero füllt den kompletten ersten Bildschirm unterhalb der Nav
+     (--nav-h wird von js/nav.js per ResizeObserver live gemessen). */
+  min-height: calc(100svh - var(--nav-h, 88px));
+}
+
+.hero__lockup {
+  /* Bewusst KEIN position:relative — .hero__photos (inset:0) soll sich
+     an .hero (volle Section-Höhe) verankern, nicht an diese textbreite Box. */
+  padding-inline: var(--container-pad);
+  width: 100%;
+}
+
+/* ---------- Wortmarke: echtes Vektor-SVG aus Figma (exaktes Kerning,
+   nicht per CSS-letter-spacing nachbaubar). Horizontal zentriert
+   (Figma: exakt gleiche Abstände links/rechts zum Canvas-Rand). ---------- */
+.hero__wordmark {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-inline: auto;
+  width: clamp(17rem, 82vw, 84rem);
+  height: auto;
+  aspect-ratio: 1421.13 / 471.999;
+}
+
+/* ---------- Foto-Overlay: bleedet über den rechten/unteren Rand ----------
+   Zwei getrennte Ebenen um die Wortmarke herum gestapelt:
+   Ghost (40%) LIEGT HINTER der Wortmarke, die scharfe Kopie DAVOR
+   (verdeckt die Wortmarke dort, wo die Person opak ist — wie in Figma). */
+.hero__photos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__photos:not(.hero__photos--front) { z-index: 1; }  /* Ghost: hinter der Wortmarke */
+.hero__photos--front { z-index: 3; }                      /* Scharf: vor der Wortmarke */
+
+.hero__photo {
+  position: absolute;
+  bottom: clamp(-3.5rem, -8vw, -1rem);
+  height: clamp(13rem, 46vw, 34rem);
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+.hero__photo--ambient {
+  right: clamp(-3rem, -6vw, 2rem);
+  opacity: 0.4;
+  transform: scale(1.08);
+}
+
+.hero__photo--main {
+  right: clamp(-2rem, 2vw, 6rem);
+  opacity: 1;
+}
+
+/* ---------- Tagline-Block (dunkel, eigenständige Section) ---------- */
+.hero-intro {
+  background: var(--c-bg);
+  padding-block: var(--space-8);
+}
+
+.hero-intro__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.hero-intro__headline {
+  max-width: 52rem;
+  color: var(--c-text);
+}
+
+.hero-intro__lead {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-body);
+  color: var(--c-text);
+  max-width: 42rem;
+}
+
+/* ---------- Breakpoint: mehr Raum, Foto darf größer bleeden ---------- */
+@media (min-width: 48rem) {
+  .hero__photo {
+    height: clamp(18rem, 48vw, 38rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__photo { transition: none; }
+}

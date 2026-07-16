@@ -1,0 +1,74 @@
+/* =========================================================
+   Smith Visuals — Portfolio Grid
+   Figma node 76:165 · 8 Portfolio-Items (Figma-Maß 400x500),
+   liegt als heller "Galerie"-Abschnitt zwischen den dunklen
+   Sections (vgl. clients.css, gleiches Muster: var(--c-light)).
+   Mobile-first: 1 -> 2 -> 4 Spalten via auto-fit/minmax,
+   keine festen Breakpoints noetig.
+   ========================================================= */
+
+.portfolio {
+  --portfolio-radius: 4px;
+
+  background: var(--c-light);
+  padding-block: var(--space-8);
+}
+
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-4);
+}
+
+.portfolio__item {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--portfolio-radius);
+  overflow: hidden;
+  /* Figma-Hintergrund hinter dem Bild (78:90 u.a.) — sichtbar als
+     Platzhalter-Ton, solange das Bild laedt */
+  background: var(--c-bg);
+}
+
+.portfolio__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio__link::after {
+  /* Sanftes Abdunkeln beim Hover/Fokus, ersetzt fehlenden Text-Overlay
+     (Figma-Instanzen enthalten keinen Titel/Kategorie-Text) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6, 7, 9, 0) 45%, rgba(6, 7, 9, 0.55) 100%);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-soft);
+}
+
+.portfolio__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio__link:hover .portfolio__img,
+  .portfolio__link:focus-visible .portfolio__img {
+    transform: scale(1.06);
+  }
+}
+
+.portfolio__link:hover::after,
+.portfolio__link:focus-visible::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio__img,
+  .portfolio__link::after {
+    transition: none;
+  }
+}

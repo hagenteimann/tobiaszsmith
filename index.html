@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Smith Visuals — Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative." />
+  <title>Smith Visuals — Cinematic Visuals for Modern Brands</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23A11919'/%3E%3C/svg%3E" />
+
+  <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
+
+  <link rel="stylesheet" href="styles/fonts.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/base.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/services.css?v=1784202109" />
+  <link rel="stylesheet" href="styles/divider.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/operate.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784201199" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
+<section class="hero" id="hero">
+  <div class="hero__lockup">
+    <div class="hero__photos" aria-hidden="true">
+      <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" width="1600" height="908" />
+    </div>
+
+    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" width="1421" height="472" />
+
+    <div class="hero__photos hero__photos--front" aria-hidden="true">
+      <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" width="1409" height="835" fetchpriority="high" />
+    </div>
+  </div>
+</section>
+<header class="nav" id="site-nav">
+  <div class="nav__bar container">
+    <a class="nav__logo" href="#hero" aria-label="Smith Visuals — Startseite">
+      <span class="nav__logo-dot" aria-hidden="true"></span>SMITH VISUALS
+    </a>
+
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link is-active" aria-current="page">Home</a></li>
+        <li><a href="#services" class="nav__link">Leistungen</a></li>
+        <li><a href="#clients" class="nav__link">Kunden</a></li>
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#services" class="nav__link">Pakete</a></li>
+        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+      </ul>
+      <!-- TODO: echten Instagram-Link ergänzen, sobald vorhanden -->
+      <a class="nav__social" href="#" aria-label="Smith Visuals auf Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </nav>
+
+    <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menü öffnen">
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile-Menü als Geschwister von <header> (nicht darin verschachtelt!): .nav trägt
+     backdrop-filter, das für position:fixed-Nachfahren einen eigenen Containing Block
+     aufspannt — verschachtelt würde das Menü auf die Nav-Bar-Höhe zusammenschrumpfen
+     statt den vollen Viewport abzudecken. Per Default per `inert` aus der Tab-Reihenfolge
+     genommen, JS hebt das beim Öffnen auf. -->
+<div class="nav__mobile" id="nav-mobile" data-state="closed" inert>
+  <button type="button" class="nav__scrim" id="nav-scrim" aria-label="Menü schließen" tabindex="-1"></button>
+
+  <div class="nav__drawer" role="dialog" aria-label="Mobile Navigation">
+    <ul class="nav__drawer-list">
+      <li><a href="#hero" class="nav__drawer-link is-active" aria-current="page">Home</a></li>
+      <li><a href="#services" class="nav__drawer-link">Leistungen</a></li>
+      <li><a href="#clients" class="nav__drawer-link">Kunden</a></li>
+      <li><a href="#portfolio" class="nav__drawer-link">Portfolio</a></li>
+      <li><a href="#services" class="nav__drawer-link">Pakete</a></li>
+      <li><a href="#kontakt" class="nav__drawer-link">Kontakt</a></li>
+    </ul>
+    <a class="nav__drawer-social" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+      <span>Instagram</span>
+    </a>
+  </div>
+</div>
+
+  <main id="main-content">
+<section class="hero-intro" id="hero-intro">
+  <div class="container hero-intro__inner">
+    <h1 class="section-title hero-intro__headline">Cinematic Visuals for Modern Brands</h1>
+    <p class="hero-intro__lead">Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative.</p>
+  </div>
+</section>
+<section class="clients" id="clients">
+  <div class="clients__marquee">
+    <ul class="clients__track" aria-label="Unsere Kunden">
+      <li class="clients__logo">Kunde 1</li>
+      <li class="clients__logo">Kunde 2</li>
+      <li class="clients__logo">Kunde 3</li>
+      <li class="clients__logo">Kunde 4</li>
+      <li class="clients__logo">Kunde 5</li>
+      <li class="clients__logo">Kunde 6</li>
+    </ul>
+    <ul class="clients__track" aria-hidden="true">
+      <li class="clients__logo">Kunde 1</li>
+      <li class="clients__logo">Kunde 2</li>
+      <li class="clients__logo">Kunde 3</li>
+      <li class="clients__logo">Kunde 4</li>
+      <li class="clients__logo">Kunde 5</li>
+      <li class="clients__logo">Kunde 6</li>
+    </ul>
+  </div>
+</section>
+<section class="services" id="services">
+  <div class="container services__inner">
+    <h2 class="section-title services__title">SERVICE</h2>
+
+    <div class="services__grid">
+      <article class="services__card services__card--dark">
+        <div class="services__icon-box" aria-hidden="true">
+          <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="services__card-title">Social Media Content</h3>
+        <p class="services__card-text">TikToks, Reels &amp; Karussells, die hängen bleiben. Strategisch fundierter Content, der organische Reichweite aufbaut.</p>
+        <span class="services__cta">Pakete</span>
+      </article>
+
+      <article class="services__card services__card--light">
+        <div class="services__icon-box" aria-hidden="true">
+          <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="13" height="10" rx="2"></rect>
+            <circle cx="8.5" cy="12" r="2.5"></circle>
+            <path d="M15 10.5 22 7v10l-7-3.5"></path>
+            <line x1="5" y1="17" x2="5" y2="19"></line>
+            <line x1="11" y1="17" x2="11" y2="19"></line>
+          </svg>
+        </div>
+        <h3 class="services__card-title">Videografie</h3>
+        <p class="services__card-text">Cinematische Imagefilme, High-End Testimonials und Drohnenaufnahmen, die Emotionen wecken und Vertrauen schaffen.</p>
+        <span class="services__cta">Pakete</span>
+      </article>
+
+      <article class="services__card services__card--dark">
+        <div class="services__icon-box" aria-hidden="true">
+          <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+            <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+            <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+            <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+            <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+            <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+          </svg>
+        </div>
+        <h3 class="services__card-title">Foto-Shootings</h3>
+        <p class="services__card-text">Präzise Produktfotografie, Lifestyle-Inszenierungen &amp; Corporate Identity Shootings mit brutalem Qualitätsanspruch.</p>
+        <span class="services__cta">Pakete</span>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="divider" id="divider" aria-hidden="true">
+  <div class="divider__panel divider__a"></div>
+  <div class="divider__panel divider__b"></div>
+  <div class="divider__panel divider__c"></div>
+</section>
+<section class="operate" id="operate">
+  <div class="container operate__inner">
+    <h2 class="section-title operate__title">HOW WE OPERATE</h2>
+
+    <div class="operate__grid">
+      <div class="operate__card operate__card--light">
+        <h3 class="operate__card-title">1. Erstgespräch</h3>
+        <p class="operate__card-text">Ziele. Stil. Budget. Klarheit ab der ersten Minute.</p>
+      </div>
+      <div class="operate__card">
+        <h3 class="operate__card-title">2. Konzept &amp; Storyboard</h3>
+        <p class="operate__card-text">Struktur, Stimmung, Shotlist. Die Grundlage für starke Ergebnisse.</p>
+      </div>
+      <div class="operate__card">
+        <h3 class="operate__card-title">3. Produktion</h3>
+        <p class="operate__card-text">Professionelle Umsetzung mit Sinn für Licht, Bewegung und Timing.</p>
+      </div>
+      <div class="operate__card">
+        <h3 class="operate__card-title">4. Editing &amp; Sound</h3>
+        <p class="operate__card-text">Cineastische Farbwelten. Präzise Schnitte. Musik, die Emotion trägt.</p>
+      </div>
+      <div class="operate__card">
+        <h3 class="operate__card-title">5. Feedback &amp; Revision</h3>
+        <p class="operate__card-text">Transparenter Austausch. 1–2 Korrekturrunden inklusive.</p>
+      </div>
+      <div class="operate__card">
+        <h3 class="operate__card-title">6. Finale Übergabe</h3>
+        <p class="operate__card-text">Optimiert für Social Media, Websites oder Werbung.</p>
+      </div>
+    </div>
+
+    <div class="operate__cta-row">
+      <a href="#contact" class="operate__cta">JETZT PROJEKT STARTEN</a>
+    </div>
+  </div>
+</section>
+<section class="testimonials" id="testimonials">
+  <div class="container testimonials__inner">
+    <h2 class="section-title testimonials__title">TESTIMONIALS</h2>
+
+    <ul class="testimonials__grid">
+      <li class="testimonials__card">
+        <div class="testimonials__header">
+          <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
+          <div class="testimonials__stars" aria-label="5 von 5 Sternen">
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+          </div>
+        </div>
+        <p class="testimonials__text">„Die Zusammenarbeit mit Smith Visuals war herausragend. Der Imagefilm hat unsere Markenidentität perfekt eingefangen und die Resonanz war überwältigend.“</p>
+        <div class="testimonials__divider" aria-hidden="true"></div>
+        <div class="testimonials__author">
+          <p class="testimonials__name">Marcus Weber</p>
+          <p class="testimonials__role">CEO bei TechFlow GmbH</p>
+        </div>
+      </li>
+
+      <li class="testimonials__card">
+        <div class="testimonials__header">
+          <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
+          <div class="testimonials__stars" aria-label="5 von 5 Sternen">
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+          </div>
+        </div>
+        <p class="testimonials__text">„Professionell, kreativ und unglaublich detailverliebt. Die Produktfotos haben unseren Online-Shop auf ein neues Level gehoben.“</p>
+        <div class="testimonials__divider" aria-hidden="true"></div>
+        <div class="testimonials__author">
+          <p class="testimonials__name">Sarah Klein</p>
+          <p class="testimonials__role">Marketing Director bei Nordic Style</p>
+        </div>
+      </li>
+
+      <li class="testimonials__card">
+        <div class="testimonials__header">
+          <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
+          <div class="testimonials__stars" aria-label="5 von 5 Sternen">
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+            <svg class="testimonials__star" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0.5l2.163 4.382 4.837.703-3.5 3.412.826 4.816L8 11.5l-4.326 2.313.826-4.816-3.5-3.412 4.837-.703z"/></svg>
+          </div>
+        </div>
+        <p class="testimonials__text">„Von der Konzeption bis zum finalen Schnitt — alles aus einem Guss. Smith Visuals versteht es, Geschichten visuell zu erzählen.“</p>
+        <div class="testimonials__divider" aria-hidden="true"></div>
+        <div class="testimonials__author">
+          <p class="testimonials__name">Daniel Hoffmann</p>
+          <p class="testimonials__role">Gründer von Momentum Studios</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="portfolio-intro" id="portfolio-intro">
+  <div class="container portfolio-intro__inner">
+    <h2 class="section-title">PORTFOLIO</h2>
+    <p class="portfolio-intro__lead">Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative.</p>
+  </div>
+</section>
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <ul class="portfolio__grid">
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Food-Fotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-1-pizza.jpg" alt="Draufsicht auf eine frisch belegte Pizza auf einem Holzbrett" width="827" height="999" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Business-Fotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-2-business.jpg" alt="Person arbeitet mit Laptop, Unterlagen und Kaffee an einem Schreibtisch" width="900" height="600" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Eventfotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-3-freizeitpark.jpg" alt="Achterbahn mit jubelnden Fahrgästen in einem Freizeitpark" width="900" height="674" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Naturfotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-4-wildlife.jpg" alt="Rotfuchs im goldenen Abendlicht auf einer Schneefläche" width="900" height="599" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Studiofotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-5-studio.jpg" alt="Fotograf fotografiert ein Model im Studio vor schwarzem Hintergrund" width="500" height="333" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Analoge Fotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-6-analog.jpg" alt="Analogkamera liegt auf einem Stapel alter Schwarzweißfotos" width="900" height="600" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Outdoor-Fotografie">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-7-outdoor.jpg" alt="Wanderer mit Rucksack fotografiert mit Teleobjektiv in den Bergen" width="500" height="333" loading="lazy" decoding="async" />
+        </a>
+      </li>
+      <li class="portfolio__item">
+        <a class="portfolio__link" href="#kontakt" aria-label="Projekt ansehen – Kamera-Detailaufnahme">
+          <img class="portfolio__img" src="assets/portfolio/portfolio-8-kamera.jpg" alt="Detailansicht einer Vintage-Kamera im Gras mit Blick auf einen Baum im Sucher" width="800" height="1000" loading="lazy" decoding="async" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="more-work" id="more-work">
+  <div class="container more-work__inner">
+    <h2 class="section-title more-work__title">WEITERE ARBEITEN</h2>
+
+    <div class="more-work__folders">
+
+      <div class="mw-item mw-item--sm">
+        <p class="mw-item__label">Projekt 4</p>
+        <div class="mw-stagewrap">
+          <div class="mw-stage">
+            <div class="mw-folder" role="button" tabindex="0" aria-pressed="false" aria-label="Projekt-Vorschau öffnen">
+              <div class="mw-folder__glow" aria-hidden="true"></div>
+              <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+              </svg>
+              <div class="mw-folder__photos">
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/more-work/foto-1.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/more-work/foto-2.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/more-work/foto-3.jpg" alt="" loading="lazy" /></figure>
+              </div>
+              <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mw-item mw-item--lg">
+        <p class="mw-item__label">Projekt 4</p>
+        <div class="mw-stagewrap">
+          <div class="mw-stage">
+            <div class="mw-folder" role="button" tabindex="0" aria-pressed="false" aria-label="Projekt-Vorschau öffnen">
+              <div class="mw-folder__glow" aria-hidden="true"></div>
+              <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+              </svg>
+              <div class="mw-folder__photos">
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/more-work/foto-1.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/more-work/foto-2.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/more-work/foto-3.jpg" alt="" loading="lazy" /></figure>
+              </div>
+              <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mw-item mw-item--sm">
+        <p class="mw-item__label">Projekt 4</p>
+        <div class="mw-stagewrap">
+          <div class="mw-stage">
+            <div class="mw-folder" role="button" tabindex="0" aria-pressed="false" aria-label="Projekt-Vorschau öffnen">
+              <div class="mw-folder__glow" aria-hidden="true"></div>
+              <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+              </svg>
+              <div class="mw-folder__photos">
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/more-work/foto-1.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/more-work/foto-2.jpg" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/more-work/foto-3.jpg" alt="" loading="lazy" /></figure>
+              </div>
+              <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="behind-scenes" id="behind-scenes">
+  <div class="container behind-scenes__inner">
+    <div class="behind-scenes__text">
+      <h2 class="behind-scenes__heading">
+        <span class="behind-scenes__accent">The</span> <span class="behind-scenes__dark">MAN Behind</span> <span class="behind-scenes__accent">the</span><br>
+        <span class="behind-scenes__accent">SCENES</span>
+      </h2>
+      <p class="behind-scenes__author">-Tobiasz Smith</p>
+    </div>
+
+    <div class="behind-scenes__media">
+      <img
+        class="behind-scenes__photo"
+        src="assets/behind-scenes/portrait.jpg"
+        width="1200"
+        height="1761"
+        loading="lazy"
+        decoding="async"
+        alt="Tobiasz Smith, Fotograf und Videograf von Smith Visuals, mit verschränkten Armen"
+      />
+    </div>
+  </div>
+</section>
+<section class="kontakt" id="kontakt">
+  <div class="kontakt__container container">
+
+    <div class="kontakt__heading">
+      <p class="kontakt__eyebrow">Projekt starten</p>
+      <h2 class="kontakt__title section-title">Genug gelesen!</h2>
+      <p class="kontakt__lead">Lass uns gemeinsam etwas Großes kreieren. Erzähl mir von deiner Idee und wir bringen sie auf die Leinwand.</p>
+    </div>
+
+    <div class="kontakt__split">
+
+      <div class="kontakt__info">
+        <div class="kontakt__summary">
+          <p class="kontakt__logo" aria-hidden="true"><span class="kontakt__logo-dot"></span>Smith Visuals</p>
+          <p class="kontakt__text">Ob High-End Commercial, cineastischer Imagefilm oder präzise Produktfotografie – wir setzen deine Vision mit brutalem Qualitätsanspruch um. Schreib uns direkt oder nutze das Formular für ein unverbindliches Erstgespräch.</p>
+        </div>
+
+        <ul class="kontakt__list">
+          <li class="kontakt__item">
+            <span class="kontakt__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </span>
+            <span class="kontakt__item-body">
+              <span class="kontakt__item-label">E-Mail</span>
+              <a class="kontakt__item-value" href="mailto:info@smithvisuals.de">info@smithvisuals.de</a>
+            </span>
+          </li>
+          <li class="kontakt__item">
+            <span class="kontakt__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
+              </svg>
+            </span>
+            <span class="kontakt__item-body">
+              <span class="kontakt__item-label">Telefon</span>
+              <a class="kontakt__item-value" href="tel:+4917689203110">+49 (0) 176 8920 3110</a>
+            </span>
+          </li>
+          <li class="kontakt__item">
+            <span class="kontakt__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="kontakt__item-body">
+              <span class="kontakt__item-label">Studio</span>
+              <span class="kontakt__item-value">Kreativpark Block 4, Hamburg</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="kontakt__social">
+          <p class="kontakt__social-label">Folge uns</p>
+          <div class="kontakt__social-links">
+            <a class="kontakt__social-link" href="https://instagram.com/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Smith Visuals auf Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <form class="kontakt__form" action="#" method="post" data-form="kontakt" novalidate>
+        <div class="kontakt__fields">
+
+          <div class="kontakt__field">
+            <label for="kontakt-name">Name*</label>
+            <input class="kontakt__input" type="text" id="kontakt-name" name="name" placeholder="Dein vollständiger Name" autocomplete="name" required />
+          </div>
+
+          <div class="kontakt__field">
+            <label for="kontakt-email">E-Mail*</label>
+            <input class="kontakt__input" type="email" id="kontakt-email" name="email" placeholder="Deine E-Mail-Adresse" autocomplete="email" required />
+          </div>
+
+          <div class="kontakt__field">
+            <label for="kontakt-projektart">Art des Projektes*</label>
+            <div class="kontakt__select-wrap">
+              <select class="kontakt__select" id="kontakt-projektart" name="projektart" required>
+                <option value="" disabled selected>Bitte wählen</option>
+                <option value="hochzeitsfilm">Hochzeitsfilm</option>
+                <option value="commercial-video">Commercial Video</option>
+                <option value="foto-produktion">Foto-Produktion</option>
+                <option value="social-content">Social Content</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+              <svg class="kontakt__select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kontakt__field">
+            <label for="kontakt-budget">Budgetrahmen</label>
+            <div class="kontakt__select-wrap">
+              <select class="kontakt__select" id="kontakt-budget" name="budget">
+                <option value="unbekannt" selected>Unbekannt</option>
+                <option value="unter-2000">Unter 2.000 €</option>
+                <option value="2000-5000">2.000 – 5.000 €</option>
+                <option value="5000-10000">5.000 – 10.000 €</option>
+                <option value="ueber-10000">Über 10.000 €</option>
+              </select>
+              <svg class="kontakt__select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kontakt__field">
+            <label for="kontakt-deadline">Projekt Deadline</label>
+            <div class="kontakt__date-wrap">
+              <input class="kontakt__input kontakt__input--date" type="date" id="kontakt-deadline" name="deadline" />
+              <svg class="kontakt__date-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <path d="M8 2v4"/>
+                <path d="M16 2v4"/>
+                <rect width="18" height="18" x="3" y="4" rx="2"/>
+                <path d="M3 10h18"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kontakt__field">
+            <label for="kontakt-nachricht">Nachricht</label>
+            <textarea class="kontakt__textarea" id="kontakt-nachricht" name="nachricht" rows="5" placeholder="Erzähle uns kurz von deinem Projekt, Stil, Budget..."></textarea>
+          </div>
+
+        </div>
+
+        <button class="kontakt__submit" type="submit">Absenden</button>
+
+        <p class="kontakt__note">*Angaben sind Nötig</p>
+
+        <!-- Live-Region fuer Absende-Feedback, wird per JS befuellt -->
+        <p class="kontakt__feedback" role="status" aria-live="polite" hidden></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+  </main>
+
+<footer class="footer">
+  <div class="footer__container container">
+
+    <div class="footer__upper">
+      <div class="footer__brand">
+        <p class="footer__logo">Smith Visuals</p>
+        <p class="footer__desc">Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative.</p>
+        <div class="footer__social">
+          <a class="footer__social-link" href="https://instagram.com/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Smith Visuals auf Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+          </a>
+          <a class="footer__social-link" href="https://linkedin.com/company/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Smith Visuals auf LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect width="4" height="12" x="2" y="9"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a class="footer__social-link" href="https://x.com/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Smith Visuals auf X">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="m15 9-6 6"/>
+              <path d="m9 9 6 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ziel-URLs sind Platzhalter (#) — Unterseiten sind noch nicht gebaut -->
+      <div class="footer__links">
+        <nav class="footer__links-col" aria-labelledby="footer-heading-leistungen">
+          <p class="footer__links-heading" id="footer-heading-leistungen">Leistungen</p>
+          <ul class="footer__links-list">
+            <li><a href="#">Social Content</a></li>
+            <li><a href="#">Foto-Produktion</a></li>
+            <li><a href="#">Commercial Video</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__links-col" aria-labelledby="footer-heading-smith">
+          <p class="footer__links-heading" id="footer-heading-smith">Tobiasz Smith</p>
+          <ul class="footer__links-list">
+            <li><a href="#">Über mich</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Karriere</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__links-col" aria-labelledby="footer-heading-legal">
+          <p class="footer__links-heading" id="footer-heading-legal">Rechtliches</p>
+          <ul class="footer__links-list">
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer__lower">
+      <p>© 2026 Tobiasz Smith. Alle Rechte vorbehalten.</p>
+      <p>Entwickelt von Schaltwerk.</p>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="js/nav.js?v=1784201199" defer></script>
+  <script src="js/more-work.js?v=1784201199" defer></script>
+  <script src="js/kontakt.js?v=1784201199" defer></script>
+</body>
+</html>
