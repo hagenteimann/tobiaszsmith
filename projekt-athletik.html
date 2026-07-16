@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athletik & Fitnessstudio - Schmith Visuals</title>
+  <link rel="stylesheet" href="styles/fonts.css?v=1">
+  <link rel="stylesheet" href="styles/tokens.css?v=1">
+  <link rel="stylesheet" href="styles/base.css?v=1">
+  <link rel="stylesheet" href="styles/portfolio.css?v=1">
+  <style>
+    body { background: var(--c-bg); color: var(--c-text-light); }
+    .project-header {
+      padding: var(--space-6) 0 var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--c-accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover { color: var(--c-white); }
+    .project-title {
+      margin-top: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+  <header class="project-header">
+    <div class="container">
+      <a href="index.html#more-work" class="back-btn">&larr; Zur&uuml;ck</a>
+      <h1 class="project-title section-title">Athletik & Fitnessstudio</h1>
+    </div>
+  </header>
+  
+  <main class="container" style="padding-bottom: var(--space-8);">
+    <ul class="portfolio__grid">
+      <li class="portfolio__item">
+        <video class="portfolio__img portfolio__media" src="assets/projects/Athletik&Fitnessstudio_Reels.2026/HIGHenergySPORT.mp4" muted loop autoplay playsinline loading="lazy"></video>
+      </li>
+      <li class="portfolio__item">
+        <video class="portfolio__img portfolio__media" src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ilias_V1.mp4" muted loop autoplay playsinline loading="lazy"></video>
+      </li>
+      <li class="portfolio__item">
+        <video class="portfolio__img portfolio__media" src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ramtin_V1.mp4" muted loop autoplay playsinline loading="lazy"></video>
+      </li>
+      <li class="portfolio__item">
+        <video class="portfolio__img portfolio__media" src="assets/projects/Athletik&Fitnessstudio_Reels.2026/SportTreffSommerfest.mp4" muted loop autoplay playsinline loading="lazy"></video>
+      </li>
+      <li class="portfolio__item">
+        <video class="portfolio__img portfolio__media" src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Werbung_Sporttreff.mp4" muted loop autoplay playsinline loading="lazy"></video>
+      </li>
+
+    </ul>
+  </main>
+  
+  <script src="js/video-interaction.js?v=1"></script>
+</body>
+</html>

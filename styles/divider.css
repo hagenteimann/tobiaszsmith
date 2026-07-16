@@ -44,12 +44,7 @@
   filter: blur(1px);
 }
 
-/* Leichtes Heranzoomen beim Hovern (nur Geräte mit echtem Zeiger) */
-@media (hover: hover) and (pointer: fine) {
-  .divider__panel:hover {
-    background-size: 112%;
-  }
-}
+
 
 /* Parallax beim Scrollen — nur ab Desktop-Breite (Performance/Kompatibilität
    von background-attachment: fixed auf Mobile ist unzuverlässig) */

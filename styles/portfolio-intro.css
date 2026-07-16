@@ -5,7 +5,8 @@
    ========================================================= */
 
 .portfolio-intro {
-  background: var(--c-bg);
+  background-color: var(--c-bg);
+  background-image: radial-gradient(circle at 0% 100%, rgba(161, 25, 25, 0.4) 0%, transparent 70%);
   padding-block: var(--space-8);
 }
 

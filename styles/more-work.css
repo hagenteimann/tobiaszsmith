@@ -31,7 +31,11 @@
   align-items: flex-end;
   justify-content: center;
   gap: var(--space-6);
+  width: 100%;
+  max-width: 100%;
 }
+
+
 
 .mw-item {
   display: flex;
@@ -210,14 +214,9 @@
 
 @media (min-width: 60rem) {
   .more-work__inner {
-    flex-direction: row;
-    justify-content: space-between;
+    /* Keep title on top */
     gap: var(--space-7);
-    text-align: left;
-  }
-
-  .more-work__folders {
-    flex-wrap: nowrap;
+    text-align: center;
   }
 }
 
