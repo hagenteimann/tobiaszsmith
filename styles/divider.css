@@ -1,40 +1,29 @@
 /* =========================================================
    Smith Visuals — Divider Section
-   Drei Set-Foto-Streifen als visueller Übergang zwischen Services
-   und How-We-Operate (Figma: 17:1127, 73:95, 76:361 — liegen im
-   Layout direkt aneinander, ergeben zusammen ein 1253px-Band).
-   Bild B & C tragen in Figma einen 1px-Blur (soft, ausklingender
-   Effekt). Laut Figma-Annotation: Bild wird beim Hover etwas größer
-   + Parallax beim Scrollen.
+   Video-Akkordeon zwischen Services und How-We-Operate: alle Panels
+   im Ruhezustand gleich hoch, das gehoverte Panel wächst auf Kosten
+   der anderen (klassisches Flexbox-Akkordeon-Muster).
    ========================================================= */
 
 .divider {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: clamp(26rem, 55vw, 44rem);
   overflow: hidden;
   background: var(--c-bg);
 }
 
 .divider__panel {
   position: relative;
-  width: 100%;
+  flex: 1 1 0%;
+  min-height: 0;
   overflow: hidden;
+  transition: flex-grow var(--dur-slow) var(--ease-soft);
 }
 
-/* Seitenverhältnisse 1:1 aus Figma übernommen (Referenzbreite 1920px) */
-.divider__a {
-  aspect-ratio: 1920 / 610;
-}
-
-.divider__b {
-  aspect-ratio: 1920 / 354;
-  filter: blur(1px);
-}
-
-.divider__c {
-  aspect-ratio: 1920 / 289;
-  filter: blur(1px);
+.divider__panel:hover {
+  flex-grow: 5;
 }
 
 .divider__video {
@@ -47,12 +36,16 @@
   transition: transform var(--dur-slow) var(--ease-soft);
 }
 
-/* Hover-Zoom (Figma-Annotation: "Bild wird beim Hover etwas größer") */
+/* Zusätzlicher, dezenter Zoom obendrauf (Figma-Annotation: "Bild wird
+   beim Hover etwas größer") — das Wachsen der Panel-Höhe allein liest
+   sich sonst nur als Layout-Sprung, nicht als bewusster Zoom. */
 .divider__panel:hover .divider__video {
   transform: scale(1.06);
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .divider__panel { transition: none; }
+  .divider__panel:hover { flex-grow: 1; }
   .divider__video { transition: none; }
   .divider__panel:hover .divider__video { transform: none; }
 }
