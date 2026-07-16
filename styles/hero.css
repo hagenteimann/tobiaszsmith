@@ -128,9 +128,17 @@
   animation: hero-rec-blink 1.4s ease-in-out infinite;
 }
 
+/* Die Kreisfläche selbst bleibt immer voll deckend rot (sonst schimmert bei
+   niedriger Opacity die weiße Maske darunter durch und wirkt wie ein simples
+   Aufblitzen statt eines echten Leuchtens) — animiert wird stattdessen ein
+   roter Glow (box-shadow), der wie eine echte Kamera-Aufnahme-LED pulsiert. */
 @keyframes hero-rec-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
+  0%, 100% {
+    box-shadow: 0 0 4px 1px rgba(161, 25, 25, 0.55), 0 0 10px 3px rgba(161, 25, 25, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 9px 4px rgba(161, 25, 25, 0.9), 0 0 22px 9px rgba(161, 25, 25, 0.5);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -33,6 +33,40 @@
 
   updateScrollState();
 
+  // --- Scrollspy: roter Balken folgt dem Abschnitt im Viewport -----------
+  var navLinks = document.querySelectorAll('.nav__link[href^="#"], .nav__drawer-link[href^="#"]');
+  var sectionIds = [];
+  navLinks.forEach(function (link) {
+    var id = link.getAttribute('href').slice(1);
+    if (id && sectionIds.indexOf(id) === -1) sectionIds.push(id);
+  });
+  var spySections = sectionIds
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  function setActiveLink(id) {
+    navLinks.forEach(function (link) {
+      var isActive = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  if (spySections.length) {
+    var spyIO = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (e) { return e.isIntersecting; });
+      if (!visible.length) return;
+      visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+      setActiveLink(visible[0].target.id);
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    spySections.forEach(function (section) { spyIO.observe(section); });
+  }
+
   // --- Mobiles Menü ------------------------------------------------------
   function openMenu() {
     mobile.removeAttribute('inert');

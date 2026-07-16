@@ -90,29 +90,15 @@
   gap: var(--k-gap-summary);
 }
 
-/* Wordmark-Wiederholung aus dem Figma-Asset "text-summary-group" —
-   als echtes Textelement statt Rastergrafik nachgebaut. */
+/* Wiederholt das Navbar-Logo (Icon + "Smith Visuals"-Wortmarke) statt einer
+   eigenen Punkt+Text-Variante — visuelle Konsistenz mit der Navigation. */
 .kontakt__logo {
-  position: relative;
   display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   width: fit-content;
-  padding-inline-start: var(--space-3);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 1.6rem + 2vw, 2.75rem);
-  letter-spacing: var(--ls-display);
-  text-transform: uppercase;
   color: var(--c-text);
-  line-height: var(--lh-tight);
-}
-
-.kontakt__logo-dot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: var(--radius-full);
-  background: var(--c-accent);
+  font-size: 1.6rem; /* steuert die Icon-Größe (1.5em, siehe .logo-icon) */
 }
 
 .kontakt__text {

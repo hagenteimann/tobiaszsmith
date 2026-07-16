@@ -15,9 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       const video = entry.target;
       if (entry.isIntersecting) {
+        video.dataset.inView = '1';
         if (!video.src) video.src = video.dataset.src;
         video.play().catch(() => {});
       } else {
+        video.dataset.inView = '';
         video.pause();
       }
     });
@@ -28,6 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
     video.loop = true;
     video.playsInline = true;
     io.observe(video);
+
+    // Manche Browser pausieren ein bereits laufendes Video automatisch, sobald
+    // es per Hover entstummt wird — die Autoplay-Policy erlaubt Ton-Wiedergabe
+    // nur nach einer "echten" Nutzerinteraktion (Klick/Tap/Taste) irgendwo auf
+    // der Seite; ein reines mouseenter zählt dafür nicht. Beim allerersten
+    // Hover nach dem Laden bliebe das Video ohne diesen Resume-Handler dann
+    // eingefroren stehen, statt weiterzulaufen. Wir versuchen erst erneut mit
+    // Ton weiterzuspielen, fallen als letzte Instanz auf stummes Weiterlaufen
+    // zurück — ein Video, das lautlos weiterläuft, ist immer besser als eins,
+    // das komplett anhält.
+    video.addEventListener('pause', () => {
+      if (video.dataset.inView !== '1') return;
+      video.play().catch(() => {
+        if (!video.muted) {
+          video.muted = true;
+          video.play().catch(() => {});
+        }
+      });
+    });
 
     // Interaktion (Hover/Tap zum Entstummen) — nur relevant außerhalb
     // der Foto-Mappen, wo Videos sichtbar & interaktiv im Grid liegen.
