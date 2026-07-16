@@ -130,6 +130,31 @@ body {
   outline-offset: 3px;
 }
 
+/* ---------- Scroll-Reveal (js/reveal.js) ----------
+   .reveal auf einzelne Elemente (Cards, Headlines, Spalten ...).
+   .reveal--stagger auf den GEMEINSAMEN Elterncontainer für ein
+   gestaffeltes Nacheinander-Einfliegen der direkten .reveal-Kinder. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-soft), transform 0.7s var(--ease-soft);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal--stagger > .reveal:nth-child(1) { transition-delay: 0.00s; }
+.reveal--stagger > .reveal:nth-child(2) { transition-delay: 0.08s; }
+.reveal--stagger > .reveal:nth-child(3) { transition-delay: 0.16s; }
+.reveal--stagger > .reveal:nth-child(4) { transition-delay: 0.24s; }
+.reveal--stagger > .reveal:nth-child(5) { transition-delay: 0.32s; }
+.reveal--stagger > .reveal:nth-child(6) { transition-delay: 0.40s; }
+.reveal--stagger > .reveal:nth-child(7) { transition-delay: 0.48s; }
+.reveal--stagger > .reveal:nth-child(8) { transition-delay: 0.56s; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

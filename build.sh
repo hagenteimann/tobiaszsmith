@@ -68,6 +68,7 @@ cat > _tail.html <<TAILEOF
   <script src="js/hero.js?v=$V" defer></script>
   <script src="js/more-work.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
+  <script src="js/reveal.js?v=$V" defer></script>
 </body>
 </html>
 TAILEOF

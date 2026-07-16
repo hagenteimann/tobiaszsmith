@@ -10,25 +10,25 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/base.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/services.css?v=1784231884" />
-  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784231884" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/operate.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784231884" />
-  <link rel="stylesheet" href="styles/preloader.css?v=1784231884" />
-  <script src="js/preloader.js?v=1784231884" defer></script>
+  <link rel="stylesheet" href="styles/fonts.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/base.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/services.css?v=1784233140" />
+  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784233140" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
+  <link rel="stylesheet" href="styles/operate.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784233140" />
+  <link rel="stylesheet" href="styles/preloader.css?v=1784233140" />
+  <script src="js/preloader.js?v=1784233140" defer></script>
 </head>
 <body>
 <div id="preloader" class="preloader">
@@ -47,9 +47,11 @@
 <section class="hero" id="hero">
   <div class="hero__stage">
     <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" aria-hidden="true" />
-    <picture class="hero__wordmark-container">
+    <picture class="hero__wordmark-container reveal">
       <source media="(max-width: 768px)" srcset="assets/hero/wordmark-mobile.svg">
       <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" />
+      <span class="hero__rec-dot-mask" aria-hidden="true"></span>
+      <span class="hero__rec-dot" aria-hidden="true"></span>
     </picture>
     <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" aria-hidden="true" fetchpriority="high" />
   </div>
@@ -134,9 +136,9 @@
 
   <main id="main-content">
 <section class="hero-intro" id="hero-intro">
-  <div class="container hero-intro__inner">
-    <h1 class="section-title hero-intro__headline">Cinematic Visuals for Modern Brands</h1>
-    <p class="hero-intro__lead">Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative.</p>
+  <div class="container hero-intro__inner reveal--stagger">
+    <h1 class="section-title hero-intro__headline reveal">Cinematic Visuals for Modern Brands</h1>
+    <p class="hero-intro__lead reveal">Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative.</p>
   </div>
 </section>
 <section class="clients" id="clients">
@@ -155,6 +157,7 @@
       <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="Mosec Sicherheitsdienst" loading="lazy" /></li>
       <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="Fronhofer Galeria" loading="lazy" /></li>
       <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="Sion im Carré" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/aat-logo.svg" alt="Advanced Aviation Training" loading="lazy" /></li>
     </ul>
     <ul class="clients__track" aria-hidden="true">
       <li class="clients__logo"><img src="assets/logos/okinii.webp" alt="" /></li>
@@ -170,6 +173,7 @@
       <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="" /></li>
       <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="" /></li>
       <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/aat-logo.svg" alt="" /></li>
     </ul>
   </div>
 </section>
@@ -177,8 +181,8 @@
   <div class="container services__inner">
     <h2 class="section-title services__title">SERVICE</h2>
 
-    <div class="services__grid">
-      <article class="services__card services__card--dark">
+    <div class="services__grid reveal--stagger">
+      <article class="services__card services__card--dark reveal">
         <div class="services__icon-box" aria-hidden="true">
           <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
@@ -190,7 +194,7 @@
         <span class="services__cta">Pakete</span>
       </article>
 
-      <article class="services__card services__card--light">
+      <article class="services__card services__card--light reveal">
         <div class="services__icon-box" aria-hidden="true">
           <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="7" width="13" height="10" rx="2"></rect>
@@ -205,7 +209,7 @@
         <span class="services__cta">Pakete</span>
       </article>
 
-      <article class="services__card services__card--dark">
+      <article class="services__card services__card--dark reveal">
         <div class="services__icon-box" aria-hidden="true">
           <svg class="services__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -228,28 +232,28 @@
   <div class="container operate__inner">
     <h2 class="section-title operate__title">HOW WE OPERATE</h2>
 
-    <div class="operate__grid">
-      <div class="operate__card operate__card--light">
+    <div class="operate__grid reveal--stagger">
+      <div class="operate__card operate__card--light reveal">
         <h3 class="operate__card-title">1. Erstgespräch</h3>
         <p class="operate__card-text">Ziele. Stil. Budget. Klarheit ab der ersten Minute.</p>
       </div>
-      <div class="operate__card">
+      <div class="operate__card reveal">
         <h3 class="operate__card-title">2. Konzept &amp; Storyboard</h3>
         <p class="operate__card-text">Struktur, Stimmung, Shotlist. Die Grundlage für starke Ergebnisse.</p>
       </div>
-      <div class="operate__card">
+      <div class="operate__card reveal">
         <h3 class="operate__card-title">3. Produktion</h3>
         <p class="operate__card-text">Professionelle Umsetzung mit Sinn für Licht, Bewegung und Timing.</p>
       </div>
-      <div class="operate__card">
+      <div class="operate__card reveal">
         <h3 class="operate__card-title">4. Editing &amp; Sound</h3>
         <p class="operate__card-text">Cineastische Farbwelten. Präzise Schnitte. Musik, die Emotion trägt.</p>
       </div>
-      <div class="operate__card">
+      <div class="operate__card reveal">
         <h3 class="operate__card-title">5. Feedback &amp; Revision</h3>
         <p class="operate__card-text">Transparenter Austausch. 1–2 Korrekturrunden inklusive.</p>
       </div>
-      <div class="operate__card">
+      <div class="operate__card reveal">
         <h3 class="operate__card-title">6. Finale Übergabe</h3>
         <p class="operate__card-text">Optimiert für Social Media, Websites oder Werbung.</p>
       </div>
@@ -264,8 +268,8 @@
   <div class="container testimonials__inner">
     <h2 class="section-title testimonials__title">TESTIMONIALS</h2>
 
-    <ul class="testimonials__grid">
-      <li class="testimonials__card">
+    <ul class="testimonials__grid reveal--stagger">
+      <li class="testimonials__card reveal">
         <div class="testimonials__header">
           <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
           <div class="testimonials__stars" aria-label="5 von 5 Sternen">
@@ -284,7 +288,7 @@
         </div>
       </li>
 
-      <li class="testimonials__card">
+      <li class="testimonials__card reveal">
         <div class="testimonials__header">
           <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
           <div class="testimonials__stars" aria-label="5 von 5 Sternen">
@@ -303,7 +307,7 @@
         </div>
       </li>
 
-      <li class="testimonials__card">
+      <li class="testimonials__card reveal">
         <div class="testimonials__header">
           <span class="testimonials__quote" aria-hidden="true">&ldquo;</span>
           <div class="testimonials__stars" aria-label="5 von 5 Sternen">
@@ -332,43 +336,43 @@
 </section>
 <section class="portfolio" id="portfolio">
   <div class="container">
-    <ul class="portfolio__grid">
-      <li class="portfolio__item">
+    <ul class="portfolio__grid reveal--stagger">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-athletik.html" aria-label="Projekt Athletik ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-1.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-schule.html" aria-label="Projekt Schule ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-2.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Event ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-3.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-fahrschule.html" aria-label="Projekt Fahrschule ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-4.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-juwelier.html" aria-label="Projekt Juwelier ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-5.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Live Music ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-produkte.html" aria-label="Projekt Produkte ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-7.mp4" muted loop playsinline></video>
         </a>
       </li>
-      <li class="portfolio__item">
+      <li class="portfolio__item reveal">
         <a class="portfolio__link" href="projekt-noroo.html" aria-label="Projekt Noroo ansehen">
           <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-8.mp4" muted loop playsinline></video>
         </a>
@@ -380,10 +384,10 @@
   <div class="container more-work__inner">
     <h2 class="section-title more-work__title">WEITERE ARBEITEN</h2>
 
-    <div class="more-work__folders">
+    <div class="more-work__folders reveal--stagger">
 
       <!-- Project 1 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Athletik & Fitnessstudio</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -406,7 +410,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Berufskolleg Schule</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -429,7 +433,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Event Aftermovies</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -452,7 +456,7 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Fahrschule KurzReels</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -475,7 +479,7 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Luxusjuwelier Reels</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -498,7 +502,7 @@
       </div>
 
       <!-- Project 6 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">Produkt Bilder</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -521,7 +525,7 @@
       </div>
 
       <!-- Project 7 -->
-      <div class="mw-item mw-item--sm">
+      <div class="mw-item mw-item--sm reveal">
         <p class="mw-item__label">NOROO Reels</p>
         <div class="mw-stagewrap">
           <div class="mw-stage">
@@ -574,8 +578,8 @@
 </section>
 
 <section class="behind-scenes" id="behind-scenes">
-  <div class="container behind-scenes__inner">
-    <div class="behind-scenes__text">
+  <div class="container behind-scenes__inner reveal--stagger">
+    <div class="behind-scenes__text reveal">
       <h2 class="behind-scenes__heading">
         <span class="behind-scenes__accent">The</span> <span class="behind-scenes__dark">MAN Behind</span> <span class="behind-scenes__accent">the</span><br>
         <span class="behind-scenes__accent">SCENES</span>
@@ -583,7 +587,7 @@
       <p class="behind-scenes__author">-Tobiasz Smith</p>
     </div>
 
-    <div class="behind-scenes__media">
+    <div class="behind-scenes__media reveal">
       <img
         class="behind-scenes__photo"
         src="assets/behind-scenes/portrait.jpg"
@@ -605,9 +609,9 @@
       <p class="kontakt__lead">Lass uns gemeinsam etwas Großes kreieren. Erzähl mir von deiner Idee und wir bringen sie auf die Leinwand.</p>
     </div>
 
-    <div class="kontakt__split">
+    <div class="kontakt__split reveal--stagger">
 
-      <div class="kontakt__info">
+      <div class="kontakt__info reveal">
         <div class="kontakt__summary">
           <p class="kontakt__logo" aria-hidden="true"><span class="kontakt__logo-dot"></span>Smith Visuals</p>
           <p class="kontakt__text">Ob High-End Commercial, cineastischer Imagefilm oder präzise Produktfotografie – wir setzen deine Vision mit brutalem Qualitätsanspruch um. Schreib uns direkt oder nutze das Formular für ein unverbindliches Erstgespräch.</p>
@@ -665,7 +669,7 @@
         </div>
       </div>
 
-      <form class="kontakt__form" action="#" method="post" data-form="kontakt" novalidate>
+      <form class="kontakt__form reveal" action="#" method="post" data-form="kontakt" novalidate>
         <div class="kontakt__fields">
 
           <div class="kontakt__field">
@@ -827,10 +831,11 @@
   </div>
 </footer>
 
-  <script src="js/video-interaction.js?v=1784231884" defer></script>
-  <script src="js/nav.js?v=1784231884" defer></script>
-  <script src="js/hero.js?v=1784231884" defer></script>
-  <script src="js/more-work.js?v=1784231884" defer></script>
-  <script src="js/kontakt.js?v=1784231884" defer></script>
+  <script src="js/video-interaction.js?v=1784233140" defer></script>
+  <script src="js/nav.js?v=1784233140" defer></script>
+  <script src="js/hero.js?v=1784233140" defer></script>
+  <script src="js/more-work.js?v=1784233140" defer></script>
+  <script src="js/kontakt.js?v=1784233140" defer></script>
+  <script src="js/reveal.js?v=1784233140" defer></script>
 </body>
 </html>

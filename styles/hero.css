@@ -101,6 +101,42 @@
   object-position: left top;
 }
 
+/* ---------- REC-Punkt: blinkt wie eine Kamera-Aufnahmeanzeige ----------
+   Der rote Punkt ist im SVG als statischer <circle> eingebrannt (nicht per
+   CSS animierbar). Trick: eine weiße Maske deckt den Original-Punkt exakt
+   ab, ein neuer HTML-Span blinkt darüber. Der Kreis liegt in BEIDEN SVGs
+   exakt in der oberen linken Ecke (cx=cy=r) — deshalb reicht `top:0;left:0`
+   (echte Länge, kein Prozentwert), unabhängig davon, ob die Container-Höhe
+   (mobil: `height:auto`) prozentual auflösbar ist oder nicht. */
+.hero__rec-dot-mask,
+.hero__rec-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.hero__rec-dot-mask {
+  width: 3.9%;
+  background: var(--c-white);
+}
+
+.hero__rec-dot {
+  width: 2.8879%;
+  background: var(--c-accent);
+  animation: hero-rec-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes hero-rec-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__rec-dot { animation: none; }
+}
+
 @media (max-width: 768px) {
   .hero {
     --hero-scale: 2.1;
@@ -119,7 +155,10 @@
     height: auto;
     object-fit: contain;
   }
-  
+
+  .hero__rec-dot-mask { width: 7.15%; }
+  .hero__rec-dot { width: 5.2959%; }
+
   .hero__photo--ambient {
     opacity: 1;
     z-index: 3;
