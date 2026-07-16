@@ -1,7 +1,10 @@
 <section class="hero" id="hero">
   <div class="hero__stage">
     <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" aria-hidden="true" />
-    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" />
+    <picture class="hero__wordmark-container">
+      <source media="(max-width: 768px)" srcset="assets/hero/wordmark-mobile.svg">
+      <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" />
+    </picture>
     <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" aria-hidden="true" fetchpriority="high" />
   </div>
 

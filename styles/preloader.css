@@ -1,0 +1,89 @@
+/* =========================================================
+   Smith Visuals — Preloader
+   ========================================================= */
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--c-white);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5%); /* slight slide up effect when hiding */
+}
+
+.preloader__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.preloader__icon {
+  width: 4rem; /* Starts at this size */
+  height: 4rem;
+  flex-shrink: 0;
+  transform: scale(2) translateX(0); /* Starts large in center */
+  transform-origin: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth snap to left */
+  opacity: 0;
+  animation: preloaderFadeIn 0.5s forwards;
+}
+
+/* When the icon moves left, we scale it down to normal size and shift its transform origin or translation if needed. 
+   Actually, flexbox handles the translation automatically when the text container takes space, 
+   so we just scale it down to 1! */
+.preloader__icon.is-moved {
+  transform: scale(1);
+}
+
+.preloader__text-container {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--c-black);
+  white-space: pre; /* preserve spaces during typing */
+  overflow: hidden;
+}
+
+.preloader__text--smith {
+  color: var(--c-accent);
+}
+
+.preloader__dots {
+  display: inline-block;
+  min-width: 1.5rem; /* prevent layout shift when dots appear */
+}
+
+@keyframes preloaderFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .preloader__content {
+    gap: 0.75rem;
+  }
+  .preloader__icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  .preloader__text-container {
+    font-size: 2rem;
+  }
+}

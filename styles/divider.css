@@ -29,19 +29,25 @@
 /* Seitenverhältnisse 1:1 aus Figma übernommen (Referenzbreite 1920px) */
 .divider__a {
   aspect-ratio: 1920 / 610;
-  background-image: url("../assets/divider/divider-a.jpg");
 }
 
 .divider__b {
   aspect-ratio: 1920 / 354;
-  background-image: url("../assets/divider/divider-b.jpg");
   filter: blur(1px);
 }
 
 .divider__c {
   aspect-ratio: 1920 / 289;
-  background-image: url("../assets/divider/divider-c.jpg");
   filter: blur(1px);
+}
+
+.divider__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 

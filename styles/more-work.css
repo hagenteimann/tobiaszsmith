@@ -44,6 +44,12 @@
   gap: var(--space-2);
 }
 
+@media (max-width: 40rem) {
+  .mw-item {
+    align-items: center;
+  }
+}
+
 .mw-item__label {
   font-family: var(--font-body);
   font-weight: 700;
@@ -56,7 +62,12 @@
 .mw-item--sm .mw-item__label { font-size: var(--fs-label-btn); }  /* Figma: 16px */
 .mw-item--lg .mw-item__label { font-size: var(--fs-subheading); } /* Figma: 28px */
 
-.mw-item:hover .mw-item__label,
+@media (hover: hover) {
+  .mw-item:hover .mw-item__label {
+    color: var(--c-accent-hover);
+  }
+}
+
 .mw-item:focus-within .mw-item__label {
   color: var(--c-accent-hover);
 }
@@ -155,7 +166,8 @@
   will-change: transform;
 }
 
-.mw-photo img {
+.mw-photo img,
+.mw-photo video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -164,30 +176,86 @@
   pointer-events: none;
 }
 
+.mw-folder__open-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-btn);
+  letter-spacing: 0.1em;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity var(--dur-slow) var(--ease-soft);
+}
+
+.mw-folder.is-open .mw-folder__open-text {
+  opacity: 1;
+  animation: pulse-white-glow 2s ease-in-out infinite;
+}
+
 .mw-photo--a { left: 30px;  top: 27px;  z-index: 3; transform: translateY(0) rotate(0deg); }
 .mw-photo--b { left: 67px;  top: 44px;  z-index: 4; transform: translateY(0) rotate(0deg); }
 .mw-photo--c { left: 153px; top: 84px;  z-index: 5; transform: translateY(0) rotate(0deg); }
 
-.mw-folder:hover        .mw-photo--a,
+@media (hover: hover) {
+  .mw-folder:hover .mw-photo--a {
+    transform: translate(-118px, -196px) rotate(-15deg);
+    box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
+    transition-delay: 0s;
+  }
+  .mw-folder:hover .mw-photo--b {
+    transform: translate(-4px, -236px) rotate(-3.75deg);
+    box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
+    transition-delay: 0.06s;
+  }
+  .mw-folder:hover .mw-photo--c {
+    transform: translate(150px, -168px) rotate(15deg);
+    box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
+    transition-delay: 0.12s;
+  }
+  .mw-folder:hover .mw-folder__glow {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .mw-folder:hover .mw-folder__open-text {
+    opacity: 1;
+    animation: pulse-text 2s ease-in-out infinite;
+  }
+}
+
 .mw-folder:focus-visible .mw-photo--a,
 .mw-folder.is-open      .mw-photo--a {
   transform: translate(-118px, -196px) rotate(-15deg);
   box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
   transition-delay: 0s;
 }
-.mw-folder:hover        .mw-photo--b,
 .mw-folder:focus-visible .mw-photo--b,
 .mw-folder.is-open      .mw-photo--b {
   transform: translate(-4px, -236px) rotate(-3.75deg);
   box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
   transition-delay: 0.06s;
 }
-.mw-folder:hover        .mw-photo--c,
 .mw-folder:focus-visible .mw-photo--c,
 .mw-folder.is-open      .mw-photo--c {
   transform: translate(150px, -168px) rotate(15deg);
   box-shadow: -6px -6px 34px rgba(255, 255, 255, 0.22);
   transition-delay: 0.12s;
+}
+
+@keyframes pulse-text {
+  0%   { opacity: 0.5; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+.mw-folder:focus-visible .mw-folder__open-text,
+.mw-folder.is-open      .mw-folder__open-text {
+  opacity: 1;
+  animation: pulse-text 2s ease-in-out infinite;
 }
 
 .mw-folder__glow {
@@ -205,11 +273,21 @@
   pointer-events: none;
 }
 
-.mw-folder:hover        .mw-folder__glow,
 .mw-folder:focus-visible .mw-folder__glow,
 .mw-folder.is-open      .mw-folder__glow {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes pulse-white-glow {
+  0%   { opacity: 0.6; filter: blur(40px) brightness(1.5); }
+  50%  { opacity: 1;   filter: blur(50px) brightness(2); }
+  100% { opacity: 0.6; filter: blur(40px) brightness(1.5); }
+}
+
+.mw-folder.pulse-white .mw-folder__glow {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: pulse-white-glow 2s ease-in-out infinite;
 }
 
 @media (min-width: 60rem) {

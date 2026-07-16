@@ -11,9 +11,28 @@
   border-top: 1px solid var(--c-border-hair);
   background: var(--c-bg);
   padding-block: var(--space-7);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__blob {
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, var(--c-accent) 0%, transparent 60%);
+  filter: blur(80px);
+  opacity: 0.15;
+  bottom: -30%;
+  right: -20%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .footer__container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--space-7);
@@ -43,11 +62,13 @@
   max-width: 22.5rem; /* 360px */
 }
 
-.footer__logo {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: var(--fs-logo);
-  color: var(--c-border-light);
+.footer__logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--c-text);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .footer__desc {

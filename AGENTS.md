@@ -25,3 +25,5 @@ Statische Vanilla-HTML/CSS/JS-Website (kein Framework, kein Build-Tool, kein CDN
 
 - Repo-Root ist `website/`, nicht der Ã¼bergeordnete "Schmith Visuals"-Ordner.
 - Vor jedem `git add -A`: prÃ¼fen, ob groÃŸe/neue Ordner (Video-Rohmaterial etc.) versehentlich mit reingezogen wÃ¼rden.
+
+8. Mobile Interaktionen für Ordner: Auf Touch-Geräten (Mobile) muss das erste Antippen eines Ordners (.mw-folder) die Öffnungs-Animation auslösen und einen weiß pulsierenden Glow erzeugen (.is-open und .pulse-white Klassen werden hinzugefügt). Erst das zweite Antippen auf den bereits offenen Ordner führt den Link aus (Navigation).
