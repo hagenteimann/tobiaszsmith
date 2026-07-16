@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
@@ -10,25 +10,25 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/base.css?v=1784221470,90501,3372,06683,3836,4595" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784221061,4595" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784221404,8306,16987,43193,25948,37881,26213,41858,97315,00069,49855,56775" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/services.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/divider.css?v=1784221591,71352" />
-  <link rel="stylesheet" href="styles/operate.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784217916,2701" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784220346,25211,94421,84796,16135,80993,84013,19537" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784221061,4595,87505" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784205362" />
-  <link rel="stylesheet" href="styles/preloader.css?v=1784222009,14259,4219">
-  <script src="js/preloader.js?v=1784221704,4219" defer></script>
+  <link rel="stylesheet" href="styles/fonts.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/base.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/services.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/divider.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/operate.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784228435" />
+  <link rel="stylesheet" href="styles/preloader.css?v=1784228435" />
+  <script src="js/preloader.js?v=1784228435" defer></script>
 </head>
 <body>
 <div id="preloader" class="preloader">
@@ -43,6 +43,7 @@
 </div>
 
   <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
 <section class="hero" id="hero">
   <div class="hero__stage">
     <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" aria-hidden="true" />
@@ -80,10 +81,9 @@
     <nav class="nav__links" aria-label="Hauptnavigation">
       <ul class="nav__list">
         <li><a href="#hero" class="nav__link is-active" aria-current="page">Home</a></li>
-        <li><a href="#services" class="nav__link">Leistungen</a></li>
         <li><a href="#clients" class="nav__link">Kunden</a></li>
+        <li><a href="#services" class="nav__link">Leistungen</a></li>
         <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
-        <li><a href="#services" class="nav__link">Pakete</a></li>
         <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
       </ul>
       <!-- TODO: echten Instagram-Link ergänzen, sobald vorhanden -->
@@ -131,6 +131,8 @@
     </a>
   </div>
 </div>
+
+  <main id="main-content">
 <section class="hero-intro" id="hero-intro">
   <div class="container hero-intro__inner">
     <h1 class="section-title hero-intro__headline">Cinematic Visuals for Modern Brands</h1>
@@ -224,13 +226,13 @@
 </section>
 <section class="divider" id="divider" aria-hidden="true">
   <div class="divider__panel divider__a">
-    <video src="assets/portfolio/portfolio-8.mp4" autoplay loop muted playsinline class="divider__video"></video>
+    <video data-src="assets/portfolio/portfolio-8.mp4" loop muted playsinline class="divider__video"></video>
   </div>
   <div class="divider__panel divider__b">
-    <video src="assets/portfolio/portfolio-2.mp4" autoplay loop muted playsinline class="divider__video"></video>
+    <video data-src="assets/portfolio/portfolio-2.mp4" loop muted playsinline class="divider__video"></video>
   </div>
   <div class="divider__panel divider__c">
-    <video src="assets/portfolio/portfolio-4.mp4" autoplay loop muted playsinline class="divider__video"></video>
+    <video data-src="assets/portfolio/portfolio-4.mp4" loop muted playsinline class="divider__video"></video>
   </div>
 </section>
 <section class="operate" id="operate">
@@ -344,42 +346,42 @@
     <ul class="portfolio__grid">
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-athletik.html" aria-label="Projekt Athletik ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-1.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-1.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-schule.html" aria-label="Projekt Schule ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-2.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-2.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Event ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-3.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-3.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-fahrschule.html" aria-label="Projekt Fahrschule ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-4.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-4.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-juwelier.html" aria-label="Projekt Juwelier ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-5.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-5.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Live Music ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-produkte.html" aria-label="Projekt Produkte ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-7.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-7.mp4" muted loop playsinline></video>
         </a>
       </li>
       <li class="portfolio__item">
         <a class="portfolio__link" href="projekt-noroo.html" aria-label="Projekt Noroo ansehen">
-          <video class="portfolio__img portfolio__media" src="assets/portfolio/portfolio-8.mp4" muted loop autoplay playsinline loading="lazy"></video>
+          <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-8.mp4" muted loop playsinline></video>
         </a>
       </li>
     </ul>
@@ -402,9 +404,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Athletik&Fitnessstudio_Reels.2026/HIGHenergySPORT.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ilias_V1.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ramtin_V1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/HIGHenergySPORT.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ilias_V1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ramtin_V1.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -425,9 +427,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 1.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 2.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 3.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 2.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Berufskolleg_Schule.Reels2026/Interview 3.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -448,9 +450,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Event_Aftermovies.2026/Aftermovie_Marriot.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Event_Aftermovies.2026/Geburtstag Aftermovie.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Event_Aftermovies.2026/Aftermovie_Marriot.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Event_Aftermovies.2026/Geburtstag Aftermovie.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -471,9 +473,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Fahrschule_KurzReels.2026/SG8_Drive_V2.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Fahrschule_KurzReels.2026/SG8_V1.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Fahrschule_KurzReels.2026/SG8_Drive_V2.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Fahrschule_KurzReels.2026/SG8_Drive_V2.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Fahrschule_KurzReels.2026/SG8_V1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Fahrschule_KurzReels.2026/SG8_Drive_V2.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -494,9 +496,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Luxusjuwelier_Reels.2026/Ice_CreamV1.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Luxusjuwelier_Reels.2026/Image_VideoV1.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Luxusjuwelier_Reels.2026/Rolex_DatejustV1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Luxusjuwelier_Reels.2026/Ice_CreamV1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Luxusjuwelier_Reels.2026/Image_VideoV1.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Luxusjuwelier_Reels.2026/Rolex_DatejustV1.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -540,9 +542,9 @@
                 <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
               </svg>
               <div class="mw-folder__photos">
-                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Reels für die Modemarke NOROO.2024/GrayTrackSuit.mp4"></video></figure>
-                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Reels für die Modemarke NOROO.2024/GreenTrackSuit(Giant-AH TXE TXE).mp4"></video></figure>
-                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop autoplay playsinline src="assets/projects/Reels für die Modemarke NOROO.2024/TrackSuitBlauINSTA.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GrayTrackSuit.mp4"></video></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GreenTrackSuit(Giant-AH TXE TXE).mp4"></video></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/TrackSuitBlauINSTA.mp4"></video></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -751,6 +753,8 @@
     </div>
   </div>
 </section>
+  </main>
+
 <footer class="footer">
   <div class="footer__blob" aria-hidden="true"></div>
   <div class="footer__container container">
@@ -833,12 +837,11 @@
 
   </div>
 </footer>
-  <script src="js/video-interaction.js?v=1784216295,94059" defer></script>
-  <script src="js/nav.js?v=1784205362" defer></script>
-  <script src="js/hero.js?v=1784205362" defer></script>
-  <script src="js/more-work.js?v=1784205362" defer></script>
-  <script src="js/kontakt.js?v=1784205362" defer></script>
+
+  <script src="js/video-interaction.js?v=1784228435" defer></script>
+  <script src="js/nav.js?v=1784228435" defer></script>
+  <script src="js/hero.js?v=1784228435" defer></script>
+  <script src="js/more-work.js?v=1784228435" defer></script>
+  <script src="js/kontakt.js?v=1784228435" defer></script>
 </body>
 </html>
-
-
