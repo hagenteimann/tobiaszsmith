@@ -20,10 +20,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition: background-size var(--dur-slow) var(--ease-soft);
 }
 
 /* Seitenverhältnisse 1:1 aus Figma übernommen (Referenzbreite 1920px) */
@@ -48,21 +44,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-soft);
 }
 
-
-
-/* Parallax beim Scrollen — nur ab Desktop-Breite (Performance/Kompatibilität
-   von background-attachment: fixed auf Mobile ist unzuverlässig) */
-@media (min-width: 64rem) {
-  .divider__panel {
-    background-attachment: fixed;
-  }
+/* Hover-Zoom (Figma-Annotation: "Bild wird beim Hover etwas größer") */
+.divider__panel:hover .divider__video {
+  transform: scale(1.06);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .divider__panel {
-    transition: none;
-    background-attachment: scroll;
-  }
+  .divider__video { transition: none; }
+  .divider__panel:hover .divider__video { transform: none; }
 }
