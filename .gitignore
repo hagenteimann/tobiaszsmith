@@ -4,3 +4,6 @@ Thumbs.db
 .playwright-mcp/
 _qa/
 _qa_*.png
+
+# Rohe Video-/Foto-Referenzdateien (mehrere GB) — nicht für Deployment/Git bestimmt
+References_Videos & Fotos/

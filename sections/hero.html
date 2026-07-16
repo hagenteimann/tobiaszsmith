@@ -1,13 +1,14 @@
 <section class="hero" id="hero">
-  <div class="hero__lockup">
-    <div class="hero__photos" aria-hidden="true">
-      <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" width="1600" height="908" />
-    </div>
-
-    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" width="1421" height="472" />
-
-    <div class="hero__photos hero__photos--front" aria-hidden="true">
-      <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" width="1409" height="835" fetchpriority="high" />
-    </div>
+  <div class="hero__stage">
+    <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" aria-hidden="true" />
+    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" />
+    <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" aria-hidden="true" fetchpriority="high" />
   </div>
+
+  <a class="hero__scroll" href="#hero-intro" aria-label="Nach unten scrollen">
+    <span class="hero__scroll-label">Scroll</span>
+    <svg class="hero__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M12 5v14M6 13l6 6 6-6" />
+    </svg>
+  </a>
 </section>

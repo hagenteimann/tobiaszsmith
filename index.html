@@ -10,39 +10,40 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/base.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/services.css?v=1784202109" />
-  <link rel="stylesheet" href="styles/divider.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/operate.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784201199" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784201199" />
+  <link rel="stylesheet" href="styles/fonts.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/base.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784206162" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/services.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/divider.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/operate.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784205362" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784205362" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
 <section class="hero" id="hero">
-  <div class="hero__lockup">
-    <div class="hero__photos" aria-hidden="true">
-      <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" width="1600" height="908" />
-    </div>
-
-    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" width="1421" height="472" />
-
-    <div class="hero__photos hero__photos--front" aria-hidden="true">
-      <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" width="1409" height="835" fetchpriority="high" />
-    </div>
+  <div class="hero__stage">
+    <img class="hero__photo hero__photo--ambient" src="assets/hero/hero-photo-ambient.webp" alt="" aria-hidden="true" />
+    <img class="hero__wordmark" src="assets/hero/wordmark.svg" alt="Smith Visuals" />
+    <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" aria-hidden="true" fetchpriority="high" />
   </div>
+
+  <a class="hero__scroll" href="#hero-intro" aria-label="Nach unten scrollen">
+    <span class="hero__scroll-label">Scroll</span>
+    <svg class="hero__scroll-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="M12 5v14M6 13l6 6 6-6" />
+    </svg>
+  </a>
 </section>
 <header class="nav" id="site-nav">
   <div class="nav__bar container">
@@ -115,20 +116,34 @@
 <section class="clients" id="clients">
   <div class="clients__marquee">
     <ul class="clients__track" aria-label="Unsere Kunden">
-      <li class="clients__logo">Kunde 1</li>
-      <li class="clients__logo">Kunde 2</li>
-      <li class="clients__logo">Kunde 3</li>
-      <li class="clients__logo">Kunde 4</li>
-      <li class="clients__logo">Kunde 5</li>
-      <li class="clients__logo">Kunde 6</li>
+      <li class="clients__logo"><img src="assets/logos/okinii.webp" alt="Okinii Sushi &amp; Grill" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/berufskolleg-bleibergquelle.webp" alt="Berufskolleg Bleibergquelle" loading="lazy" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/sport-treff.webp" alt="Sport-Treff" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/siam-tulip.webp" alt="Siam Tulip Wellness" loading="lazy" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/villa-first.webp" alt="Villa First" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/maya.svg" alt="Maya" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/noroo.webp" alt="Noroo" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/velten-toennies.webp" alt="Velten &amp; Tönnies Juweliere" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/sg8-drive.webp" alt="SG8 Drive Fahrschule" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/koelner-kompass.webp" alt="Kölner Kompass" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="Mosec Sicherheitsdienst" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="Fronhofer Galeria" loading="lazy" /></li>
+      <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="Sion im Carré" loading="lazy" /></li>
     </ul>
     <ul class="clients__track" aria-hidden="true">
-      <li class="clients__logo">Kunde 1</li>
-      <li class="clients__logo">Kunde 2</li>
-      <li class="clients__logo">Kunde 3</li>
-      <li class="clients__logo">Kunde 4</li>
-      <li class="clients__logo">Kunde 5</li>
-      <li class="clients__logo">Kunde 6</li>
+      <li class="clients__logo"><img src="assets/logos/okinii.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/berufskolleg-bleibergquelle.webp" alt="" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/sport-treff.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/siam-tulip.webp" alt="" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/villa-first.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/maya.svg" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/noroo.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/velten-toennies.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/sg8-drive.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/koelner-kompass.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="" /></li>
+      <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="" /></li>
     </ul>
   </div>
 </section>
@@ -655,8 +670,9 @@
   </div>
 </footer>
 
-  <script src="js/nav.js?v=1784201199" defer></script>
-  <script src="js/more-work.js?v=1784201199" defer></script>
-  <script src="js/kontakt.js?v=1784201199" defer></script>
+  <script src="js/nav.js?v=1784205362" defer></script>
+  <script src="js/hero.js?v=1784205362" defer></script>
+  <script src="js/more-work.js?v=1784205362" defer></script>
+  <script src="js/kontakt.js?v=1784205362" defer></script>
 </body>
 </html>

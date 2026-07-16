@@ -7,7 +7,11 @@
    ========================================================= */
 
 .hero {
-  --hero-pad-block: clamp(2rem, 1rem + 3vw, 4rem);
+  --hero-pad-block: clamp(0.25rem, 0.1rem + 0.4vw, 0.5rem);
+  /* Verfügbare Höhe für die Stage nach Abzug des minimalen Innenabstands.
+     Der Scroll-CTA ist absolut positioniert (siehe .hero__scroll) und
+     zieht daher hier KEIN Budget ab. */
+  --hero-avail-h: calc(100svh - var(--nav-h, 88px) - var(--hero-pad-block) * 2);
 
   position: relative;
   overflow: hidden;
@@ -16,64 +20,120 @@
   padding-block: var(--hero-pad-block);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  /* Hero füllt den kompletten ersten Bildschirm unterhalb der Nav
-     (--nav-h wird von js/nav.js per ResizeObserver live gemessen). */
-  min-height: calc(100svh - var(--nav-h, 88px));
+  /* HARTE Obergrenze (nicht nur min-height!): Die Nav wird direkt nach dem
+     Hero gerendert (sticky) — würde der Hero durch seinen Inhalt höher als
+     der erste Bildschirm werden, verschwände die Nav unterhalb der Fold.
+     Diese feste Höhe garantiert das unabhängig von der Stage-Größe. */
+  height: calc(100svh - var(--nav-h, 88px));
 }
 
-.hero__lockup {
-  /* Bewusst KEIN position:relative — .hero__photos (inset:0) soll sich
-     an .hero (volle Section-Höhe) verankern, nicht an diese textbreite Box. */
-  padding-inline: var(--container-pad);
-  width: 100%;
-}
-
-/* ---------- Wortmarke: echtes Vektor-SVG aus Figma (exaktes Kerning,
-   nicht per CSS-letter-spacing nachbaubar). Horizontal zentriert
-   (Figma: exakt gleiche Abstände links/rechts zum Canvas-Rand). ---------- */
-.hero__wordmark {
+/* ---------- Stage: exaktes Figma-Koordinatensystem (1920×928) ----------
+   Wortmarke UND beide Foto-Ebenen sind Ausschnitte/Positionen aus DERSELBEN
+   Design-Leinwand. Alle drei werden hier als Prozentwerte dieser Leinwand
+   positioniert (kein JS nötig — Prozent skaliert automatisch mit der
+   Stage-Breite). So bleiben Wortmarke und Fotos IMMER exakt zueinander
+   ausgerichtet, unabhängig von der tatsächlichen Viewport-Breite.
+   Breite = min(volle Breite, die Breite die exakt in --hero-avail-h passt) —
+   auf breiten/niedrigen Viewports schrumpft die Stage proportional (statt
+   den Hero zu sprengen und die Nav aus dem ersten Bildschirm zu drücken). */
+.hero__stage {
   position: relative;
-  z-index: 2;
-  display: block;
-  margin-inline: auto;
-  width: clamp(17rem, 82vw, 84rem);
-  height: auto;
-  aspect-ratio: 1421.13 / 471.999;
+  flex-shrink: 0;
+  width: min(100%, calc(var(--hero-avail-h) * 1920 / 928));
+  aspect-ratio: 1920 / 928;
 }
 
-/* ---------- Foto-Overlay: bleedet über den rechten/unteren Rand ----------
-   Zwei getrennte Ebenen um die Wortmarke herum gestapelt:
-   Ghost (40%) LIEGT HINTER der Wortmarke, die scharfe Kopie DAVOR
-   (verdeckt die Wortmarke dort, wo die Person opak ist — wie in Figma). */
-.hero__photos {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero__photos:not(.hero__photos--front) { z-index: 1; }  /* Ghost: hinter der Wortmarke */
-.hero__photos--front { z-index: 3; }                      /* Scharf: vor der Wortmarke */
-
+/* Beide Foto-Ebenen zeigen DASSELBE Foto (nur unterschiedlich freigestellt) —
+   Ghost (40%, Node 57:91) LIEGT HINTER der Wortmarke, die scharfe Kopie
+   (Node 56:77) DAVOR. Da beide exakt Figmas Bounding-Box übernehmen, deckt
+   sich die Person in beiden Ebenen pixelgenau — kein "Geister-Doppelbild"
+   mehr wie zuvor bei unabhängig positionierten Ausschnitten. */
 .hero__photo {
   position: absolute;
-  bottom: clamp(-3.5rem, -8vw, -1rem);
-  height: clamp(13rem, 46vw, 34rem);
-  width: auto;
-  max-width: none;
-  object-fit: contain;
-  object-position: bottom right;
+  object-fit: fill;
+  pointer-events: none;
+  /* Parallax beim Scrollen (js/hero.js setzt --hero-parallax-y).
+     BEIDE Ebenen lesen dieselbe Variable → niemals relative Verschiebung
+     zueinander, egal wie stark der Effekt ist. */
+  transform: translateY(var(--hero-parallax-y, 0px));
+  will-change: transform;
 }
 
 .hero__photo--ambient {
-  right: clamp(-3rem, -6vw, 2rem);
+  z-index: 1;
+  left: 28.4505%;
+  top: 15.3017%;
+  width: 93.3160%;
+  height: 107.7586%;
   opacity: 0.4;
-  transform: scale(1.08);
 }
 
 .hero__photo--main {
-  right: clamp(-2rem, 2vw, 6rem);
+  z-index: 3;
+  left: 39.2839%;
+  top: 14.7629%;
+  width: 94.1146%;
+  height: 108.7284%;
+}
+
+/* ---------- Wortmarke: echtes Vektor-SVG aus Figma (exaktes Kerning,
+   nicht per CSS-letter-spacing nachbaubar). ---------- */
+.hero__wordmark {
+  position: absolute;
+  z-index: 2;
+  left: 12.9914%;
+  top: 24.5690%;
+  width: 74.0172%;
+  height: 50.8620%;
+}
+
+/* ---------- Scroll-CTA: zeigt an, dass die Seite weitergeht ----------
+   Absolut positioniert (statt Flex-Geschwister der Stage) — zieht dadurch
+   KEIN Höhenbudget von der Bühne ab, die so wieder so groß wie zuvor sein
+   kann und trotzdem garantiert innerhalb des ersten Bildschirms bleibt. */
+.hero__scroll {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--c-text-dark);
+  opacity: 0.55;
+  transition: opacity var(--dur-fast) var(--ease-soft);
+}
+
+.hero__scroll:hover,
+.hero__scroll:focus-visible {
   opacity: 1;
+}
+
+.hero__scroll-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-sm);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.hero__scroll-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  animation: hero-scroll-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(0.3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-icon { animation: none; }
 }
 
 /* ---------- Tagline-Block (dunkel, eigenständige Section) ---------- */
@@ -104,13 +164,7 @@
   max-width: 42rem;
 }
 
-/* ---------- Breakpoint: mehr Raum, Foto darf größer bleeden ---------- */
-@media (min-width: 48rem) {
-  .hero__photo {
-    height: clamp(18rem, 48vw, 38rem);
-  }
+@media (prefers-reduced-motion: reduce) {
+  .hero__photo { transform: none !important; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero__photo { transition: none; }
-}

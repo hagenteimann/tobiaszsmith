@@ -55,17 +55,49 @@
 }
 
 .clients__logo {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--fs-h3);
-  letter-spacing: 0.03em;
-  color: var(--c-text-dark);
-  white-space: nowrap;
-  opacity: 0.75;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+}
+
+.clients__logo img {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: clamp(6rem, 5rem + 4vw, 9rem);
+  object-fit: contain;
+  /* Dezente Graustufen-Optik im Ruhezustand, volle Farbe bei Hover/Fokus —
+     vereinheitlicht die sehr unterschiedlichen Logo-Farbwelten (Rot, Pink,
+     Orange, Gelb, Grün, Teal) zu einer ruhigen Vertrauensleiste. */
+  filter: grayscale(1) opacity(0.75);
+  transition: filter var(--dur-fast) var(--ease-soft);
+}
+
+.clients__logo:hover img,
+.clients__logo:focus-within img {
+  filter: grayscale(0) opacity(1);
+}
+
+/* Zwei Logos (Villa First, Sport-Treff) sind reinweiße Wortmarken auf
+   transparentem Grund — auf der hellen Leiste sonst unsichtbar. Bekommen
+   einen dunklen Chip als Träger; Graustufen-Filter macht hier keinen Sinn
+   (Logo ist bereits neutral/weiß), daher eigener, einfacherer Hover. */
+.clients__logo--chip {
+  padding: 0.5em 0.9em;
+  border-radius: var(--radius-sm);
+  background: var(--c-bg);
+}
+
+.clients__logo--chip img {
+  filter: none;
+  opacity: 0.85;
   transition: opacity var(--dur-fast) var(--ease-soft);
 }
 
-.clients__logo:hover {
+.clients__logo--chip:hover img,
+.clients__logo--chip:focus-within img {
+  filter: none;
   opacity: 1;
 }
 
