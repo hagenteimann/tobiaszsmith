@@ -35,6 +35,7 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/portfolio-intro.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio-video.css?v=$V" />
+  <link rel="stylesheet" href="styles/aat-showcase.css?v=$V" />
   <link rel="stylesheet" href="styles/more-work.css?v=$V" />
   <link rel="stylesheet" href="styles/behind-scenes.css?v=$V" />
   <link rel="stylesheet" href="styles/kontakt.css?v=$V" />
@@ -90,6 +91,7 @@ SECTIONS=(
   sections/portfolio-intro.html
   sections/portfolio.html
   sections/portfolio-video.html
+  sections/aat-showcase.html
   sections/more-work.html
   sections/behind-scenes.html
   sections/kontakt.html
