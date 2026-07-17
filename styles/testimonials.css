@@ -111,6 +111,40 @@
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--c-text-dark);
+  /* Lange Zitate auf eine vernuenftige Laenge kappen -- "Mehr lesen"
+     (js/testimonials-toggle.js) blendet den Rest bei Bedarf ein. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
+.testimonials__card.is-expanded .testimonials__text {
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+.testimonials__toggle {
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-body-sm);
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.testimonials__toggle:hover,
+.testimonials__toggle:focus-visible {
+  color: var(--c-accent-hover);
+}
+
+.testimonials__toggle[hidden] {
+  display: none;
 }
 
 .testimonials__divider {
