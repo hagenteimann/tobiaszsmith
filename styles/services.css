@@ -53,6 +53,25 @@
   padding: var(--card-pad);
   border-radius: var(--services-radius);
   box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft);
+}
+
+@media (hover: hover) {
+  .services__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  }
+}
+
+.services__card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__card {
+    transition: none;
+  }
 }
 
 .services__card--dark {
@@ -101,6 +120,9 @@
   justify-content: center;
   height: 48px;
   padding-inline: var(--space-4);
+  border: none;
+  cursor: pointer;
+  font: inherit;
   font-family: var(--font-display);
   font-size: var(--fs-display-btn);
   letter-spacing: var(--ls-display);

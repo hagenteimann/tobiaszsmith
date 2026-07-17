@@ -29,6 +29,7 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/hero.css?v=$V" />
   <link rel="stylesheet" href="styles/clients.css?v=$V" />
   <link rel="stylesheet" href="styles/services.css?v=$V" />
+  <link rel="stylesheet" href="styles/paket-modal.css?v=$V" />
   <!-- <link rel="stylesheet" href="styles/divider.css?v=$V" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
   <link rel="stylesheet" href="styles/operate.css?v=$V" />
   <link rel="stylesheet" href="styles/testimonials.css?v=$V" />
@@ -70,6 +71,7 @@ cat > _tail.html <<TAILEOF
   <script src="js/hero.js?v=$V" defer></script>
   <script src="js/more-work.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
+  <script src="js/paket-modal.js?v=$V" defer></script>
   <script src="js/portfolio-video.js?v=$V" defer></script>
   <script src="js/portfolio-carousel.js?v=$V" defer></script>
   <script src="js/reveal.js?v=$V" defer></script>
@@ -86,6 +88,7 @@ SECTIONS=(
   sections/clients.html
   sections/portfolio.html
   sections/services.html
+  sections/paket-modal.html
   # sections/divider.html      # <- Akkordeon: einkommentieren zum Reaktivieren
   sections/more-work.html
   sections/testimonials.html

@@ -10,27 +10,28 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/base.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/services.css?v=1784293518" />
-  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784293518" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/operate.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784293518" />
-  <link rel="stylesheet" href="styles/preloader.css?v=1784293518" />
-  <script src="js/preloader.js?v=1784293518" defer></script>
+  <link rel="stylesheet" href="styles/fonts.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/base.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/services.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/paket-modal.css?v=1784293899" />
+  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784293899" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
+  <link rel="stylesheet" href="styles/operate.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784293899" />
+  <link rel="stylesheet" href="styles/preloader.css?v=1784293899" />
+  <script src="js/preloader.js?v=1784293899" defer></script>
 </head>
 <body>
 <div id="preloader" class="preloader">
@@ -252,7 +253,7 @@
         </div>
         <h3 class="services__card-title">Social Media Content</h3>
         <p class="services__card-text">TikToks, Reels &amp; Karussells, die hängen bleiben. Strategisch fundierter Content, der organische Reichweite aufbaut.</p>
-        <span class="services__cta">Pakete</span>
+        <button type="button" class="services__cta" data-open-paket-modal>Pakete</button>
       </article>
 
       <article class="services__card services__card--light reveal">
@@ -267,7 +268,7 @@
         </div>
         <h3 class="services__card-title">Videografie</h3>
         <p class="services__card-text">Cinematische Imagefilme, High-End Testimonials und Drohnenaufnahmen, die Emotionen wecken und Vertrauen schaffen.</p>
-        <span class="services__cta">Pakete</span>
+        <button type="button" class="services__cta" data-open-paket-modal>Pakete</button>
       </article>
 
       <article class="services__card services__card--dark reveal">
@@ -284,11 +285,50 @@
         </div>
         <h3 class="services__card-title">Foto-Shootings</h3>
         <p class="services__card-text">Präzise Produktfotografie, Lifestyle-Inszenierungen &amp; Corporate Identity Shootings mit brutalem Qualitätsanspruch.</p>
-        <span class="services__cta">Pakete</span>
+        <button type="button" class="services__cta" data-open-paket-modal>Pakete</button>
       </article>
     </div>
   </div>
 </section>
+<div class="paket-modal" id="paket-modal" aria-hidden="true">
+  <div class="paket-modal__backdrop" data-modal-close></div>
+  <div class="paket-modal__panel" role="dialog" aria-modal="true" aria-labelledby="paket-modal-title">
+    <button type="button" class="paket-modal__close" data-modal-close aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true" focusable="false">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+
+    <div class="paket-modal__header">
+      <p class="eyebrow">Unsere Angebote</p>
+      <h2 id="paket-modal-title" class="section-title paket-modal__title">Pakete</h2>
+    </div>
+
+    <div class="paket-modal__cards">
+      <article class="paket-card">
+        <h3 class="paket-card__title">Starter</h3>
+        <p class="paket-card__price">ab 990&nbsp;€</p>
+        <p class="paket-card__desc">Für den ersten Auftritt: ein kompaktes Social-Content-Paket mit 3 kurzen Reels und Grundschnitt.</p>
+        <button type="button" class="paket-card__cta" data-paket="starter" data-paket-label="Starter">Anfragen</button>
+      </article>
+
+      <article class="paket-card">
+        <h3 class="paket-card__title">Standard</h3>
+        <p class="paket-card__price">ab 2.490&nbsp;€</p>
+        <p class="paket-card__desc">Unser meistgebuchtes Paket: Imagefilm oder Produktshooting inklusive Konzept, Dreh und Farbkorrektur.</p>
+        <button type="button" class="paket-card__cta" data-paket="standard" data-paket-label="Standard">Anfragen</button>
+      </article>
+
+      <article class="paket-card">
+        <h3 class="paket-card__title">Premium</h3>
+        <p class="paket-card__price">ab 4.990&nbsp;€</p>
+        <p class="paket-card__desc">Volles Programm: Video, Foto und Social Content aus einer Hand, mit persönlicher Projektbetreuung.</p>
+        <button type="button" class="paket-card__cta" data-paket="premium" data-paket-label="Premium">Anfragen</button>
+      </article>
+    </div>
+  </div>
+</div>
 <section class="more-work" id="more-work">
   <div class="container more-work__inner">
     <h2 class="section-title more-work__title">WEITERE ARBEITEN</h2>
@@ -793,6 +833,21 @@
           </div>
 
           <div class="kontakt__field">
+            <label for="kontakt-paket">Interessiertes Paket</label>
+            <div class="kontakt__select-wrap">
+              <select class="kontakt__select" id="kontakt-paket" name="paket">
+                <option value="" selected>Noch offen / kein bestimmtes Paket</option>
+                <option value="starter">Starter</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+              </select>
+              <svg class="kontakt__select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kontakt__field">
             <label for="kontakt-budget">Budgetrahmen</label>
             <div class="kontakt__select-wrap">
               <select class="kontakt__select" id="kontakt-budget" name="budget">
@@ -924,13 +979,14 @@
   </div>
 </footer>
 
-  <script src="js/video-interaction.js?v=1784293518" defer></script>
-  <script src="js/nav.js?v=1784293518" defer></script>
-  <script src="js/hero.js?v=1784293518" defer></script>
-  <script src="js/more-work.js?v=1784293518" defer></script>
-  <script src="js/kontakt.js?v=1784293518" defer></script>
-  <script src="js/portfolio-video.js?v=1784293518" defer></script>
-  <script src="js/portfolio-carousel.js?v=1784293518" defer></script>
-  <script src="js/reveal.js?v=1784293518" defer></script>
+  <script src="js/video-interaction.js?v=1784293899" defer></script>
+  <script src="js/nav.js?v=1784293899" defer></script>
+  <script src="js/hero.js?v=1784293899" defer></script>
+  <script src="js/more-work.js?v=1784293899" defer></script>
+  <script src="js/kontakt.js?v=1784293899" defer></script>
+  <script src="js/paket-modal.js?v=1784293899" defer></script>
+  <script src="js/portfolio-video.js?v=1784293899" defer></script>
+  <script src="js/portfolio-carousel.js?v=1784293899" defer></script>
+  <script src="js/reveal.js?v=1784293899" defer></script>
 </body>
 </html>

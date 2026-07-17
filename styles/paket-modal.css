@@ -1,0 +1,167 @@
+/* =========================================================
+   Smith Visuals — Paket-Modal
+   Bildschirmfuellendes Overlay mit geblurtem Hintergrund, zeigt eine
+   scrollbare Uebersicht der (Platzhalter-)Pakete. Wird von den
+   "Pakete"-Buttons in der Services-Section geoeffnet (js/paket-modal.js).
+   ========================================================= */
+
+.paket-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-base) var(--ease-soft);
+}
+
+.paket-modal[data-open] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.paket-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 7, 9, 0.6);
+  border: none;
+  cursor: pointer;
+}
+
+.paket-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 60rem);
+  max-height: min(85vh, 44rem);
+  overflow-y: auto;
+  background: var(--c-bg);
+  color: var(--c-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-card);
+  transform: translateY(16px) scale(0.98);
+  transition: transform var(--dur-base) var(--ease-soft);
+}
+
+.paket-modal[data-open] .paket-modal__panel {
+  transform: translateY(0) scale(1);
+}
+
+.paket-modal__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-border-hair);
+  background: transparent;
+  color: var(--c-white);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft);
+}
+
+.paket-modal__close:hover,
+.paket-modal__close:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.paket-modal__header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.paket-modal__title {
+  color: var(--c-white);
+}
+
+.paket-modal__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  overflow-y: auto;
+}
+
+@media (min-width: 48rem) {
+  .paket-modal__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.paket-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--c-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border-hair);
+}
+
+.paket-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-display);
+  color: var(--c-white);
+}
+
+.paket-card__price {
+  font-weight: 700;
+  color: var(--c-accent);
+}
+
+.paket-card__desc {
+  flex: 1;
+  font-size: var(--fs-body-sm);
+  color: var(--c-text-dim);
+  line-height: var(--lh-body);
+}
+
+.paket-card__cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: none;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-btn);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft);
+}
+
+.paket-card__cta:hover,
+.paket-card__cta:focus-visible {
+  background: var(--c-accent-hover);
+}
+
+/* Blur auf den Rest der Seite, waehrend das Modal offen ist. */
+body.paket-modal-open #main-content {
+  filter: blur(8px);
+  transition: filter var(--dur-base) var(--ease-soft);
+}
+
+body.paket-modal-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paket-modal,
+  .paket-modal__panel,
+  body.paket-modal-open #main-content {
+    transition: none;
+  }
+}
