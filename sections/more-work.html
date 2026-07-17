@@ -3,14 +3,22 @@
     <h2 class="section-title more-work__title">WEITERE ARBEITEN</h2>
 
     <!-- Geteiltes Gradient-Def fuer alle Ordner-Shells (ein Mal fuer den ganzen
-         Abschnitt statt 14x dupliziert) -- gibt den Ordnern eine sanfte,
-         materialhafte Tiefe statt flacher Einheitsfarbe. -->
+         Abschnitt statt 14x dupliziert). Zwei Toene statt einem: die
+         Rueckwand (hinter den Fotos) ist sichtbar heller als die vordere
+         Lasche (die die Fotos von unten haelt) -- genau die Zwei-Ebenen-
+         Tiefe, die einen macOS-Ordner als echten "Behaelter" statt als
+         flache schwarze Kachel lesbar macht. -->
     <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
       <defs>
-        <linearGradient id="mw-folder-sheen" x1="12%" y1="0%" x2="58%" y2="100%">
-          <stop offset="0%" style="stop-color: var(--c-bg-elevated)" />
-          <stop offset="55%" style="stop-color: var(--c-bg)" />
-          <stop offset="100%" style="stop-color: var(--c-black)" />
+        <linearGradient id="mw-folder-sheen-back" x1="12%" y1="0%" x2="60%" y2="100%">
+          <stop offset="0%" stop-color="#4b4e56" />
+          <stop offset="50%" stop-color="#2b2d33" />
+          <stop offset="100%" stop-color="#17181c" />
+        </linearGradient>
+        <linearGradient id="mw-folder-sheen-front" x1="10%" y1="0%" x2="55%" y2="100%">
+          <stop offset="0%" stop-color="#34363c" />
+          <stop offset="55%" stop-color="#1a1b1f" />
+          <stop offset="100%" stop-color="#0a0a0c" />
         </linearGradient>
       </defs>
     </svg>
