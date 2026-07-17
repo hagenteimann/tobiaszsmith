@@ -2,6 +2,19 @@
   <div class="container more-work__inner">
     <h2 class="section-title more-work__title">WEITERE ARBEITEN</h2>
 
+    <!-- Geteiltes Gradient-Def fuer alle Ordner-Shells (ein Mal fuer den ganzen
+         Abschnitt statt 14x dupliziert) -- gibt den Ordnern eine sanfte,
+         materialhafte Tiefe statt flacher Einheitsfarbe. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="mw-folder-sheen" x1="12%" y1="0%" x2="58%" y2="100%">
+          <stop offset="0%" style="stop-color: var(--c-bg-elevated)" />
+          <stop offset="55%" style="stop-color: var(--c-bg)" />
+          <stop offset="100%" style="stop-color: var(--c-black)" />
+        </linearGradient>
+      </defs>
+    </svg>
+
     <div class="more-work__folders reveal--stagger">
 
       <!-- Project 1 -->
