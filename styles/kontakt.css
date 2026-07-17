@@ -155,6 +155,56 @@ a.kontakt__item-value:focus-visible {
   color: var(--c-accent);
 }
 
+.kontakt__quick {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.kontakt__quick-label {
+  font-weight: 700;
+  font-size: var(--fs-label-sm);
+  letter-spacing: 1px;
+  color: var(--c-text-dim);
+}
+
+.kontakt__quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.kontakt__quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  background: var(--c-accent);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-btn);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  transition: background-color var(--dur-fast) var(--ease-soft),
+              transform var(--dur-fast) var(--ease-soft);
+}
+
+.kontakt__quick-link svg {
+  flex-shrink: 0;
+}
+
+.kontakt__quick-link:hover,
+.kontakt__quick-link:focus-visible {
+  background: var(--c-accent-hover);
+  transform: translateY(-2px);
+}
+
+.kontakt__quick-link:active {
+  transform: translateY(0);
+}
+
 .kontakt__social {
   display: flex;
   flex-direction: column;
@@ -373,6 +423,7 @@ a.kontakt__item-value:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .kontakt__submit,
+  .kontakt__quick-link,
   .kontakt__social-link {
     transition-duration: 0.001ms;
   }
