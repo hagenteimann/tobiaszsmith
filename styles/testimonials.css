@@ -6,8 +6,11 @@
    ========================================================= */
 
 .testimonials {
-  /* Feinwerte aus Figma, die nicht Teil des globalen Token-Sets sind */
-  --testimonials-quote-size: clamp(3rem, 2.4rem + 2vw, 5rem); /* 80px Desktop */
+  /* Feinwerte aus Figma, die nicht Teil des globalen Token-Sets sind --
+     Zitat-Glyphe und Card-Padding gegenueber Figma-Vorlage verkleinert,
+     damit die Cards weniger wuchtig wirken. */
+  --testimonials-quote-size: clamp(2.25rem, 1.8rem + 1.6vw, 3.5rem); /* 36px → 56px */
+  --testimonials-card-pad: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);   /* 24px → 36px */
   --testimonials-name-ls: 0.03em; /* ~0.46px bei 16px Fließtext */
 
   background: var(--c-light);
@@ -44,8 +47,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-5);
-  padding: var(--space-6);
+  gap: var(--space-4);
+  padding: var(--testimonials-card-pad);
   background: var(--c-white);
   border: 1px solid var(--c-border-light);
   border-radius: var(--radius-sm);

@@ -43,8 +43,8 @@
    aus einer erzwungenen Mindesthöhe. Fluid zwischen Mobile und diesem
    Desktop-Zielwert skaliert (kein Space-Token, da Figma-Fixwerte). */
 .services__card {
-  --card-pad: clamp(1.5rem, 1.15rem + 1.4vw, 2rem);  /* 24px → 32px */
-  --card-gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);    /* 16px → 24px */
+  --card-pad: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); /* 20px → 28px */
+  --card-gap: clamp(0.875rem, 0.7rem + 0.75vw, 1.25rem); /* 14px → 20px */
 
   display: flex;
   flex-direction: column;
@@ -70,22 +70,22 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--services-radius);
   background: var(--c-accent);
 }
 
 .services__icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: var(--c-white);
 }
 
 .services__card-title {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--fs-subheading);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem); /* 18.4px → 24px, statt --fs-subheading (28px) */
   line-height: var(--lh-tight);
 }
 
