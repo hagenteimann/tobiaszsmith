@@ -10,28 +10,28 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/base.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/services.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/paket-modal.css?v=1784296771" />
-  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784296771" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/operate.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784296771" />
-  <link rel="stylesheet" href="styles/preloader.css?v=1784296771" />
-  <script src="js/preloader.js?v=1784296771" defer></script>
+  <link rel="stylesheet" href="styles/fonts.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/base.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/services.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/paket-modal.css?v=1784297238" />
+  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784297238" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
+  <link rel="stylesheet" href="styles/operate.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784297238" />
+  <link rel="stylesheet" href="styles/preloader.css?v=1784297238" />
+  <script src="js/preloader.js?v=1784297238" defer></script>
 </head>
 <body>
 <div id="preloader" class="preloader">
@@ -988,9 +988,10 @@
             <div class="kontakt__select-wrap">
               <select class="kontakt__select" id="kontakt-paket" name="paket">
                 <option value="" selected>Noch offen / kein bestimmtes Paket</option>
-                <option value="starter">Starter</option>
-                <option value="standard">Standard</option>
+                <option value="basic">Basic</option>
+                <option value="pro">Pro</option>
                 <option value="premium">Premium</option>
+                <option value="foto-addon">Foto-Add-on</option>
               </select>
               <svg class="kontakt__select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true">
                 <path d="m6 9 6 6 6-6"/>
@@ -1058,32 +1059,84 @@
     </button>
 
     <div class="paket-modal__header">
-      <p class="eyebrow">Unsere Angebote</p>
+      <p class="eyebrow">Content-Pakete</p>
       <h2 id="paket-modal-title" class="section-title paket-modal__title">Pakete</h2>
+    </div>
+
+    <div class="paket-modal__why">
+      <h3 class="paket-modal__why-title">Warum Smith Visuals</h3>
+      <ul class="paket-modal__why-list">
+        <li>Kino-taugliches Equipment: Sony A7V &amp; ZV-E1, GM-Objektive, DJI-Gimbal und Drohne</li>
+        <li>Farbgenaue Postproduktion in DaVinci Resolve</li>
+        <li>Erfahrung branchenübergreifend — von Fahrschulen bis Premium-Marken</li>
+        <li>Ein fester Ansprechpartner von Konzept bis Delivery</li>
+        <li>Content, der für jede Plattform sitzt: YouTube, TikTok, Instagram, LinkedIn</li>
+      </ul>
     </div>
 
     <div class="paket-modal__cards">
       <article class="paket-card">
-        <h3 class="paket-card__title">Starter</h3>
-        <p class="paket-card__price">ab 990&nbsp;€</p>
-        <p class="paket-card__desc">Für den ersten Auftritt: ein kompaktes Social-Content-Paket mit 3 kurzen Reels und Grundschnitt.</p>
-        <button type="button" class="paket-card__cta" data-paket="starter" data-paket-label="Starter">Anfragen</button>
+        <h3 class="paket-card__title">Basic</h3>
+        <p class="paket-card__tagline">Einstieg in professionellen Content</p>
+        <ul class="paket-card__list">
+          <li>Kamera — Single-Kamera-Setup (Sony A7V)</li>
+          <li>1 Drehtermin (halber Tag, vor Ort)</li>
+          <li>3–5 Short-Form-Videos, geschnitten und postfertig</li>
+          <li>Sauberer Schnitt, Farbkorrektur, Untertitel</li>
+          <li>1 Korrekturschleife</li>
+          <li>Lieferung optimiert für 2 Plattformen nach Wahl</li>
+          <li>Lieferzeit: ca. 1 Woche</li>
+        </ul>
+        <p class="paket-card__note">Optional buchbar: professionelles Foto-Paket (siehe unten)</p>
+        <button type="button" class="paket-card__cta" data-paket="basic" data-paket-label="Basic">Anfragen</button>
       </article>
 
       <article class="paket-card">
-        <h3 class="paket-card__title">Standard</h3>
-        <p class="paket-card__price">ab 2.490&nbsp;€</p>
-        <p class="paket-card__desc">Unser meistgebuchtes Paket: Imagefilm oder Produktshooting inklusive Konzept, Dreh und Farbkorrektur.</p>
-        <button type="button" class="paket-card__cta" data-paket="standard" data-paket-label="Standard">Anfragen</button>
+        <h3 class="paket-card__title">Pro</h3>
+        <p class="paket-card__tagline">Mehr Perspektiven, mehr Wirkung</p>
+        <ul class="paket-card__list">
+          <li>Kamera — Dual-Kamera-Setup — zwei Perspektiven gleichzeitig, kein verpasster Moment, dynamischerer Schnitt</li>
+          <li>1–2 Drehtermine (ganzer Tag)</li>
+          <li>6–10 Short-Form-Videos plus 1 längerer Schnitt (z. B. für YouTube oder Website)</li>
+          <li>Erweiterter Schnitt: Motion Graphics, Sounddesign, Untertitel</li>
+          <li>2 Korrekturschleifen</li>
+          <li>Lieferung optimiert für alle wichtigen Plattformen</li>
+          <li>Content-Beratung inklusive</li>
+          <li>Lieferzeit: ca. 1–2 Wochen</li>
+        </ul>
+        <p class="paket-card__note">Optional buchbar: professionelles Foto-Paket (siehe unten)</p>
+        <button type="button" class="paket-card__cta" data-paket="pro" data-paket-label="Pro">Anfragen</button>
       </article>
 
       <article class="paket-card">
         <h3 class="paket-card__title">Premium</h3>
-        <p class="paket-card__price">ab 4.990&nbsp;€</p>
-        <p class="paket-card__desc">Volles Programm: Video, Foto und Social Content aus einer Hand, mit persönlicher Projektbetreuung.</p>
+        <p class="paket-card__tagline">Die volle Produktion</p>
+        <ul class="paket-card__list">
+          <li>Kamera — Dual-Kamera-Setup plus Drohne — kinoreife Luftaufnahmen und maximale visuelle Tiefe</li>
+          <li>Mehrtägiger Dreh oder monatliches Content-Abo</li>
+          <li>10+ Short-Form-Videos plus 1–2 Long-Form-Videos</li>
+          <li>Volle Produktionsbegleitung: Konzept &amp; Skript, Motion Graphics, professionelles Sounddesign</li>
+          <li>Bis zu 3 Korrekturschleifen</li>
+          <li>Vollständige Lieferung für alle Plattformen inkl. Posting-Strategie</li>
+          <li>Priorisierte Lieferzeit, Express-Lieferung möglich</li>
+          <li>Professionelles Foto-Paket inklusive</li>
+          <li>Feste Ansprechperson</li>
+        </ul>
         <button type="button" class="paket-card__cta" data-paket="premium" data-paket-label="Premium">Anfragen</button>
       </article>
     </div>
+
+    <div class="paket-modal__addon">
+      <h3 class="paket-modal__addon-title">Foto-Add-on</h3>
+      <ul class="paket-card__list">
+        <li>Zu jedem Paket buchbar</li>
+        <li>Professionelle Fotografie während desselben Drehtermins — kein zusätzlicher Termin nötig</li>
+        <li>Bearbeitete Bilder in hoher Auflösung, geliefert zusammen mit den Videos</li>
+      </ul>
+      <button type="button" class="paket-card__cta" data-paket="foto-addon" data-paket-label="Foto-Add-on">Anfragen</button>
+    </div>
+
+    <p class="paket-modal__footer">Jedes Paket wird individuell auf Kunde und Branche zugeschnitten. Lassen Sie uns über Ihr Projekt sprechen.</p>
   </div>
 </div>
 <footer class="footer">
@@ -1169,15 +1222,15 @@
   </div>
 </footer>
 
-  <script src="js/video-interaction.js?v=1784296771" defer></script>
-  <script src="js/nav.js?v=1784296771" defer></script>
-  <script src="js/hero.js?v=1784296771" defer></script>
-  <script src="js/more-work.js?v=1784296771" defer></script>
-  <script src="js/kontakt.js?v=1784296771" defer></script>
-  <script src="js/paket-modal.js?v=1784296771" defer></script>
-  <script src="js/portfolio-video.js?v=1784296771" defer></script>
-  <script src="js/portfolio-carousel.js?v=1784296771" defer></script>
-  <script src="js/testimonials-toggle.js?v=1784296771" defer></script>
-  <script src="js/reveal.js?v=1784296771" defer></script>
+  <script src="js/video-interaction.js?v=1784297238" defer></script>
+  <script src="js/nav.js?v=1784297238" defer></script>
+  <script src="js/hero.js?v=1784297238" defer></script>
+  <script src="js/more-work.js?v=1784297238" defer></script>
+  <script src="js/kontakt.js?v=1784297238" defer></script>
+  <script src="js/paket-modal.js?v=1784297238" defer></script>
+  <script src="js/portfolio-video.js?v=1784297238" defer></script>
+  <script src="js/portfolio-carousel.js?v=1784297238" defer></script>
+  <script src="js/testimonials-toggle.js?v=1784297238" defer></script>
+  <script src="js/reveal.js?v=1784297238" defer></script>
 </body>
 </html>

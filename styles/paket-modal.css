@@ -1,8 +1,9 @@
 /* =========================================================
    Smith Visuals — Paket-Modal
-   Bildschirmfuellendes Overlay mit geblurtem Hintergrund, zeigt eine
-   scrollbare Uebersicht der (Platzhalter-)Pakete. Wird von den
-   "Pakete"-Buttons in der Services-Section geoeffnet (js/paket-modal.js).
+   Bildschirmfuellendes Overlay mit geblurtem Hintergrund, zeigt die
+   Content-Pakete (Basic/Pro/Premium + Foto-Add-on) als scrollbare
+   Karten-Uebersicht. Wird von den "Pakete"-Buttons in der Services-
+   Section geoeffnet (js/paket-modal.js).
    ========================================================= */
 
 .paket-modal {
@@ -34,8 +35,8 @@
 .paket-modal__panel {
   position: relative;
   z-index: 1;
-  width: min(100%, 60rem);
-  max-height: min(85vh, 44rem);
+  width: min(100%, 68rem);
+  max-height: min(90vh, 52rem);
   overflow-y: auto;
   background: var(--c-bg);
   color: var(--c-white);
@@ -81,6 +82,48 @@
   color: var(--c-white);
 }
 
+/* ---------- "Warum Smith Visuals" ---------- */
+.paket-modal__why {
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background: var(--c-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border-hair);
+}
+
+.paket-modal__why-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-display);
+  color: var(--c-white);
+  margin-bottom: var(--space-3);
+}
+
+.paket-modal__why-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.paket-modal__why-list li {
+  position: relative;
+  padding-left: 1.6em;
+  font-size: var(--fs-body-sm);
+  color: var(--c-text-dim);
+  line-height: var(--lh-body);
+}
+
+.paket-modal__why-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--c-accent);
+  font-weight: 700;
+}
+
+/* ---------- Paket-Karten ---------- */
 .paket-modal__cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -88,16 +131,17 @@
   overflow-y: auto;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 60rem) {
   .paket-modal__cards {
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 }
 
 .paket-card {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
   padding: var(--space-4);
   background: var(--c-bg-elevated);
   border-radius: var(--radius-md);
@@ -112,16 +156,43 @@
   color: var(--c-white);
 }
 
-.paket-card__price {
+.paket-card__tagline {
+  margin-top: calc(var(--space-3) * -1);
   font-weight: 700;
+  font-size: var(--fs-body-sm);
   color: var(--c-accent);
 }
 
-.paket-card__desc {
+.paket-card__list {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.paket-card__list li {
+  position: relative;
+  padding-left: 1.1em;
   font-size: var(--fs-body-sm);
   color: var(--c-text-dim);
   line-height: var(--lh-body);
+}
+
+.paket-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+
+.paket-card__note {
+  font-size: var(--fs-body-xs);
+  font-style: italic;
+  color: var(--c-text-dim);
 }
 
 .paket-card__cta {
@@ -146,6 +217,55 @@
 .paket-card__cta:hover,
 .paket-card__cta:focus-visible {
   background: var(--c-accent-hover);
+}
+
+/* ---------- Foto-Add-on (kein eigener Tarif, sondern Zusatzbuchung) ---------- */
+.paket-modal__addon {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: transparent;
+  border: 1px dashed var(--c-border-hair);
+  border-radius: var(--radius-md);
+}
+
+.paket-modal__addon-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-display);
+  color: var(--c-white);
+}
+
+@media (min-width: 30rem) {
+  .paket-modal__addon {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .paket-modal__addon-title {
+    flex-shrink: 0;
+    width: 10rem;
+  }
+
+  .paket-modal__addon .paket-card__list {
+    flex: 1;
+  }
+
+  .paket-modal__addon .paket-card__cta {
+    flex-shrink: 0;
+    width: auto;
+    padding-inline: var(--space-5);
+  }
+}
+
+.paket-modal__footer {
+  margin-top: var(--space-5);
+  text-align: center;
+  font-size: var(--fs-body-sm);
+  color: var(--c-text-dim);
 }
 
 /* Blur auf den Rest der Seite, waehrend das Modal offen ist. */
