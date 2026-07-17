@@ -67,12 +67,6 @@
   .aat-showcase__stagewrap .mw-stage { --mw-scale: 0.4356; }
 }
 
-/* Rein dekorativ (kein Klickziel wie bei .more-work .mw-folder) --
-   Zeigefinger-Cursor waere hier irrefuehrend. */
-.aat-showcase .mw-folder {
-  cursor: default;
-}
-
 /* ---------- Medien-Spalte ---------- */
 .aat-showcase__media {
   display: flex;
