@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let dotsCount = 0;
   let dotsCycle = 0;
 
-  // Timings
-  const START_DELAY = 600; // wait before moving icon
-  const TYPE_SPEED = 70; // ms per character
-  const DOTS_SPEED = 300; // ms per dot
+  // Timings -- Gesamtsequenz bewusst auf < 2s gestrafft (siehe Summe unten)
+  const START_DELAY = 100; // wait before moving icon
+  const TYPE_SPEED = 30; // ms per character
+  const DOTS_SPEED = 80; // ms per dot
   const DOTS_CYCLES = 2; // wie oft "..." komplett durchläuft, bevor die Seite kommt
-  const DOTS_CYCLE_PAUSE = 350; // Pause zwischen den Durchläufen (Punkte geloescht -> naechster Zyklus)
-  const HOLD_END = 800; // hold before hiding preloader
+  const DOTS_CYCLE_PAUSE = 80; // Pause zwischen den Durchläufen (Punkte geloescht -> naechster Zyklus)
+  const HOLD_END = 150; // hold before hiding preloader
+  const FADE_OUT_MS = 350; // muss zur CSS-Transition-Dauer von .preloader passen (styles/preloader.css)
 
   // Sequence:
   // 1. Icon is large in center (via CSS). Wait.
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.classList.add("is-moved");
 
     // Wait for icon transition to mostly finish before typing
-    setTimeout(typeSmith, 600);
+    setTimeout(typeSmith, 350);
   }, START_DELAY);
 
   function typeSmith() {
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Remove from DOM after fade out
       setTimeout(() => {
         preloader.remove();
-      }, 800);
+      }, FADE_OUT_MS);
     }, HOLD_END);
   }
 });

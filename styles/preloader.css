@@ -13,7 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
+  /* Dauer bewusst kurz gehalten (siehe js/preloader.js FADE_OUT_MS) --
+     die gesamte Preloader-Sequenz soll unter 2s bleiben. */
+  transition: opacity 0.35s var(--ease-soft), transform 0.35s var(--ease-soft);
 }
 
 .preloader.is-hidden {
@@ -35,7 +37,7 @@
   flex-shrink: 0;
   transform: scale(2) translateX(0); /* Starts large in center */
   transform-origin: center;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth snap to left */
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth snap to left */
   opacity: 0;
   animation: preloaderFadeIn 0.5s forwards;
 }

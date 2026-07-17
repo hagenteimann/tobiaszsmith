@@ -49,6 +49,22 @@ cat > _head.html <<HEADEOF
 HEADEOF
 cat sections/preloader.html >> _head.html
 cat >> _head.html <<'EOF'
+  <script>
+    // Preloader nur beim allerersten Seitenaufruf dieser Browser-Session zeigen,
+    // nicht wenn man z. B. von einer Projekt-Unterseite auf die Startseite
+    // zurueckkommt. Bewusst inline + OHNE defer/async direkt hinter dem
+    // Preloader-Markup, damit das Entfernen synchron waehrend des Parsens
+    // passiert -- js/preloader.js laeuft erst spaeter (defer) und wuerde
+    // sonst einen kurzen Flash des Preloaders nicht verhindern koennen.
+    (function () {
+      if (sessionStorage.getItem("smithVisualsPreloaderShown") === "1") {
+        var el = document.getElementById("preloader");
+        if (el) el.remove();
+      } else {
+        sessionStorage.setItem("smithVisualsPreloaderShown", "1");
+      }
+    })();
+  </script>
 
   <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
