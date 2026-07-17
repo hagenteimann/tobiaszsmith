@@ -34,30 +34,43 @@
 }
 
 /* ---------- Hintergrund-Typewriter: Category-Entry-Points ----------
-   Sehr dezenter (6% Deckkraft), großer Fließtext HINTER der Stage, der
-   nacheinander konkrete Kaufanlaesse eintippt (js/hero-typewriter.js).
-   Bewusst als eigenständiges, absolut positioniertes Element VOR
+   Zwei sehr dezente (14% Deckkraft), statische Text-Ecken HINTER der
+   Stage, in der freien Diagonale oben-rechts / unten-links neben der
+   "SMITH VISUALS"-Wortmarke (nicht dahinter -- sonst nie sichtbar).
+   Jede Ecke tippt unabhaengig ihre EIGENE Phrasen-Liste ein
+   (js/hero-typewriter.js) -- oben rechts fuer eher private/einmalige
+   Anlaesse, unten links fuer eher gewerbliche/laufende Anlaesse,
+   spricht also unterschiedliche ICPs an derselben Stelle an.
+   Bewusst als eigenständige, absolut positionierte Elemente VOR
    .hero__stage im DOM platziert (nicht als Kind der Stage!) — dadurch
    bleibt das fragile Figma-Prozent-Koordinatensystem der Stage komplett
    unangetastet, und die Flexbox-Zentrierung der Stage bleibt unberührt,
    da position:absolute-Elemente nicht am Flex-Layout teilnehmen. */
 .hero__bg-type {
   position: absolute;
-  inset: 0;
   z-index: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-inline: var(--space-5);
+  max-width: 42%;
+  margin: 0;
   pointer-events: none;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 1rem + 8vw, 6.5rem);
-  line-height: 1.05;
+  font-size: clamp(1.15rem, 0.9rem + 2.2vw, 2.5rem);
+  line-height: 1.15;
   letter-spacing: var(--ls-display);
   text-transform: uppercase;
   color: var(--c-text-dark);
   opacity: 0.14;
-  text-align: center;
+}
+
+.hero__bg-type--tr {
+  top: var(--space-5);
+  right: var(--space-5);
+  text-align: right;
+}
+
+.hero__bg-type--bl {
+  bottom: var(--space-5);
+  left: var(--space-5);
+  text-align: left;
 }
 
 .hero__bg-type-cursor {
@@ -73,6 +86,20 @@
 @keyframes hero-bg-type-blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  /* Auf Mobile ist neben der grossskalierten Wortmarke kaum freie Ecke
+     uebrig -- die untere rechte Ecke wuerde mit dem Foto kollidieren,
+     daher dort ausgeblendet, nur die obere bleibt. */
+  .hero__bg-type--bl {
+    display: none;
+  }
+
+  .hero__bg-type--tr {
+    max-width: 60%;
+    font-size: clamp(1rem, 0.85rem + 2vw, 1.5rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
