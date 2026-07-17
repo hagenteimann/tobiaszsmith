@@ -85,6 +85,7 @@ cat > _tail.html <<TAILEOF
   <script src="js/video-interaction.js?v=$V" defer></script>
   <script src="js/nav.js?v=$V" defer></script>
   <script src="js/hero.js?v=$V" defer></script>
+  <script src="js/hero-typewriter.js?v=$V" defer></script>
   <script src="js/more-work.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
   <script src="js/paket-modal.js?v=$V" defer></script>

@@ -33,6 +33,55 @@
   height: calc(100svh - var(--nav-h, 88px));
 }
 
+/* ---------- Hintergrund-Typewriter: Category-Entry-Points ----------
+   Sehr dezenter (6% Deckkraft), großer Fließtext HINTER der Stage, der
+   nacheinander konkrete Kaufanlaesse eintippt (js/hero-typewriter.js).
+   Bewusst als eigenständiges, absolut positioniertes Element VOR
+   .hero__stage im DOM platziert (nicht als Kind der Stage!) — dadurch
+   bleibt das fragile Figma-Prozent-Koordinatensystem der Stage komplett
+   unangetastet, und die Flexbox-Zentrierung der Stage bleibt unberührt,
+   da position:absolute-Elemente nicht am Flex-Layout teilnehmen. */
+.hero__bg-type {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: var(--space-5);
+  pointer-events: none;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1rem + 8vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: var(--ls-display);
+  text-transform: uppercase;
+  color: var(--c-text-dark);
+  opacity: 0.14;
+  text-align: center;
+}
+
+.hero__bg-type-cursor {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.9em;
+  margin-left: 0.06em;
+  background: currentColor;
+  vertical-align: -0.1em;
+  animation: hero-bg-type-blink 0.9s steps(1) infinite;
+}
+
+@keyframes hero-bg-type-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-type-cursor {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 /* ---------- Stage: exaktes Figma-Koordinatensystem (1920×928) ----------
    Wortmarke UND beide Foto-Ebenen sind Ausschnitte/Positionen aus DERSELBEN
    Design-Leinwand. Alle drei werden hier als Prozentwerte dieser Leinwand
