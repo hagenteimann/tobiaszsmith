@@ -1,16 +1,16 @@
 /* =========================================================
    Smith Visuals — Portfolio Grid
    Figma node 76:165 · 8 Portfolio-Items (Figma-Maß 400x500),
-   liegt als heller "Galerie"-Abschnitt zwischen den dunklen
-   Sections (vgl. clients.css, gleiches Muster: var(--c-light)).
-   Mobile-first: 1 -> 2 -> 4 Spalten via auto-fit/minmax,
-   keine festen Breakpoints noetig.
+   jetzt dunkler Abschnitt inkl. Headline (vormals portfolio-intro),
+   liegt zwischen den dunklen Sections. Mobile-first: 1 -> 2 -> 4
+   Spalten via auto-fit/minmax, keine festen Breakpoints noetig.
    ========================================================= */
 
 .portfolio {
   --portfolio-radius: 4px;
 
-  background: var(--c-light);
+  background-color: var(--c-bg);
+  background-image: radial-gradient(circle at 0% 100%, rgba(161, 25, 25, 0.4) 0%, transparent 70%);
   padding-block: var(--space-8);
 }
 
@@ -27,7 +27,7 @@
   overflow: hidden;
   /* Figma-Hintergrund hinter dem Bild (78:90 u.a.) — sichtbar als
      Platzhalter-Ton, solange das Bild laedt */
-  background: var(--c-bg);
+  background: var(--c-bg-elevated);
 }
 
 .portfolio__link {

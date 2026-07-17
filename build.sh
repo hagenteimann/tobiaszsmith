@@ -87,7 +87,6 @@ SECTIONS=(
   sections/services.html
   # sections/divider.html      # <- Akkordeon: einkommentieren zum Reaktivieren
   sections/more-work.html
-  sections/portfolio-intro.html
   sections/testimonials.html
   sections/portfolio-video.html
   sections/aat-showcase.html
