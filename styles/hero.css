@@ -149,12 +149,12 @@
   .hero {
     --hero-scale: 2.1;
     --hero-tx: -100%;
-    --hero-ty: 20%;
+    --hero-ty: 10%;
   }
 
   .hero__wordmark-container {
     left: 8%;
-    top: -85%;
+    top: -100%;
     width: 84%;
     height: auto;
   }
