@@ -28,8 +28,9 @@
   gap: var(--space-4);
   width: 100%;
 
-  /* Karten-Maße 1:1 aus Figma (40px Padding, 4px Radius, weicher Schlagschatten) */
-  --operate-card-pad: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
+  /* Karten-Maße an Figma angelehnt (urspruenglich 40px Padding), fuer mehr
+     Luft im Grid auf ~32px Desktop-Maximum reduziert */
+  --operate-card-pad: clamp(1.5rem, 1.2rem + 1.1vw, 2rem);
   --operate-card-radius: 4px;
 }
 

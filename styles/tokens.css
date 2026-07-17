@@ -69,7 +69,7 @@
   --radius-full: 999px;
 
   /* ---------- Schatten / Glow ---------- */
-  --shadow-card:      0 4px 40px rgba(0, 0, 0, 0.35);
+  --shadow-card:      0 2px 16px rgba(0, 0, 0, 0.12);
   --shadow-hairline:  -4px -4px 22px rgba(255, 255, 255, 0.10);
   --shadow-accent:    0 8px 30px rgba(161, 25, 25, 0.35);
 

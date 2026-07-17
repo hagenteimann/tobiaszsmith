@@ -43,8 +43,8 @@
    aus einer erzwungenen Mindesthöhe. Fluid zwischen Mobile und diesem
    Desktop-Zielwert skaliert (kein Space-Token, da Figma-Fixwerte). */
 .services__card {
-  --card-pad: clamp(1.5rem, 1rem + 2vw, 2.5rem);   /* 24px → 40px */
-  --card-gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);  /* 16px → 24px */
+  --card-pad: clamp(1.5rem, 1.15rem + 1.4vw, 2rem);  /* 24px → 32px */
+  --card-gap: clamp(1rem, 0.75rem + 1vw, 1.5rem);    /* 16px → 24px */
 
   display: flex;
   flex-direction: column;
