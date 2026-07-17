@@ -88,7 +88,6 @@ SECTIONS=(
   sections/clients.html
   sections/portfolio.html
   sections/services.html
-  sections/paket-modal.html
   # sections/divider.html      # <- Akkordeon: einkommentieren zum Reaktivieren
   sections/more-work.html
   sections/testimonials.html
@@ -98,6 +97,7 @@ SECTIONS=(
   sections/behind-scenes.html
   sections/kontakt.html
   __MAIN_CLOSE__
+  sections/paket-modal.html
   sections/footer.html
 )
 
