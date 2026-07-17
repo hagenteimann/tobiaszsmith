@@ -14,20 +14,79 @@
   padding-block: var(--space-8);
 }
 
+.portfolio__carousel {
+  position: relative;
+}
+
 .portfolio__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  display: flex;
   gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--container-pad);
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-block: 0.25rem; /* Platz fuer sichtbaren Fokus-Outline-Ring */
+  scrollbar-width: none; /* Firefox: eigene Pfeile statt System-Scrollbar */
+}
+
+.portfolio__grid::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio__item {
   position: relative;
+  flex: 0 0 auto;
+  width: min(78vw, 320px);
   aspect-ratio: 4 / 5;
+  scroll-snap-align: start;
   border-radius: var(--portfolio-radius);
   overflow: hidden;
   /* Figma-Hintergrund hinter dem Bild (78:90 u.a.) — sichtbar als
      Platzhalter-Ton, solange das Bild laedt */
   background: var(--c-bg-elevated);
+}
+
+@media (min-width: 40rem) {
+  .portfolio__item { width: 320px; }
+}
+
+@media (min-width: 60rem) {
+  .portfolio__item { width: 360px; }
+}
+
+.portfolio__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--c-white);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft);
+}
+
+.portfolio__nav:hover,
+.portfolio__nav:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.portfolio__nav--prev { left: var(--space-2); }
+.portfolio__nav--next { right: var(--space-2); }
+
+@media (max-width: 39.99rem) {
+  .portfolio__nav {
+    display: none;
+  }
 }
 
 .portfolio__link {
@@ -70,5 +129,8 @@
   .portfolio__img,
   .portfolio__link::after {
     transition: none;
+  }
+  .portfolio__grid {
+    scroll-behavior: auto;
   }
 }
