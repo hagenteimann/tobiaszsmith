@@ -72,6 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function finishPreloader() {
     setTimeout(() => {
       preloader.classList.add("is-hidden");
+      // Signalisiert js/reveal.js, dass Inhalte, die schon im ersten Viewport
+      // liegen (z. B. die Hero-Wortmarke), jetzt erst ihren Einflug-Effekt
+      // starten sollen — sonst liefe die Animation komplett hinter dem
+      // Preloader ab und wäre beim Verschwinden schon fertig.
+      window.dispatchEvent(new CustomEvent("preloader:hidden"));
       // Remove from DOM after fade out
       setTimeout(() => {
         preloader.remove();
