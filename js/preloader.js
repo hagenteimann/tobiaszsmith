@@ -16,11 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let smithIndex = 0;
   let visualsIndex = 0;
   let dotsCount = 0;
+  let dotsCycle = 0;
 
   // Timings
   const START_DELAY = 600; // wait before moving icon
   const TYPE_SPEED = 70; // ms per character
   const DOTS_SPEED = 300; // ms per dot
+  const DOTS_CYCLES = 2; // wie oft "..." komplett durchläuft, bevor die Seite kommt
+  const DOTS_CYCLE_PAUSE = 350; // Pause zwischen den Durchläufen (Punkte geloescht -> naechster Zyklus)
   const HOLD_END = 800; // hold before hiding preloader
 
   // Sequence:
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2. Icon scales down and moves left (CSS transition).
   // 3. Type "SMITH ".
   // 4. Type "VISUALS".
-  // 5. Type "..."
+  // 5. Type "..." -- DOTS_CYCLES Mal komplett durchlaufen (tippen, kurze Pause, löschen, erneut)
   // 6. Fade out preloader.
 
   setTimeout(() => {
@@ -65,7 +68,16 @@ document.addEventListener("DOMContentLoaded", () => {
       dotsCount++;
       setTimeout(typeDots, DOTS_SPEED);
     } else {
-      finishPreloader();
+      dotsCycle++;
+      if (dotsCycle < DOTS_CYCLES) {
+        setTimeout(() => {
+          dotsEl.textContent = "";
+          dotsCount = 0;
+          typeDots();
+        }, DOTS_CYCLE_PAUSE);
+      } else {
+        finishPreloader();
+      }
     }
   }
 
