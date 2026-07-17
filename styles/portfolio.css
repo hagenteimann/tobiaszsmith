@@ -14,6 +14,14 @@
   padding-block: var(--space-8);
 }
 
+.portfolio .section-title {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.portfolio > .portfolio-intro__inner {
+  margin-bottom: var(--space-6);
+}
+
 .portfolio__carousel {
   position: relative;
 }
@@ -37,7 +45,7 @@
 .portfolio__item {
   position: relative;
   flex: 0 0 auto;
-  width: min(78vw, 320px);
+  width: min(72vw, 300px);
   aspect-ratio: 4 / 5;
   scroll-snap-align: start;
   border-radius: var(--portfolio-radius);
@@ -48,45 +56,22 @@
 }
 
 @media (min-width: 40rem) {
-  .portfolio__item { width: 320px; }
+  .portfolio__item { width: 280px; }
 }
 
 @media (min-width: 60rem) {
-  .portfolio__item { width: 360px; }
+  .portfolio__item { width: 290px; }
 }
 
-.portfolio__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--c-white);
-  cursor: pointer;
-  transition: background-color var(--dur-fast) var(--ease-soft);
-}
-
-.portfolio__nav:hover,
-.portfolio__nav:focus-visible {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.portfolio__nav--prev { left: var(--space-2); }
-.portfolio__nav--next { right: var(--space-2); }
-
-@media (max-width: 39.99rem) {
-  .portfolio__nav {
-    display: none;
-  }
+/* Eigener Breakpoint ab --container-max (1600px): die Container-Breite
+   deckelt hier, Grid wird dadurch spuerbar breiter als knapp unter 1600px
+   (~1328px bei 1440px Viewport vs. ~1469px ab 1600px). Ohne diesen
+   zusaetzlichen Schritt faellt der "Peek" des naechsten Cards je nach
+   Fensterbreite mal komplett weg, mal ist die naechste Karte fast
+   komplett sichtbar — hier eigener Wert, der bei sehr breiten
+   Viewports (getestet 1920px) wieder einen sauberen Peek ergibt. */
+@media (min-width: 100rem) {
+  .portfolio__item { width: 320px; }
 }
 
 .portfolio__link {

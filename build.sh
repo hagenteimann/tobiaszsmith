@@ -71,7 +71,6 @@ cat > _tail.html <<TAILEOF
   <script src="js/more-work.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
   <script src="js/portfolio-video.js?v=$V" defer></script>
-  <script src="js/portfolio-carousel.js?v=$V" defer></script>
   <script src="js/reveal.js?v=$V" defer></script>
 </body>
 </html>
