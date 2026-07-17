@@ -82,17 +82,16 @@ SECTIONS=(
   sections/hero.html
   sections/nav.html
   __MAIN_OPEN__
-  sections/hero-intro.html
   sections/clients.html
-  sections/portfolio-intro.html
   sections/portfolio.html
   sections/services.html
   # sections/divider.html      # <- Akkordeon: einkommentieren zum Reaktivieren
-  sections/operate.html
+  sections/more-work.html
+  sections/portfolio-intro.html
   sections/testimonials.html
   sections/portfolio-video.html
   sections/aat-showcase.html
-  sections/more-work.html
+  sections/operate.html
   sections/behind-scenes.html
   sections/kontakt.html
   __MAIN_CLOSE__
