@@ -34,6 +34,7 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/testimonials.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio-intro.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
+  <link rel="stylesheet" href="styles/portfolio-video.css?v=$V" />
   <link rel="stylesheet" href="styles/more-work.css?v=$V" />
   <link rel="stylesheet" href="styles/behind-scenes.css?v=$V" />
   <link rel="stylesheet" href="styles/kontakt.css?v=$V" />
@@ -68,6 +69,7 @@ cat > _tail.html <<TAILEOF
   <script src="js/hero.js?v=$V" defer></script>
   <script src="js/more-work.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
+  <script src="js/portfolio-video.js?v=$V" defer></script>
   <script src="js/reveal.js?v=$V" defer></script>
 </body>
 </html>
@@ -87,6 +89,7 @@ SECTIONS=(
   sections/testimonials.html
   sections/portfolio-intro.html
   sections/portfolio.html
+  sections/portfolio-video.html
   sections/more-work.html
   sections/behind-scenes.html
   sections/kontakt.html

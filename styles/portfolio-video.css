@@ -1,0 +1,143 @@
+/* =========================================================
+   Smith Visuals — Herzensprojekt-Video (Portfolio-Bereich)
+   Dunkle Section zwischen Portfolio-Grid und "Weitere Arbeiten" —
+   bricht die zwei hellen Sections rhythmisch auf (wie portfolio-intro).
+   YouTube läuft NICHT automatisch mit: nur ein Thumbnail + Play-Button
+   werden initial geladen, das echte <iframe> (youtube-nocookie.com)
+   entsteht erst per Klick (js/portfolio-video.js) — DSGVO-freundlich,
+   keine Google-Cookies/Tracking vor expliziter Nutzerinteraktion.
+   ========================================================= */
+
+.portfolio-video {
+  background-color: var(--c-bg);
+  background-image: radial-gradient(circle at 100% 0%, rgba(161, 25, 25, 0.35) 0%, transparent 70%);
+  padding-block: var(--space-8);
+}
+
+.portfolio-video__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 880px) {
+  .portfolio-video__inner {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: var(--space-7);
+  }
+
+  .portfolio-video__text {
+    flex: 1 1 0;
+    max-width: 26rem;
+  }
+
+  .portfolio-video__player {
+    flex: 1.15 1 0;
+  }
+}
+
+.portfolio-video__title {
+  /* Kleiner als der volle --fs-display-xl-Standard (bis 128px) -- im engeren
+     Zweispalten-Layout würde das lange Kompositum "Herzensprojekt" sonst
+     ohne Umbruchstelle in die Video-Box hineinlaufen. */
+  font-size: clamp(2.25rem, 1.6rem + 3vw, 4rem);
+  overflow-wrap: break-word;
+  color: var(--c-text);
+}
+
+.portfolio-video__lead {
+  margin-top: var(--space-3);
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+  color: var(--c-text-dim);
+}
+
+@media (min-width: 880px) {
+  .portfolio-video__lead {
+    max-width: none;
+  }
+}
+
+/* ---------- Player-Facade ---------- */
+.portfolio-video__player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--c-bg-elevated);
+  box-shadow: var(--shadow-card);
+}
+
+.portfolio-video__thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-soft);
+}
+
+@media (hover: hover) {
+  .portfolio-video__player:hover .portfolio-video__thumb {
+    transform: scale(1.05);
+  }
+}
+
+.portfolio-video__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: rgba(6, 7, 9, 0.28);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portfolio-video__play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--c-accent);
+  color: var(--c-white);
+  box-shadow: var(--shadow-accent);
+  transition: transform var(--dur-fast) var(--ease-soft), background-color var(--dur-fast) var(--ease-soft);
+}
+
+.portfolio-video__play:hover .portfolio-video__play-icon,
+.portfolio-video__play:focus-visible .portfolio-video__play-icon {
+  transform: scale(1.08);
+  background: var(--c-accent-hover);
+}
+
+.portfolio-video__player.is-playing .portfolio-video__thumb,
+.portfolio-video__player.is-playing .portfolio-video__play {
+  display: none;
+}
+
+.portfolio-video__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-video__thumb,
+  .portfolio-video__play-icon {
+    transition-duration: 0.001ms;
+  }
+}
