@@ -31,6 +31,7 @@
     // Mobile-taugliche Breakpoint-Prüfung zur Klickzeit (nicht beim Laden
     // gecacht), damit Rotation/Resize korrekt behandelt wird.
     folder.addEventListener('click', function (e) {
+      if (folder.dataset.justSwiped) { e.preventDefault(); return; } // Swipe soll nicht als Navigation zählen
       var mobileLike = isTouch || window.innerWidth <= 1024;
       if (mobileLike && !folder.classList.contains('is-open')) {
         e.preventDefault(); // Erster Tap: nur öffnen, noch nicht navigieren
@@ -51,5 +52,58 @@
     });
     folder.addEventListener('focus', function () { setOpen(folder, true); });
     folder.addEventListener('blur', function () { setOpen(folder, false); });
+  });
+
+  // --- Wisch-Slider (.mw-folder--slider): mehr Fotos als Plätze im Fächer.
+  // Ein Swipe schließt kurz den Fächer (bestehende Collapse-Animation),
+  // tauscht dann die 3 Fotos gegen das nächste/vorherige Trio aus dem
+  // data-images-Array und öffnet den Fächer erneut -- exakt dieselbe
+  // Fächer-Animation wie beim Hover/Tap-Öffnen, nur mit neuem Bildinhalt.
+  document.querySelectorAll('.mw-folder--slider').forEach(function (folder) {
+    var images;
+    try { images = JSON.parse(folder.dataset.images || '[]'); } catch (err) { images = []; }
+    if (images.length < 3) return;
+
+    var index = 0;
+    var imgs = folder.querySelectorAll('.mw-photo img');
+    var tracking = false, startX = 0, dx = 0;
+
+    function render() {
+      imgs[0].src = images[index % images.length];
+      imgs[1].src = images[(index + 1) % images.length];
+      imgs[2].src = images[(index + 2) % images.length];
+    }
+
+    function cycle(direction) {
+      if (folder.dataset.cycling) return;
+      folder.dataset.cycling = '1';
+      folder.classList.remove('is-open', 'pulse-white');
+      setTimeout(function () {
+        index = (index + direction + images.length) % images.length;
+        render();
+        folder.classList.add('is-open', 'pulse-white');
+        delete folder.dataset.cycling;
+      }, 700); // entspricht --dur-slow, damit der Fächer erst vollständig einklappt
+    }
+
+    folder.addEventListener('pointerdown', function (e) {
+      if (!folder.classList.contains('is-open')) return;
+      tracking = true;
+      startX = e.clientX;
+      dx = 0;
+    });
+    folder.addEventListener('pointermove', function (e) {
+      if (!tracking) return;
+      dx = e.clientX - startX;
+    });
+    folder.addEventListener('pointerup', function () {
+      if (!tracking) return;
+      tracking = false;
+      if (Math.abs(dx) > 24) {
+        folder.dataset.justSwiped = '1';
+        cycle(dx < 0 ? 1 : -1);
+        setTimeout(function () { delete folder.dataset.justSwiped; }, 0);
+      }
+    });
   });
 })();

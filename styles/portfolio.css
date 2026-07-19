@@ -131,18 +131,17 @@
   width: 3rem;
   height: 3rem;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: var(--c-white);
+  border: 1px solid var(--c-border-light);
+  background: var(--c-white);
+  box-shadow: var(--shadow-card);
+  color: var(--c-text-dark);
   cursor: pointer;
   transition: background-color var(--dur-fast) var(--ease-soft);
 }
 
 .portfolio__nav:hover,
 .portfolio__nav:focus-visible {
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--c-border-light);
 }
 
 .portfolio__nav--prev { left: var(--space-2); }

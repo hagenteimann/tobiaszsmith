@@ -328,6 +328,19 @@
   }
 }
 
+/* Auf sehr schmalen Screens ist der volle .btn-Text ("JETZT CONTENT
+   ERSCHAFFEN") zu breit fuer den zentrierten, absolut positionierten
+   Button -- er stoesst fast an beide Viewport-Raender. Nur hier minimal
+   verkleinern (Padding/Schriftgroesse), nicht global an .btn/.btn--primary
+   ruehren, da Portfolio-CTA und Kontakt-Quick-Links dort genug Platz haben. */
+@media (max-width: 400px) {
+  .hero__cta {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+}
+
 /* ---------- Tagline-Block (dunkel, eigenständige Section) ---------- */
 .hero-intro {
   background-color: var(--c-bg);

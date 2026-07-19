@@ -1,0 +1,108 @@
+/* =========================================================
+   Smith Visuals — Projekt-Showcase (horizontales Snap-Scrolling)
+   Fasst die NOROO- und AAT-Flugschule-Showcase (styles/noroo-showcase.css,
+   styles/aat-showcase.css liefern weiterhin Ordner/Label/Media/Caption-
+   Styling innerhalb jeder Slide) in einer gemeinsamen, per Scroll-Snap
+   horizontal wischbaren Section zusammen -- eine Slide pro Projekt,
+   volle Breite, Scrollen (Touch-Wisch oder Trackpad) rastet auf der
+   naechsten Slide ein.
+   ========================================================= */
+
+.project-showcase {
+  background: var(--c-white);
+  padding-block: var(--space-8);
+}
+
+.project-showcase__carousel {
+  position: relative;
+}
+
+/* Gleiches Pfeil-Icon/-Prinzip wie .portfolio__nav (styles/portfolio.css),
+   hier aber dunkel-auf-hell statt hell-auf-dunkel, da dieser Abschnitt
+   (anders als .portfolio) einen weissen Hintergrund hat. */
+.project-showcase__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-border-light);
+  background: var(--c-white);
+  box-shadow: var(--shadow-card);
+  color: var(--c-text-dark);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+
+.project-showcase__nav:hover,
+.project-showcase__nav:focus-visible {
+  background: var(--c-border-light);
+}
+
+/* .project-showcase__carousel ist bewusst randlos (Track muss volle
+   Breite scrollen), die Pfeile sollen aber am Container-Inset ausgerichtet
+   sein statt am echten Viewport-Rand -- gleicher Effekt wie bei
+   .portfolio__nav, das innerhalb eines .container liegt. */
+.project-showcase__nav--prev {
+  left: calc((100% - min(100%, var(--container-max))) / 2 + var(--container-pad) + var(--space-2));
+}
+.project-showcase__nav--next {
+  right: calc((100% - min(100%, var(--container-max))) / 2 + var(--container-pad) + var(--space-2));
+}
+
+@media (max-width: 39.99rem) {
+  .project-showcase__nav {
+    display: none;
+  }
+}
+
+.project-showcase__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.project-showcase__track::-webkit-scrollbar {
+  display: none;
+}
+
+.project-showcase__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.project-showcase__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.project-showcase__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--c-border);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+
+.project-showcase__dot.is-active {
+  background: var(--c-accent);
+  transform: scale(1.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-showcase__track {
+    scroll-behavior: auto;
+  }
+}

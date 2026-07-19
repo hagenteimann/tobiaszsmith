@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; }
 /* ---------- Scrollbar (CD-Akzent, schmal & dezent statt Browser-Standard) ---------- */
 html {
   scrollbar-width: thin;
-  scrollbar-color: rgba(161, 25, 25, 0.45) transparent;
+  scrollbar-color: rgba(161, 25, 25, 0.45) var(--c-white);
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +23,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--c-white);
 }
 
 ::-webkit-scrollbar-thumb {

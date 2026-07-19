@@ -10,9 +10,11 @@
 
   // Oben rechts: eher private/einmalige Anlaesse.
   var phrasesA = [
-    'Hochzeit steht an.',
-    'Event soll festgehalten werden.',
-    'Feier braucht Erinnerungen.'
+    'Feier braucht Erinnerungen.',
+    'Marke braucht neuen Auftritt.',
+    'Kampagne startet nächsten Monat.',
+    'Messe steht vor der Tür.',
+    'Investoren brauchen ein starkes Video.'
   ];
 
   // Unten links: eher gewerbliche/laufende Anlaesse.

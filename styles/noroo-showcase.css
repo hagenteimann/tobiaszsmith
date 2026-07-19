@@ -1,17 +1,16 @@
 /* =========================================================
-   Smith Visuals — AAT Flugschule Showcase (Portfolio-Bereich)
-   Helle Section zwischen "Ein Herzensprojekt" und "Weitere Arbeiten":
-   links die Foto-Mappe (gleiche .mw-folder-Optik wie more-work.css,
-   hier rein dekorativ ohne Klickziel), rechts ein grosses Einzelfoto
-   mit kurzer Bildunterschrift.
+   Smith Visuals — NOROO Reels Showcase (Portfolio-Bereich)
+   Gleiches Layout wie aat-showcase.css (Ordner-Spalte + grosses
+   Medium mit Bildunterschrift), hier rechts ein Video statt Foto,
+   da NOROO ein reines Reels-Projekt ist.
    ========================================================= */
 
-.aat-showcase {
+.noroo-showcase {
   background: var(--c-white);
   padding-block: var(--space-8);
 }
 
-.aat-showcase__inner {
+.noroo-showcase__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,8 +18,8 @@
 }
 
 @media (min-width: 60rem) {
-  .aat-showcase__inner {
-    flex-direction: row;
+  .noroo-showcase__inner {
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     gap: var(--space-9);
@@ -28,7 +27,7 @@
 }
 
 /* ---------- Ordner-Spalte ---------- */
-.aat-showcase__folder-col {
+.noroo-showcase__folder-col {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +35,7 @@
   flex-shrink: 0;
 }
 
-.aat-showcase__label {
+.noroo-showcase__label {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: var(--fs-label-btn);
@@ -45,30 +44,27 @@
   margin: 0;
 }
 
-/* Groesser als die Grid-Mappen in more-work.css (--mw-item--lg), da hier
-   die einzige, freistehende Mappe im Fokus steht. Gleiches Skalierungs-
-   prinzip: .mw-stage bleibt nativ 808x682, --mw-scale skaliert unitless. */
-.aat-showcase__stagewrap {
+.noroo-showcase__stagewrap {
   overflow: visible;
   width: 13rem;
 }
 
-.aat-showcase__stagewrap .mw-stage {
+.noroo-showcase__stagewrap .mw-stage {
   --mw-scale: 0.2575;
 }
 
 @media (min-width: 40rem) {
-  .aat-showcase__stagewrap { width: 17rem; }
-  .aat-showcase__stagewrap .mw-stage { --mw-scale: 0.3366; }
+  .noroo-showcase__stagewrap { width: 17rem; }
+  .noroo-showcase__stagewrap .mw-stage { --mw-scale: 0.3366; }
 }
 
 @media (min-width: 60rem) {
-  .aat-showcase__stagewrap { width: 22rem; }
-  .aat-showcase__stagewrap .mw-stage { --mw-scale: 0.4356; }
+  .noroo-showcase__stagewrap { width: 22rem; }
+  .noroo-showcase__stagewrap .mw-stage { --mw-scale: 0.4356; }
 }
 
 /* ---------- Medien-Spalte ---------- */
-.aat-showcase__media {
+.noroo-showcase__media {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -76,16 +72,17 @@
   max-width: 40rem;
 }
 
-.aat-showcase__photo {
+.noroo-showcase__video {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
+  background: var(--c-bg);
 }
 
-.aat-showcase__caption {
+.noroo-showcase__caption {
   font-family: var(--font-body);
   font-style: italic;
   font-size: var(--fs-body);
@@ -94,12 +91,12 @@
 }
 
 @media (min-width: 60rem) {
-  .aat-showcase__caption {
+  .noroo-showcase__caption {
     text-align: left;
   }
 }
 
-.aat-showcase__instagram {
+.noroo-showcase__instagram {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -112,17 +109,17 @@
   transition: color var(--dur-fast) var(--ease-soft);
 }
 
-.aat-showcase__instagram:hover,
-.aat-showcase__instagram:focus-visible {
+.noroo-showcase__instagram:hover,
+.noroo-showcase__instagram:focus-visible {
   color: var(--c-accent-hover);
 }
 
-.aat-showcase__instagram svg {
+.noroo-showcase__instagram svg {
   flex-shrink: 0;
 }
 
 @media (min-width: 60rem) {
-  .aat-showcase__instagram {
+  .noroo-showcase__instagram {
     align-self: flex-start;
   }
 }

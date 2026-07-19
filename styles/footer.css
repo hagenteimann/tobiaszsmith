@@ -155,9 +155,28 @@
   }
 }
 
+.footer__dev-link {
+  color: var(--c-accent);
+  text-decoration: underline;
+  animation: footer-dev-pulse 2s ease-in-out infinite;
+}
+
+.footer__dev-link:hover,
+.footer__dev-link:focus-visible {
+  color: var(--c-accent-hover);
+}
+
+@keyframes footer-dev-pulse {
+  0%, 100% { color: var(--c-accent); }
+  50% { color: var(--c-accent-hover); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .footer__social-link,
   .footer__links-list a {
     transition-duration: 0.001ms;
+  }
+  .footer__dev-link {
+    animation: none;
   }
 }
