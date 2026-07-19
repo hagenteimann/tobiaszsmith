@@ -307,7 +307,7 @@
   position: absolute;
   z-index: 4;
   left: 50%;
-  bottom: clamp(3rem, 2.2rem + 3vw, 4.5rem);
+  bottom: clamp(4rem, 3rem + 3vw, 5.5rem);
   transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
@@ -340,7 +340,7 @@
   .hero__cta {
     padding: 0.75rem 1.5rem;
     font-size: var(--fs-body-sm);
-    bottom: clamp(3.5rem, 3rem + 2vw, 4.5rem);
+    bottom: clamp(4.25rem, 3.75rem + 2vw, 5.5rem);
   }
 }
 
