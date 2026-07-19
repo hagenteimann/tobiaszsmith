@@ -251,35 +251,8 @@ a.kontakt__item-value:focus-visible {
   gap: var(--space-3);
 }
 
-.kontakt__quick-link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--k-radius);
-  background: var(--c-accent);
-  color: var(--c-white);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: var(--fs-label-btn);
-  letter-spacing: var(--ls-label);
-  text-transform: uppercase;
-  transition: background-color var(--dur-fast) var(--ease-soft),
-              transform var(--dur-fast) var(--ease-soft);
-}
-
 .kontakt__quick-link svg {
   flex-shrink: 0;
-}
-
-.kontakt__quick-link:hover,
-.kontakt__quick-link:focus-visible {
-  background: var(--c-accent-hover);
-  transform: translateY(-2px);
-}
-
-.kontakt__quick-link:active {
-  transform: translateY(0);
 }
 
 .kontakt__social {

@@ -78,8 +78,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: 0.9em 2em;
-  border-radius: var(--radius-full);
+  padding: 0.75rem 1.25rem;
   border: none;
   cursor: pointer;
   font-family: var(--font-body);
@@ -87,18 +86,22 @@ body {
   font-size: var(--fs-label-btn);
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
-  transition: transform var(--dur-fast) var(--ease-soft),
-              box-shadow var(--dur-fast) var(--ease-soft),
-              background-color var(--dur-fast) var(--ease-soft);
+  white-space: nowrap;
+  transition: background-color var(--dur-fast) var(--ease-soft),
+              transform var(--dur-fast) var(--ease-soft);
 }
 
 .btn--primary {
   background: var(--c-accent);
   color: var(--c-white);
-  box-shadow: var(--shadow-accent);
 }
-.btn--primary:hover { background: var(--c-accent-hover); transform: translateY(-2px); }
+.btn--primary:hover,
+.btn--primary:focus-visible { background: var(--c-accent-hover); transform: translateY(-2px); }
 .btn--primary:active { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}
 
 .btn--ghost {
   background: transparent;

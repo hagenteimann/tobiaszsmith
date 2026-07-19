@@ -10,27 +10,29 @@
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
 
-  <link rel="stylesheet" href="styles/fonts.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/tokens.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/base.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/nav.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/hero.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/clients.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/services.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/paket-modal.css?v=1784473915" />
-  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784473915" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/testimonials.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/more-work.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/footer.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/grain.css?v=1784473915" />
-  <link rel="stylesheet" href="styles/preloader.css?v=1784473915" />
-  <script src="js/preloader.js?v=1784473915" defer></script>
+  <link rel="stylesheet" href="styles/fonts.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/tokens.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/base.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/nav.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/hero.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/clients.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/services.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/paket-modal.css?v=1784486576" />
+  <!-- <link rel="stylesheet" href="styles/divider.css?v=1784486576" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
+  <link rel="stylesheet" href="styles/testimonials.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/portfolio-intro.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/portfolio.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/portfolio-video.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/aat-showcase.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/noroo-showcase.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/project-showcase.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/more-work.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/behind-scenes.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/kontakt.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/footer.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/grain.css?v=1784486576" />
+  <link rel="stylesheet" href="styles/preloader.css?v=1784486576" />
+  <script src="js/preloader.js?v=1784486576" defer></script>
 </head>
 <body>
 <div id="preloader" class="preloader">
@@ -76,7 +78,7 @@
     <img class="hero__photo hero__photo--main" src="assets/hero/hero-photo-main.webp" alt="" aria-hidden="true" fetchpriority="high" />
   </div>
 
-  <a class="hero__cta" href="#kontakt" aria-label="Jetzt Projekt starten">
+  <a class="hero__cta btn btn--primary" href="#kontakt" aria-label="Jetzt Projekt starten">
     JETZT PROJEKT STARTEN
   </a>
 
@@ -174,7 +176,7 @@
       <li class="clients__logo"><img src="assets/logos/koelner-kompass.webp" alt="Kölner Kompass" loading="lazy" /></li>
       <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="Mosec Sicherheitsdienst" loading="lazy" /></li>
       <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="Fronhofer Galeria" loading="lazy" /></li>
-      <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="Sion im Carré" loading="lazy" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/sion-im-carre.webp" alt="Sion im Carré" loading="lazy" /></li>
       <li class="clients__logo"><img src="assets/logos/aat-logo.svg" alt="Advanced Aviation Training" loading="lazy" /></li>
     </ul>
     <ul class="clients__track" aria-hidden="true">
@@ -190,7 +192,7 @@
       <li class="clients__logo"><img src="assets/logos/koelner-kompass.webp" alt="" /></li>
       <li class="clients__logo"><img src="assets/logos/mosec-dekra.webp" alt="" /></li>
       <li class="clients__logo"><img src="assets/logos/fronhofer-galeria.webp" alt="" /></li>
-      <li class="clients__logo"><img src="assets/logos/sion-im-carre.webp" alt="" /></li>
+      <li class="clients__logo clients__logo--chip"><img src="assets/logos/sion-im-carre.webp" alt="" /></li>
       <li class="clients__logo"><img src="assets/logos/aat-logo.svg" alt="" /></li>
     </ul>
   </div>
@@ -209,33 +211,8 @@
       </button>
       <ul class="portfolio__grid">
         <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-athletik.html" aria-label="Projekt Athletik ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-1.mp4" muted loop playsinline></video>
-          </a>
-        </li>
-        <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-schule.html" aria-label="Projekt Schule ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-2.mp4" muted loop playsinline></video>
-          </a>
-        </li>
-        <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Event ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-3.mp4" muted loop playsinline></video>
-          </a>
-        </li>
-        <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-fahrschule.html" aria-label="Projekt Fahrschule ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-4.mp4" muted loop playsinline></video>
-          </a>
-        </li>
-        <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-juwelier.html" aria-label="Projekt Juwelier ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-5.mp4" muted loop playsinline></video>
-          </a>
-        </li>
-        <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Live Music ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4" muted loop playsinline></video>
+          <a class="portfolio__link" href="projekt-noroo.html" aria-label="Projekt Noroo ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-8.mp4" muted loop playsinline></video>
           </a>
         </li>
         <li class="portfolio__item">
@@ -244,8 +221,33 @@
           </a>
         </li>
         <li class="portfolio__item">
-          <a class="portfolio__link" href="projekt-noroo.html" aria-label="Projekt Noroo ansehen">
-            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-8.mp4" muted loop playsinline></video>
+          <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Live Music ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/projects/Event_Aftermovies.2026/LiveMusic_Aftermovie.mp4" muted loop playsinline></video>
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a class="portfolio__link" href="projekt-juwelier.html" aria-label="Projekt Juwelier ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-5.mp4" muted loop playsinline></video>
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a class="portfolio__link" href="projekt-fahrschule.html" aria-label="Projekt Fahrschule ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-4.mp4" muted loop playsinline></video>
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a class="portfolio__link" href="projekt-event.html" aria-label="Projekt Event ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-3.mp4" muted loop playsinline></video>
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a class="portfolio__link" href="projekt-schule.html" aria-label="Projekt Schule ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-2.mp4" muted loop playsinline></video>
+          </a>
+        </li>
+        <li class="portfolio__item">
+          <a class="portfolio__link" href="projekt-athletik.html" aria-label="Projekt Athletik ansehen">
+            <video class="portfolio__img portfolio__media" data-src="assets/portfolio/portfolio-1.mp4" muted loop playsinline></video>
           </a>
         </li>
       </ul>
@@ -256,7 +258,7 @@
       </button>
     </div>
     <div class="portfolio__cta-row">
-      <a href="#kontakt" class="operate__cta">JETZT PROJEKT STARTEN</a>
+      <a href="#kontakt" class="btn btn--primary">JETZT PROJEKT STARTEN</a>
     </div>
   </div>
 </section>
@@ -490,6 +492,29 @@
                 <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GrayTrackSuit.mp4"></video></figure>
                 <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GreenTrackSuit(Giant-AH TXE TXE).mp4"></video></figure>
                 <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/TrackSuitBlauINSTA.mp4"></video></figure>
+              </div>
+              <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="mw-item mw-item--sm reveal">
+        <p class="mw-item__label">AAT Flugschule</p>
+        <div class="mw-stagewrap">
+          <div class="mw-stage">
+            <a href="projekt-aat-flugschule.html" class="mw-folder mw-folder--slider" aria-label="Projekt-Vorschau öffnen, wischen für weitere Fotos" data-images='["assets/projects/aat Flugschule/DSC00526.webp","assets/projects/aat Flugschule/DSC01813.webp","assets/projects/aat Flugschule/DSC00503.webp","assets/projects/aat Flugschule/DSC00570.webp","assets/projects/aat Flugschule/DSC00507.webp","assets/projects/aat Flugschule/DSC00547.webp","assets/projects/aat Flugschule/DSC02095.webp","assets/projects/aat Flugschule/DSC02127.webp"]'>
+              <div class="mw-folder__glow" aria-hidden="true"></div><span class="mw-folder__open-text">ÖFFNEN</span>
+              <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+              </svg>
+              <div class="mw-folder__photos">
+                <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00526.webp" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC01813.webp" alt="" loading="lazy" /></figure>
+                <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00503.webp" alt="" loading="lazy" /></figure>
               </div>
               <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
                 <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
@@ -786,36 +811,126 @@
     </div>
   </div>
 </section>
-<section class="aat-showcase" id="aat-showcase">
-  <div class="container aat-showcase__inner">
+<section class="project-showcase" id="project-showcase">
+  <div class="project-showcase__carousel">
+    <button type="button" class="project-showcase__nav project-showcase__nav--prev" aria-label="Vorheriges Projekt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true" focusable="false">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </button>
+  <div class="project-showcase__track">
 
-    <div class="aat-showcase__folder-col reveal">
-      <p class="aat-showcase__label">AAT Flugschule</p>
-      <div class="aat-showcase__stagewrap">
-        <div class="mw-stage">
-          <a href="projekt-aat-flugschule.html" class="mw-folder" aria-label="Projekt-Vorschau öffnen">
-            <div class="mw-folder__glow" aria-hidden="true"></div><span class="mw-folder__open-text">ÖFFNEN</span>
-            <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
-              <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
-            </svg>
-            <div class="mw-folder__photos">
-              <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC01813.webp" alt="" loading="lazy" /></figure>
-              <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00503.webp" alt="" loading="lazy" /></figure>
-              <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00570.webp" alt="" loading="lazy" /></figure>
+    <div class="project-showcase__slide">
+      <div class="container noroo-showcase__inner">
+
+        <div class="noroo-showcase__folder-col reveal">
+          <p class="noroo-showcase__label">NOROO Reels</p>
+          <div class="noroo-showcase__stagewrap">
+            <div class="mw-stage">
+              <a href="projekt-noroo.html" class="mw-folder" aria-label="Projekt-Vorschau öffnen">
+                <div class="mw-folder__glow" aria-hidden="true"></div><span class="mw-folder__open-text">ÖFFNEN</span>
+                <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+                </svg>
+                <div class="mw-folder__photos">
+                  <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GrayTrackSuit.mp4"></video></figure>
+                  <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/GreenTrackSuit(Giant-AH TXE TXE).mp4"></video></figure>
+                  <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/TrackSuitBlauINSTA.mp4"></video></figure>
+                </div>
+                <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+                </svg>
+              </a>
             </div>
-            <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
-              <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
-            </svg>
-          </a>
+          </div>
         </div>
+
+        <div class="noroo-showcase__media reveal">
+          <video class="noroo-showcase__video" muted loop playsinline data-src="assets/projects/Reels für die Modemarke NOROO.2024/TShirtSchwarzINSTA(PNL-Onizuka(Instrumental)).mp4" aria-label="NOROO Streetwear-Reel"></video>
+          <p class="noroo-showcase__caption">Der Style hat den Feed erobert!</p>
+        </div>
+
       </div>
     </div>
 
-    <div class="aat-showcase__media reveal">
-      <img class="aat-showcase__photo" src="assets/projects/aat Flugschule/DSC00526.webp" alt="Kleinflugzeug der AAT Flugschule im Sinkflug über Feldern im goldenen Abendlicht" loading="lazy" />
-      <p class="aat-showcase__caption">Die Kamera hat den Luftraum erschlossen!</p>
+    <div class="project-showcase__slide">
+      <div class="container aat-showcase__inner">
+
+        <div class="aat-showcase__folder-col reveal">
+          <p class="aat-showcase__label">AAT Flugschule</p>
+          <div class="aat-showcase__stagewrap">
+            <div class="mw-stage">
+              <a href="projekt-aat-flugschule.html" class="mw-folder" aria-label="Projekt-Vorschau öffnen">
+                <div class="mw-folder__glow" aria-hidden="true"></div><span class="mw-folder__open-text">ÖFFNEN</span>
+                <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+                </svg>
+                <div class="mw-folder__photos">
+                  <figure class="mw-photo mw-photo--a" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC01813.webp" alt="" loading="lazy" /></figure>
+                  <figure class="mw-photo mw-photo--b" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00503.webp" alt="" loading="lazy" /></figure>
+                  <figure class="mw-photo mw-photo--c" aria-hidden="true"><img src="assets/projects/aat Flugschule/DSC00570.webp" alt="" loading="lazy" /></figure>
+                </div>
+                <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="aat-showcase__media reveal">
+          <img class="aat-showcase__photo" src="assets/projects/aat Flugschule/DSC00526.webp" alt="Kleinflugzeug der AAT Flugschule im Sinkflug über Feldern im goldenen Abendlicht" loading="lazy" />
+          <p class="aat-showcase__caption">Die Kamera hat den Luftraum erschlossen!</p>
+        </div>
+
+      </div>
     </div>
 
+    <div class="project-showcase__slide">
+      <div class="container noroo-showcase__inner">
+
+        <div class="noroo-showcase__folder-col reveal">
+          <p class="noroo-showcase__label">Athletik &amp; Fitnessstudio</p>
+          <div class="noroo-showcase__stagewrap">
+            <div class="mw-stage">
+              <a href="projekt-athletik.html" class="mw-folder" aria-label="Projekt-Vorschau öffnen">
+                <div class="mw-folder__glow" aria-hidden="true"></div><span class="mw-folder__open-text">ÖFFNEN</span>
+                <svg class="mw-folder__shell mw-folder__back" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M221 105.528C221 116.573 229.954 125.528 241 125.528H788C799.046 125.528 808 134.482 808 145.528V662C808 673.046 799.046 682 788 682H20C8.95432 682 0 673.046 0 662V20C0 8.95429 8.95431 0 20 0H201C212.046 0 221 8.9543 221 20V105.528Z" />
+                </svg>
+                <div class="mw-folder__photos">
+                  <figure class="mw-photo mw-photo--a" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ilias_V1.mp4"></video></figure>
+                  <figure class="mw-photo mw-photo--b" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/Ramtin_V1.mp4"></video></figure>
+                  <figure class="mw-photo mw-photo--c" aria-hidden="true"><video muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/SportTreffSommerfest.mp4"></video></figure>
+                </div>
+                <svg class="mw-folder__shell mw-folder__front" viewBox="0 0 808 682" aria-hidden="true" preserveAspectRatio="none">
+                  <path d="M788 62C799.046 62 808 70.9543 808 82V662C808 673.046 799.046 682 788 682H20C8.9543 682 0 673.046 0 662V196.116C0 185.071 8.9543 176.116 20 176.116H320.563C331.609 176.116 340.563 167.162 340.563 156.116V82C340.563 70.9543 349.518 62 360.563 62H788Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="noroo-showcase__media reveal">
+          <video class="noroo-showcase__video" muted loop playsinline data-src="assets/projects/Athletik&Fitnessstudio_Reels.2026/HIGHenergySPORT.mp4" aria-label="Athletik & Fitnessstudio Reel"></video>
+          <p class="noroo-showcase__caption">Der Grind hat jetzt seinen Auftritt!</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+    <button type="button" class="project-showcase__nav project-showcase__nav--next" aria-label="Nächstes Projekt">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" aria-hidden="true" focusable="false">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="project-showcase__dots" aria-hidden="true">
+    <span class="project-showcase__dot is-active"></span>
+    <span class="project-showcase__dot"></span>
+    <span class="project-showcase__dot"></span>
   </div>
 </section>
 <section class="behind-scenes" id="behind-scenes">
@@ -904,13 +1019,13 @@
         <div class="kontakt__quick">
           <p class="kontakt__quick-label">Lieber direkt schreiben?</p>
           <div class="kontakt__quick-links">
-            <a class="kontakt__quick-link" href="https://wa.me/4917689203110" target="_blank" rel="noopener noreferrer" aria-label="Schreib uns auf WhatsApp">
+            <a class="kontakt__quick-link btn btn--primary" href="https://wa.me/4917689203110" target="_blank" rel="noopener noreferrer" aria-label="Schreib uns auf WhatsApp">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
               </svg>
               WhatsApp
             </a>
-            <a class="kontakt__quick-link" href="https://instagram.com/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Schreib uns auf Instagram">
+            <a class="kontakt__quick-link btn btn--primary" href="https://instagram.com/smithvisuals" target="_blank" rel="noopener noreferrer" aria-label="Schreib uns auf Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -1190,16 +1305,17 @@
   </div>
 </footer>
 
-  <script src="js/video-interaction.js?v=1784473915" defer></script>
-  <script src="js/nav.js?v=1784473915" defer></script>
-  <script src="js/hero.js?v=1784473915" defer></script>
-  <script src="js/hero-typewriter.js?v=1784473915" defer></script>
-  <script src="js/more-work.js?v=1784473915" defer></script>
-  <script src="js/kontakt.js?v=1784473915" defer></script>
-  <script src="js/paket-modal.js?v=1784473915" defer></script>
-  <script src="js/portfolio-video.js?v=1784473915" defer></script>
-  <script src="js/portfolio-carousel.js?v=1784473915" defer></script>
-  <script src="js/testimonials-toggle.js?v=1784473915" defer></script>
-  <script src="js/reveal.js?v=1784473915" defer></script>
+  <script src="js/video-interaction.js?v=1784486576" defer></script>
+  <script src="js/nav.js?v=1784486576" defer></script>
+  <script src="js/hero.js?v=1784486576" defer></script>
+  <script src="js/hero-typewriter.js?v=1784486576" defer></script>
+  <script src="js/more-work.js?v=1784486576" defer></script>
+  <script src="js/project-showcase.js?v=1784486576" defer></script>
+  <script src="js/kontakt.js?v=1784486576" defer></script>
+  <script src="js/paket-modal.js?v=1784486576" defer></script>
+  <script src="js/portfolio-video.js?v=1784486576" defer></script>
+  <script src="js/portfolio-carousel.js?v=1784486576" defer></script>
+  <script src="js/testimonials-toggle.js?v=1784486576" defer></script>
+  <script src="js/reveal.js?v=1784486576" defer></script>
 </body>
 </html>
