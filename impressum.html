@@ -9,8 +9,24 @@
   <link rel="stylesheet" href="styles/tokens.css?v=1">
   <link rel="stylesheet" href="styles/base.css?v=1">
   <style>
-    body { background: var(--c-bg); color: var(--c-text-light); }
+    body { background: var(--c-bg); color: var(--c-text-light); position: relative; overflow-x: hidden; }
+    .legal-blob {
+      position: fixed;
+      width: 80vw;
+      height: 80vw;
+      max-width: 800px;
+      max-height: 800px;
+      background: radial-gradient(circle, var(--c-accent) 0%, transparent 60%);
+      filter: blur(80px);
+      opacity: 0.15;
+      top: -20%;
+      right: -20%;
+      z-index: 0;
+      pointer-events: none;
+    }
     .project-header {
+      position: relative;
+      z-index: 1;
       padding: var(--space-6) 0 var(--space-4);
       margin-bottom: var(--space-6);
     }
@@ -29,6 +45,8 @@
       margin-top: var(--space-4);
     }
     .legal-content {
+      position: relative;
+      z-index: 1;
       max-width: 42rem;
     }
     .legal-content h2 {
@@ -55,6 +73,7 @@
   </style>
 </head>
 <body>
+  <div class="legal-blob" aria-hidden="true"></div>
   <header class="project-header">
     <div class="container">
       <a href="index.html" class="back-btn">&larr; Zur&uuml;ck</a>
