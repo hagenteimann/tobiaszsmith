@@ -61,6 +61,12 @@
   height: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
 }
 
+.clients__logo a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .clients__logo img {
   display: block;
   height: 100%;

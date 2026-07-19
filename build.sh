@@ -57,8 +57,7 @@ cat > _head.html <<HEADEOF
     },
     "sameAs": [
       "https://instagram.com/smithvisuals",
-      "https://linkedin.com/company/smithvisuals",
-      "https://x.com/smithvisuals"
+      "https://www.linkedin.com/in/tobiasz-smith-8109a9253/"
     ]
   }
   </script>

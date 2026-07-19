@@ -121,7 +121,7 @@
      (js/testimonials-toggle.js) blendet den Rest bei Bedarf ein. */
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 8;
+  -webkit-line-clamp: 4;
   overflow: hidden;
 }
 
@@ -160,9 +160,17 @@
 
 .testimonials__author {
   display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
+  align-items: center;
+  gap: var(--space-3);
   width: 100%;
+}
+
+.testimonials__logo {
+  height: 1.75rem;
+  width: auto;
+  max-width: 6rem;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .testimonials__name {
