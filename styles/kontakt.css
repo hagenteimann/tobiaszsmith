@@ -102,11 +102,13 @@
 
 @media (max-width: 40em) {
   .kontakt__process {
-    gap: var(--space-4) var(--space-5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4) var(--space-3);
   }
 
   .kontakt__process-step {
-    max-width: 6rem;
+    max-width: none;
   }
 }
 
