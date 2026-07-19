@@ -10,7 +10,7 @@
 
   border-top: 1px solid var(--c-border-hair);
   background: var(--c-bg);
-  padding-block: var(--space-7);
+  padding-block: var(--space-8);
   position: relative;
   overflow: hidden;
 }

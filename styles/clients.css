@@ -9,7 +9,7 @@
   --clients-dur: 32s;
 
   background: var(--c-light);
-  padding-block: var(--space-7);
+  padding-block: var(--space-8);
   overflow: hidden;
 }
 
