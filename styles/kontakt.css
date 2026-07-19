@@ -386,25 +386,3 @@ a.kontakt__item-value:focus-visible {
     transition-duration: 0.001ms;
   }
 }
-
-.kontakt__field--checkbox {
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-2);
-}
-
-.kontakt__checkbox {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: 0.15rem;
-  cursor: pointer;
-  accent-color: var(--c-accent);
-}
-
-.kontakt__field--checkbox label {
-  font-weight: 500;
-  font-size: var(--fs-body-sm);
-  color: var(--c-text-dim);
-  cursor: pointer;
-}
