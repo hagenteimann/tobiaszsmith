@@ -43,6 +43,7 @@
 
   --lh-tight: 1;
   --lh-body:  1.6;
+  --lh-display-quote: 0.8; /* extrem enge Zeilenhoehe fuer das grosse Anfuehrungszeichen-Glyph in Testimonials, bewusste Ausnahme von --lh-tight */
 
   --ls-display: 0.02em;
   --ls-label:   0.19em;   /* letterSpacing 3 auf 16px */

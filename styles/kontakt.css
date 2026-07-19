@@ -327,7 +327,7 @@ a.kontakt__item-value:focus-visible {
 }
 
 .kontakt__field label {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--fs-body-sm);
   letter-spacing: 0.5px;
   color: var(--c-text-dim);
@@ -368,7 +368,7 @@ a.kontakt__item-value:focus-visible {
 }
 
 .kontakt__field--checkbox label {
-  font-weight: 500;
+  font-weight: 400;
   font-size: var(--fs-body-sm);
   color: var(--c-text-dim);
   cursor: pointer;

@@ -94,7 +94,7 @@
 .testimonials__quote {
   font-family: var(--font-display);
   font-size: var(--testimonials-quote-size);
-  line-height: 0.8;
+  line-height: var(--lh-display-quote);
   color: var(--c-accent);
 }
 

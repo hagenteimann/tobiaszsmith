@@ -54,7 +54,7 @@
 
 .nav__link {
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: 500;
   font-size: var(--fs-nav);
   letter-spacing: 0.015em;
   color: var(--c-text-dark);
@@ -78,7 +78,7 @@
 .nav__link:hover { color: var(--c-accent); }
 
 .nav__link.is-active {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--c-accent);
 }
 
