@@ -43,14 +43,13 @@
    aus einer erzwungenen Mindesthöhe. Fluid zwischen Mobile und diesem
    Desktop-Zielwert skaliert (kein Space-Token, da Figma-Fixwerte). */
 .services__card {
-  --card-pad: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem); /* 20px → 28px */
   --card-gap: clamp(0.875rem, 0.7rem + 0.75vw, 1.25rem); /* 14px → 20px */
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--card-gap);
-  padding: var(--card-pad);
+  padding: var(--space-card-pad);
   border-radius: var(--services-radius);
   box-shadow: var(--shadow-card);
   transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft);

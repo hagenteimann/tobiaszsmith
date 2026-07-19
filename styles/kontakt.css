@@ -12,7 +12,6 @@
   --k-gap-stack: 0.25rem;                               /* 4px, Label/Wert-Abstand */
   --k-icon-box: 3rem;                                   /* 48px */
   --k-social-box: 2.75rem;                              /* 44px */
-  --k-card-pad: clamp(1.5rem, 1rem + 3vw, 3rem);        /* 24px -> 48px */
   --k-field-gap: 1.25rem;                               /* 20px */
   --k-input-h: 3.375rem;                                /* 54px */
   --k-submit-h: 3.625rem;                                /* 58px */
@@ -300,7 +299,7 @@ a.kontakt__item-value:focus-visible {
   gap: var(--space-5);
   width: 100%;
   max-width: var(--k-form-max);
-  padding: var(--k-card-pad);
+  padding: var(--space-card-pad);
   background: var(--c-white);
   border: 1px solid var(--c-bg);
   border-radius: var(--radius-md);
