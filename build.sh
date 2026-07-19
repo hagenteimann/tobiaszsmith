@@ -31,7 +31,6 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/services.css?v=$V" />
   <link rel="stylesheet" href="styles/paket-modal.css?v=$V" />
   <!-- <link rel="stylesheet" href="styles/divider.css?v=$V" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/operate.css?v=$V" />
   <link rel="stylesheet" href="styles/testimonials.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio-intro.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
@@ -111,7 +110,6 @@ SECTIONS=(
   sections/testimonials.html
   sections/portfolio-video.html
   sections/aat-showcase.html
-  sections/operate.html
   sections/behind-scenes.html
   sections/kontakt.html
   __MAIN_CLOSE__
