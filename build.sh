@@ -16,8 +16,50 @@ cat > _head.html <<HEADEOF
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Smith Visuals — Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative." />
+  <link rel="canonical" href="https://hagenteimann.github.io/tobiaszsmith/" />
+  <meta name="theme-color" content="#0a0a0c" />
   <title>Smith Visuals — Cinematic Visuals for Modern Brands</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23A11919'/%3E%3C/svg%3E" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Smith Visuals" />
+  <meta property="og:title" content="Smith Visuals — Cinematic Visuals for Modern Brands" />
+  <meta property="og:description" content="Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative." />
+  <meta property="og:url" content="https://hagenteimann.github.io/tobiaszsmith/" />
+  <meta property="og:image" content="https://hagenteimann.github.io/tobiaszsmith/assets/portfolio/og-image.jpg" />
+  <meta property="og:locale" content="de_DE" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smith Visuals — Cinematic Visuals for Modern Brands" />
+  <meta name="twitter:description" content="Cineastische Videos und hochwertige Fotos für Unternehmen, Marken und Kreative." />
+  <meta name="twitter:image" content="https://hagenteimann.github.io/tobiaszsmith/assets/portfolio/og-image.jpg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Smith Visuals",
+    "founder": {
+      "@type": "Person",
+      "name": "Tobiasz Smith"
+    },
+    "email": "info@smithvisuals.de",
+    "telephone": "+4917670067578",
+    "url": "https://hagenteimann.github.io/tobiaszsmith/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "An der Alten Beienburg 16",
+      "postalCode": "51503",
+      "addressLocality": "Rösrath",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://instagram.com/smithvisuals",
+      "https://linkedin.com/company/smithvisuals",
+      "https://x.com/smithvisuals"
+    ]
+  }
+  </script>
 
   <link rel="preload" href="assets/fonts/geist-regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/league-gothic-variable.ttf" as="font" type="font/ttf" crossorigin />
@@ -36,6 +78,8 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
   <link rel="stylesheet" href="styles/portfolio-video.css?v=$V" />
   <link rel="stylesheet" href="styles/aat-showcase.css?v=$V" />
+  <link rel="stylesheet" href="styles/noroo-showcase.css?v=$V" />
+  <link rel="stylesheet" href="styles/project-showcase.css?v=$V" />
   <link rel="stylesheet" href="styles/more-work.css?v=$V" />
   <link rel="stylesheet" href="styles/behind-scenes.css?v=$V" />
   <link rel="stylesheet" href="styles/kontakt.css?v=$V" />
@@ -86,6 +130,7 @@ cat > _tail.html <<TAILEOF
   <script src="js/hero.js?v=$V" defer></script>
   <script src="js/hero-typewriter.js?v=$V" defer></script>
   <script src="js/more-work.js?v=$V" defer></script>
+  <script src="js/project-showcase.js?v=$V" defer></script>
   <script src="js/kontakt.js?v=$V" defer></script>
   <script src="js/paket-modal.js?v=$V" defer></script>
   <script src="js/portfolio-video.js?v=$V" defer></script>
@@ -109,7 +154,7 @@ SECTIONS=(
   sections/more-work.html
   sections/testimonials.html
   sections/portfolio-video.html
-  sections/aat-showcase.html
+  sections/project-showcase.html
   sections/behind-scenes.html
   sections/kontakt.html
   __MAIN_CLOSE__
