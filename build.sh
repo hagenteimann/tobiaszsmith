@@ -19,7 +19,9 @@ cat > _head.html <<HEADEOF
   <link rel="canonical" href="https://hagenteimann.github.io/tobiaszsmith/" />
   <meta name="theme-color" content="#0a0a0c" />
   <title>Smith Visuals — Cinematic Visuals for Modern Brands</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23A11919'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-512.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Smith Visuals" />
