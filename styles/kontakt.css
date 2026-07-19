@@ -57,13 +57,35 @@
   font-size: var(--fs-body-lg);
 }
 
-/* ---------- Kompakter Prozess-Ablauf (ex "How We Operate") ---------- */
+/* ---------- Kompakter Prozess-Ablauf (ex "How We Operate") ----------
+   Eigener Gruppen-Wrapper mit engem internem Abstand (Titel <-> Liste),
+   damit das Label sichtbar zur Liste gehoert statt durch den gleichmaessigen
+   .kontakt__container-Gap von ihr getrennt zu wirken. Visuell bewusst
+   untergeordnet (kleines Label, kleinere Nummern-Kreise) -- das Formular
+   bleibt die primaere Aktion der Section. */
+
+.kontakt__process-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.kontakt__process-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-label-sm);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
 
 .kontakt__process {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-5) var(--space-6);
+  gap: var(--space-4) var(--space-6);
   width: 100%;
   max-width: 60rem;
   margin-inline: auto;
@@ -83,14 +105,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.75rem;
+  height: 1.75rem;
   border-radius: var(--radius-full);
   background: var(--c-accent);
   color: var(--c-white);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: var(--fs-body-md);
+  font-size: var(--fs-body-sm);
 }
 
 .kontakt__process-label {

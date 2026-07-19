@@ -322,6 +322,7 @@
   text-transform: uppercase;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-accent);
+  white-space: nowrap;
   transition: background-color var(--dur-fast) var(--ease-soft),
               transform var(--dur-fast) var(--ease-soft);
 }
@@ -341,6 +342,14 @@
     padding: 0.75rem 1.5rem;
     font-size: var(--fs-body-sm);
     bottom: clamp(4.25rem, 3.75rem + 2vw, 5.5rem);
+  }
+}
+
+@media (max-width: 400px) {
+  .hero__cta {
+    padding: 0.65rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
   }
 }
 
