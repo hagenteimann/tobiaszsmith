@@ -4,7 +4,7 @@
    ========================================================= */
 
 .footer {
-  --f-radius: 4px;              /* Figma-Radius fuer Social-Icon-Boxen (kein Token deckt 4px ab) */
+  --f-radius: var(--radius-xs); /* Social-Icon-Boxen */
   --f-social-box: 2.75rem;      /* 44px, gleiche Groeße wie in der Kontakt-Section */
   --f-links-gap: clamp(2rem, 1.4rem + 3vw, 5rem); /* Spalten-Abstand im Link-Grid */
 

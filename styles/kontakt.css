@@ -6,7 +6,7 @@
    ========================================================= */
 
 .kontakt {
-  --k-radius: 4px;                                     /* Figma-Radius fuer Inputs/Buttons/Boxen (kein Token deckt 4px ab) */
+  --k-radius: var(--radius-xs);                        /* Inputs/Buttons/Boxen */
   --k-gap-summary: 1.25rem;                             /* 20px */
   --k-gap-info: clamp(1.75rem, 1.3rem + 1.6vw, 3rem);   /* 28px -> 48px */
   --k-gap-stack: 0.25rem;                               /* 4px, Label/Wert-Abstand */
@@ -256,7 +256,7 @@ a.kontakt__item-value:focus-visible {
   align-items: center;
   gap: var(--space-2);
   padding: 0.75rem 1.25rem;
-  border-radius: 4px;
+  border-radius: var(--k-radius);
   background: var(--c-accent);
   color: var(--c-white);
   font-family: var(--font-body);

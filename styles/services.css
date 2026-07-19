@@ -5,7 +5,7 @@
    ========================================================= */
 
 .services {
-  --services-radius: 4px;
+  --services-radius: var(--radius-xs);
 
   background: var(--c-white);
   padding-block: var(--space-8);
