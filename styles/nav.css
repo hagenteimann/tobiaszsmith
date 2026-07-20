@@ -192,7 +192,7 @@
 }
 
 .nav__drawer-link:hover,
-.nav__drawer-link.is-active { color: var(--c-accent); }
+.nav__drawer-link.is-active { color: var(--c-accent-on-dark); }
 
 .nav__drawer-social {
   display: inline-flex;
@@ -207,7 +207,7 @@
 }
 
 .nav__drawer-social svg { width: 1.25rem; height: 1.25rem; }
-.nav__drawer-social:hover { color: var(--c-accent); }
+.nav__drawer-social:hover { color: var(--c-accent-on-dark); }
 
 @media (prefers-reduced-motion: reduce) {
   .nav__drawer { transition-duration: 0.001ms; }

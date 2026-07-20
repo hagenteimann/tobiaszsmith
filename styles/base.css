@@ -72,7 +72,10 @@ body {
   font-size: var(--fs-label-sm);
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
-  color: var(--c-accent);
+  /* --c-accent schafft auf dunklem Hintergrund (einziger Verwendungskontext
+     dieser Klasse, Pakete-Modal) nur 2.56:1 -- --c-accent-on-dark ist
+     dieselbe Markenfarbe mit WCAG-AA-Kontrast (>=4.5:1). */
+  color: var(--c-accent-on-dark);
 }
 
 .btn {

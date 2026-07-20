@@ -62,6 +62,13 @@
   max-width: 22.5rem; /* 360px */
 }
 
+/* .logo-text-accent (base.css) ist auf --c-accent geeicht, was auf dem
+   hellen Nav-Hintergrund passt -- im dunklen Footer braucht dieselbe
+   Wortmarke die kontraststarke Dark-Variante. */
+.footer__logo-link .logo-text-accent {
+  color: var(--c-accent-on-dark);
+}
+
 .footer__logo-link {
   display: inline-flex;
   align-items: center;
@@ -94,7 +101,7 @@
 
 .footer__social-link:hover,
 .footer__social-link:focus-visible {
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
 }
 
 /* ---------- Link-Grid ---------- */
@@ -116,7 +123,7 @@
   font-weight: 700;
   font-size: var(--fs-label-sm);
   letter-spacing: 1px;
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
 }
 
 .footer__links-list {
@@ -156,19 +163,19 @@
 }
 
 .footer__dev-link {
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
   text-decoration: underline;
   animation: footer-dev-pulse 2s ease-in-out infinite;
 }
 
 .footer__dev-link:hover,
 .footer__dev-link:focus-visible {
-  color: var(--c-accent-hover);
+  color: var(--c-accent-on-dark-hover);
 }
 
 @keyframes footer-dev-pulse {
-  0%, 100% { color: var(--c-accent); }
-  50% { color: var(--c-accent-hover); }
+  0%, 100% { color: var(--c-accent-on-dark); }
+  50% { color: var(--c-accent-on-dark-hover); }
 }
 
 @media (prefers-reduced-motion: reduce) {

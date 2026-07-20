@@ -8,6 +8,8 @@
   /* ---------- Farben ---------- */
   --c-accent:        #A11919;
   --c-accent-hover:  #C42222;
+  --c-accent-on-dark:       #E14545; /* dieselbe Markenfarbe als TEXT auf dunklem Hintergrund (>=4.5:1) -- --c-accent selbst schafft dort nur 2.56:1 */
+  --c-accent-on-dark-hover: #EF6363;
   --c-bg:            #060709;
   --c-bg-elevated:   #101114;
   --c-text:          #FFFFFF;

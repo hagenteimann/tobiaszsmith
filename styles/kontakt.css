@@ -43,7 +43,7 @@
   font-size: var(--fs-label-btn);
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
 }
 
 .kontakt__title {
@@ -228,7 +228,7 @@
 
 a.kontakt__item-value:hover,
 a.kontakt__item-value:focus-visible {
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
 }
 
 .kontakt__quick {
@@ -288,7 +288,7 @@ a.kontakt__item-value:focus-visible {
 .kontakt__social-link:hover,
 .kontakt__social-link:focus-visible {
   border-color: var(--c-accent);
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
 }
 
 /* ---------- Formular-Spalte ---------- */
@@ -418,13 +418,13 @@ a.kontakt__item-value:focus-visible {
 
 .kontakt__feedback[data-state="success"] {
   background: rgba(161, 25, 25, 0.08);
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
   border: 1px solid var(--c-accent);
 }
 
 .kontakt__feedback[data-state="error"] {
   background: rgba(161, 25, 25, 0.08);
-  color: var(--c-accent);
+  color: var(--c-accent-on-dark);
   border: 1px solid var(--c-accent);
 }
 
