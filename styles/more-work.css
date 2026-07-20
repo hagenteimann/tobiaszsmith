@@ -80,8 +80,8 @@
   margin-top: 0.1em;
 }
 
-.mw-item--sm .mw-item__label { font-size: var(--fs-label-btn); }  /* Figma: 16px */
-.mw-item--lg .mw-item__label { font-size: var(--fs-subheading); } /* Figma: 28px */
+.mw-item--sm .mw-item__label { font-size: 0.875rem; } /* 14px */  /* Figma: 16px */
+.mw-item--lg .mw-item__label { font-size: 1.375rem; } /* 22px */ /* Figma: 28px */
 
 @media (hover: hover) {
   .mw-item:hover .mw-item__label {
