@@ -71,22 +71,42 @@ cat > _head.html <<HEADEOF
   <link rel="stylesheet" href="styles/nav.css?v=$V" />
   <link rel="stylesheet" href="styles/hero.css?v=$V" />
   <link rel="stylesheet" href="styles/clients.css?v=$V" />
-  <link rel="stylesheet" href="styles/services.css?v=$V" />
-  <link rel="stylesheet" href="styles/paket-modal.css?v=$V" />
-  <!-- <link rel="stylesheet" href="styles/divider.css?v=$V" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
-  <link rel="stylesheet" href="styles/testimonials.css?v=$V" />
-  <link rel="stylesheet" href="styles/portfolio-intro.css?v=$V" />
-  <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
-  <link rel="stylesheet" href="styles/portfolio-video.css?v=$V" />
-  <link rel="stylesheet" href="styles/aat-showcase.css?v=$V" />
-  <link rel="stylesheet" href="styles/noroo-showcase.css?v=$V" />
-  <link rel="stylesheet" href="styles/project-showcase.css?v=$V" />
-  <link rel="stylesheet" href="styles/more-work.css?v=$V" />
-  <link rel="stylesheet" href="styles/behind-scenes.css?v=$V" />
-  <link rel="stylesheet" href="styles/kontakt.css?v=$V" />
-  <link rel="stylesheet" href="styles/footer.css?v=$V" />
   <link rel="stylesheet" href="styles/grain.css?v=$V" />
   <link rel="stylesheet" href="styles/preloader.css?v=$V" />
+
+  <!-- Unterhalb-des-Folds-CSS ist nicht render-blockierend: preload +
+       onload-Swap laedt es parallel, ohne den ersten Render zu verzoegern
+       (PageSpeed: "Anfragen zum Blockieren des Renderings"). noscript-
+       Fallback deckt Faelle ohne JS ab. -->
+  <link rel="preload" href="styles/services.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/paket-modal.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <!-- <link rel="stylesheet" href="styles/divider.css?v=$V" /> --> <!-- Akkordeon deaktiviert, siehe SECTIONS unten -->
+  <link rel="preload" href="styles/testimonials.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/portfolio-intro.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/portfolio.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/portfolio-video.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/aat-showcase.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/noroo-showcase.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/project-showcase.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/more-work.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/behind-scenes.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/kontakt.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="styles/footer.css?v=$V" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="styles/services.css?v=$V" />
+    <link rel="stylesheet" href="styles/paket-modal.css?v=$V" />
+    <link rel="stylesheet" href="styles/testimonials.css?v=$V" />
+    <link rel="stylesheet" href="styles/portfolio-intro.css?v=$V" />
+    <link rel="stylesheet" href="styles/portfolio.css?v=$V" />
+    <link rel="stylesheet" href="styles/portfolio-video.css?v=$V" />
+    <link rel="stylesheet" href="styles/aat-showcase.css?v=$V" />
+    <link rel="stylesheet" href="styles/noroo-showcase.css?v=$V" />
+    <link rel="stylesheet" href="styles/project-showcase.css?v=$V" />
+    <link rel="stylesheet" href="styles/more-work.css?v=$V" />
+    <link rel="stylesheet" href="styles/behind-scenes.css?v=$V" />
+    <link rel="stylesheet" href="styles/kontakt.css?v=$V" />
+    <link rel="stylesheet" href="styles/footer.css?v=$V" />
+  </noscript>
   <script src="js/preloader.js?v=$V" defer></script>
 </head>
 <body>

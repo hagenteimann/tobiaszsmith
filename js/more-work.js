@@ -13,9 +13,10 @@
   var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
   function setOpen(folder, open) {
+    // Kein aria-pressed hier: .mw-folder ist ein <a> (role=link), aria-pressed
+    // ist nur fuer role=button gueltig -- war ein ARIA-Validitaetsfehler.
     folder.classList.toggle('is-open', open);
     folder.classList.toggle('pulse-white', open);
-    folder.setAttribute('aria-pressed', String(open));
     var videos = folder.querySelectorAll('video[data-src]');
     videos.forEach(function (v) {
       if (open) {

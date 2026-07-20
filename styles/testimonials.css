@@ -36,7 +36,7 @@
   max-width: 42rem;
   text-align: center;
   font-size: var(--fs-body-lg);
-  color: var(--c-text-dim);
+  color: var(--c-text-dim-on-light);
 }
 
 .testimonials__marquee {

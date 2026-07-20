@@ -11,7 +11,8 @@
   --c-bg:            #060709;
   --c-bg-elevated:   #101114;
   --c-text:          #FFFFFF;
-  --c-text-dim:      #6B7280;
+  --c-text-dim:      #7A8390; /* WCAG AA (>=4.5:1) auf dunklen Hintergruenden (--c-bg/--c-bg-elevated) */
+  --c-text-dim-on-light: #5B6472; /* dieselbe Rolle, aber AA-konform auf --c-white/--c-light */
   --c-text-dark:     #060709;
   --c-light:         #F5F5F5;
   --c-white:         #FFFFFF;

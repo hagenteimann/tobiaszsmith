@@ -2,7 +2,11 @@
 // Zitat tatsaechlich ueber die CSS-line-clamp-Grenze hinausgeht.
 
 (function () {
-  var cards = document.querySelectorAll('.testimonials__card');
+  // Nur die sichtbare Track-Kopie verarbeiten -- die aria-hidden Duplikat-
+  // Kopie (fuer den nahtlosen Loop) darf keine fokussierbaren "Mehr lesen"-
+  // Buttons bekommen (ARIA: aria-hidden-Container mit fokussierbaren
+  // Kindern ist ein Accessibility-Fehler).
+  var cards = document.querySelectorAll('.testimonials__track:not([aria-hidden]) .testimonials__card');
   if (!cards.length) return;
 
   function setUp(card) {

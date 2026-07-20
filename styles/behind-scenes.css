@@ -64,7 +64,7 @@
   font-size: var(--bs-fs-author);
   line-height: var(--lh-tight);
   letter-spacing: var(--ls-display);
-  color: var(--c-text-dim);
+  color: var(--c-text-dim-on-light);
 }
 
 /* ---------- Media ---------- */
