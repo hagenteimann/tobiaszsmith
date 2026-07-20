@@ -56,7 +56,7 @@ cat > _head.html <<HEADEOF
       "addressCountry": "DE"
     },
     "sameAs": [
-      "https://instagram.com/smithvisuals",
+      "https://www.instagram.com/smith_visuals_archive/",
       "https://www.linkedin.com/in/tobiasz-smith-8109a9253/"
     ]
   }
