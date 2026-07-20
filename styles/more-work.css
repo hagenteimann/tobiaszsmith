@@ -29,10 +29,20 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  justify-content: flex-start;
+  /* Mobil (ein Ordner pro Zeile) zentriert, ab da wo mehrere Ordner
+     nebeneinander passen linksbuendig, damit eine unvollstaendige
+     letzte Zeile (z.B. nur 2 von 5 Ordnern) unter der ersten Zeile
+     beginnt statt zentriert zu "schweben". */
+  justify-content: center;
   gap: var(--space-6);
   width: 100%;
   max-width: 100%;
+}
+
+@media (min-width: 40rem) {
+  .more-work__folders {
+    justify-content: flex-start;
+  }
 }
 
 
