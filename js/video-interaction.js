@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         video.pause();
       }
     });
-  }, { rootMargin: '200px 0px' });
+  }, { rootMargin: '50px 0px' });
 
   videos.forEach(video => {
     video.muted = true;
