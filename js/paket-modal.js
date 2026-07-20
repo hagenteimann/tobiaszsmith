@@ -13,6 +13,7 @@
     lastFocused = document.activeElement;
     modal.setAttribute('data-open', '');
     modal.removeAttribute('aria-hidden');
+    modal.removeAttribute('inert');
     document.body.classList.add('paket-modal-open');
     var closeBtn = modal.querySelector('.paket-modal__close');
     if (closeBtn) closeBtn.focus();
@@ -22,6 +23,7 @@
   function closeModal() {
     modal.removeAttribute('data-open');
     modal.setAttribute('aria-hidden', 'true');
+    modal.setAttribute('inert', '');
     document.body.classList.remove('paket-modal-open');
     document.removeEventListener('keydown', onKeydown);
     if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
