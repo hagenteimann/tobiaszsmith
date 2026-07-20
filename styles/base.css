@@ -9,7 +9,15 @@ img, picture, svg, video { display: block; max-width: 100%; }
 button, input, textarea, select { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* Absicherung gegen horizontales Seiten-Scrollen -- body hat das schon,
+     aber manche Browser nutzen html als eigentlichen Viewport-Scroller.
+     Faengt Faelle ab, in denen ein transformiertes Element (z.B. die
+     Foto-Mappen-Faecher in more-work.css) kurzzeitig ueber den
+     Viewport-Rand hinaus scrollbaren Ueberlauf erzeugt. */
+  overflow-x: hidden;
+}
 
 /* ---------- Scrollbar (CD-Akzent, schmal & dezent statt Browser-Standard) ---------- */
 html {
