@@ -67,6 +67,17 @@
   letter-spacing: 0.03em;
   margin: 0;
   transition: color var(--dur-fast) var(--ease-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+.mw-item__label-type {
+  font-size: 0.65em;
+  font-weight: 500;
+  color: var(--c-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.1em;
 }
 
 .mw-item--sm .mw-item__label { font-size: var(--fs-label-btn); }  /* Figma: 16px */
