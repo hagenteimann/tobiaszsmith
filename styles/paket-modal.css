@@ -45,6 +45,14 @@
   box-shadow: var(--shadow-card);
   transform: translateY(16px) scale(0.98);
   transition: transform var(--dur-base) var(--ease-soft);
+  /* Dunkler Scrollbar-Track statt des globalen weissen (base.css) --
+     das Modal selbst ist dunkel, ein weisser Track wuerde hier hart
+     herausstechen. */
+  scrollbar-color: rgba(161, 25, 25, 0.45) var(--c-bg-elevated);
+}
+
+.paket-modal__panel::-webkit-scrollbar-track {
+  background: var(--c-bg-elevated);
 }
 
 .paket-modal[data-open] .paket-modal__panel {
@@ -52,9 +60,17 @@
 }
 
 .paket-modal__close {
-  position: absolute;
+  /* sticky statt absolute: .paket-modal__panel ist selbst der scrollende
+     Container (overflow-y:auto) -- ein absolut positioniertes Kind scrollt
+     mit dem Inhalt mit und verschwindet nach oben aus dem Sichtbereich.
+     sticky haelt den Button oben im sichtbaren Bereich, waehrend man durch
+     die Pakete scrollt. "display: flex" macht die Box block-level, damit
+     "margin-left: auto" sie an den rechten Rand schiebt (ersetzt die
+     vorherige absolute right-Positionierung). */
+  position: sticky;
   top: var(--space-3);
-  right: var(--space-3);
+  margin-left: auto;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +78,7 @@
   height: 2.5rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--c-border-hair);
-  background: transparent;
+  background: var(--c-bg);
   color: var(--c-white);
   cursor: pointer;
   transition: background-color var(--dur-fast) var(--ease-soft);
