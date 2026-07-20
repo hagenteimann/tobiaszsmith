@@ -152,10 +152,10 @@ SECTIONS=(
   sections/portfolio.html
   sections/services.html
   # sections/divider.html      # <- Akkordeon: einkommentieren zum Reaktivieren
-  sections/more-work.html
   sections/testimonials.html
-  sections/portfolio-video.html
   sections/project-showcase.html
+  sections/more-work.html
+  sections/portfolio-video.html
   sections/behind-scenes.html
   sections/kontakt.html
   __MAIN_CLOSE__

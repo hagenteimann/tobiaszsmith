@@ -1,8 +1,11 @@
 /* =========================================================
    Smith Visuals — Testimonials Section
    Figma node 76:278 · Überschrift „TESTIMONIALS" + 6 Review-Cards
-   in auto-scrolling Marquee mit Hover-Pause. Mobile-first:
-   Cards scrollen horizontal in endloser Schleife.
+   in auto-scrollendem Marquee (js/testimonials-toggle.js treibt
+   scrollLeft per requestAnimationFrame). Interaktion pausiert den
+   Lauf: kurzes Antippen/Ziehen haelt fuer 2s an und laeuft danach
+   weiter, Halten (pointerdown gehalten) pausiert dauerhaft und
+   erlaubt manuelles Ziehen, bis losgelassen wird.
    ========================================================= */
 
 .testimonials {
@@ -12,7 +15,6 @@
   --testimonials-quote-size: clamp(2.25rem, 1.8rem + 1.6vw, 3.5rem); /* 36px → 56px */
   --testimonials-name-ls: 0.03em; /* ~0.46px bei 16px Fließtext */
   --testimonials-gap: clamp(1.5rem, 4vw, 3rem);
-  --testimonials-dur: 60s;
 
   background: var(--c-light);
   padding-block: var(--space-8);
@@ -40,8 +42,8 @@
 .testimonials__marquee {
   display: flex;
   width: 100%;
-  gap: var(--testimonials-gap);
-  overflow: hidden;
+  overflow-x: hidden;
+  cursor: grab;
   mask-image: linear-gradient(
     90deg,
     transparent 0,
@@ -58,16 +60,15 @@
   );
 }
 
+.testimonials__marquee.is-dragging {
+  cursor: grabbing;
+}
+
 .testimonials__track {
   display: flex;
   align-items: stretch;
   flex-shrink: 0;
   gap: var(--testimonials-gap);
-  animation: testimonials-scroll var(--testimonials-dur) linear infinite;
-}
-
-.testimonials__marquee:hover .testimonials__track {
-  animation-play-state: paused;
 }
 
 /* ---------- Card ---------- */
@@ -82,6 +83,7 @@
   background: var(--c-white);
   border: 1px solid var(--c-border-light);
   border-radius: var(--radius-sm);
+  user-select: none;
 }
 
 .testimonials__header {
@@ -181,23 +183,11 @@
   color: var(--c-text-dark);
 }
 
-@keyframes testimonials-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
-}
-
-/* Ruhige, statische Variante ohne Bewegung */
+/* Kein Auto-Scroll bei reduzierter Bewegung -- js/testimonials-toggle.js
+   prueft dasselbe matchMedia und startet den rAF-Loop dann gar nicht erst.
+   Das Duplikat (aria-hidden) fuer den nahtlosen Loop wird dann nicht
+   gebraucht und ausgeblendet; manuelles Ziehen bleibt moeglich. */
 @media (prefers-reduced-motion: reduce) {
-  .testimonials__marquee {
-    overflow-x: auto;
-    mask-image: none;
-    -webkit-mask-image: none;
-  }
-
-  .testimonials__track {
-    animation: none;
-  }
-
   .testimonials__track[aria-hidden="true"] {
     display: none;
   }
