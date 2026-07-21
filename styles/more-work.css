@@ -50,7 +50,7 @@
 .mw-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-2);
 }
 
@@ -69,6 +69,8 @@
   transition: color var(--dur-fast) var(--ease-soft);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .mw-item__label-type {
