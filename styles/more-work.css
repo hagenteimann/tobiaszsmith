@@ -226,6 +226,19 @@
   transition:
     transform var(--dur-slow) var(--ease-fan),
     box-shadow var(--dur-slow) var(--ease-soft);
+  /* KEIN pauschales will-change hier: das wuerde fuer jedes der ~40
+     Faecher-Fotos (534x668 nativ, x Geraete-Pixeldichte) dauerhaft eine
+     GPU-Ebene reservieren -- auf Mobile ein bekannter Ausloeser fuer
+     Renderer-Crashes durch GPU-Speicher-Erschoepfung. Stattdessen nur
+     waehrend der tatsaechlichen Faecher-Animation (Hover/offen) setzen. */
+}
+
+@media (hover: hover) {
+  .mw-folder:hover .mw-photo { will-change: transform; }
+}
+
+.mw-folder.is-open .mw-photo,
+.mw-folder:focus-visible .mw-photo {
   will-change: transform;
 }
 
