@@ -72,10 +72,34 @@
   max-width: 40rem;
 }
 
-.noroo-showcase__video {
+/* Wrapper für YouTube-iframes — hält das 9:16 Seitenverhältnis */
+.noroo-showcase__yt-wrap {
+  position: relative;
+  width: 100%;
+  /* 9:16 = 177.77% padding-bottom */
+  padding-bottom: 177.78%;
+  max-width: 22rem;
+  align-self: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--c-bg);
+}
+
+.noroo-showcase__yt-wrap iframe.noroo-showcase__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  border: none;
+}
+
+/* Fallback falls noch ein <video> verwendet wird */
+video.noroo-showcase__video {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 9 / 16;
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
