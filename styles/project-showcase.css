@@ -64,7 +64,17 @@
 .project-showcase__track {
   display: flex;
   overflow-x: auto;
-  padding-block: var(--space-5); /* Verhindert Abschneiden der ausgefächerten Ordner */
+  /* overflow-x:auto allein reicht nicht -- laut CSS-Overflow-Spec wird
+     overflow-y automatisch ebenfalls zu "auto" (nicht "visible"), sobald
+     overflow-x einen Scroll-Wert hat. Der ausgefaecherte Foto-Stapel
+     (mw-folder__photos) faehrt beim Hover/Oeffnen bis zu ~103px nach
+     oben aus (bei --mw-scale:0.4356 auf Desktop) -- 2rem Puffer reichte
+     nicht, die Faecherspitzen wurden oben abgeschnitten. Nur padding-top
+     braucht den groesseren Sicherheitsabstand, da nur nach oben ausgefahren
+     wird; padding-bottom bleibt schlank (die Section selbst hat schon
+     eigenes vertikales padding). */
+  padding-top: 7rem;
+  padding-bottom: var(--space-5);
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
