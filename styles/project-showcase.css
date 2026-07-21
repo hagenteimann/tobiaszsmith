@@ -106,3 +106,5 @@
     scroll-behavior: auto;
   }
 }
+
+.project-showcase .mw-item__label-type { color: var(--c-text-dim-on-light); }

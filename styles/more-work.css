@@ -219,10 +219,19 @@
   overflow: hidden;
   transform-origin: 50% 88%;
   box-shadow: -4px -4px 22px rgba(255, 255, 255, 0.10);
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.02) 8%, rgba(255, 255, 255, 0.08) 18%, rgba(255, 255, 255, 0.02) 33%);
+  background-size: 200% 100%;
+  animation: shine-skeleton 1.5s linear infinite;
   transition:
     transform var(--dur-slow) var(--ease-fan),
     box-shadow var(--dur-slow) var(--ease-soft);
   will-change: transform;
+}
+
+@keyframes shine-skeleton {
+  to {
+    background-position-x: -200%;
+  }
 }
 
 .mw-photo img,
