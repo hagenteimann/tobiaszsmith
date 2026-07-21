@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hagenteimann.github.io/tobiaszsmith/sitemap.xml
+Sitemap: https://smithvisuals.de/sitemap.xml

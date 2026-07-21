@@ -20,10 +20,14 @@
     var videos = folder.querySelectorAll('video[data-src]');
     videos.forEach(function (v) {
       if (open) {
-        if (!v.src) v.src = v.dataset.src;
+        if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
         v.play().catch(function () {});
       } else {
         v.pause();
+        if (isTouch || window.innerWidth <= 1024) {
+          v.removeAttribute('src');
+          v.load();
+        }
       }
     });
   }

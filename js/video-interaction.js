@@ -16,14 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const video = entry.target;
       if (entry.isIntersecting) {
         video.dataset.inView = '1';
-        if (!video.src) video.src = video.dataset.src;
+        if (!video.getAttribute('src')) video.setAttribute('src', video.dataset.src);
         video.play().catch(() => {});
       } else {
         video.dataset.inView = '';
         video.pause();
+        // Speicher auf Mobile freigeben, um iOS-Crash zu verhindern
+        if (isTouchDevice) {
+          video.removeAttribute('src');
+          video.load();
+        }
       }
     });
-  }, { rootMargin: '50px 0px' });
+  }, { rootMargin: '300px 0px' });
 
   videos.forEach(video => {
     video.muted = true;
@@ -55,7 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const interactionTarget = video.closest('a') || video.parentElement;
 
     if (!isTouchDevice) {
-      interactionTarget.addEventListener('mouseenter', () => { video.muted = false; });
+      interactionTarget.addEventListener('mouseenter', () => {
+        if (navigator.userActivation && !navigator.userActivation.hasBeenActive) return;
+        video.muted = false; 
+      });
       interactionTarget.addEventListener('mouseleave', () => { video.muted = true; });
     } else {
       interactionTarget.addEventListener('click', (e) => {
