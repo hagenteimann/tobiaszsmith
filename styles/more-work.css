@@ -206,7 +206,7 @@
   position: absolute;
   inset: 0;
   z-index: 5;
-  clip-path: inset(-1200px);
+  clip-path: inset(-1200px -1200px 0 -1200px);
 }
 
 .mw-photo {
